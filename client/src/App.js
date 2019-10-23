@@ -1,17 +1,17 @@
 import React from "react";
-// import logo from "./logo.svg";
-import "bootswatch/dist/[theme]/bootstrap.min.css";
-import "./App.css";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import ScheduleMaker from "./pages/ScheduleMaker";
 
 function App() {
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col justify-content-center">
-          <h1>WeSchedule is under development :)</h1>
-        </div>
+    <Router>
+      <div>
+        <Switch>
+          <Route exact path="/" component={ScheduleMaker} />
+          <Route exact path="/employees" component={ScheduleMaker} />
+        </Switch>
       </div>
-    </div>
+    </Router>
   );
 }
 
