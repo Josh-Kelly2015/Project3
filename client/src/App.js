@@ -1,5 +1,6 @@
 import React from "react";
 // import logo from "./logo.svg";
+import "bootswatch/dist/[theme]/bootstrap.min.css";
 import "./App.css";
 
 function App() {
