@@ -107,6 +107,7 @@ const employeeSeed = [
     rank: "employee"
   }
 ];
+
 db.Employee.remove({})
   .then(() => db.Employee.collection.insertMany(employeeSeed))
   .then(data => {
