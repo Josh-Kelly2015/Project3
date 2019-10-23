@@ -1,0 +1,27 @@
+{
+  "name": "project3",
+  "version": "1.0.0",
+  "description": "This app will allow users to create a weekly schedule and the ability to share the schedule with other users.",
+  "main": "server.js",
+  "scripts": {
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "seed": "node scripts/seedDB.js",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Josh-Kelly2015/Project3.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Josh-Kelly2015/Project3/issues"
+  },
+  "homepage": "https://github.com/Josh-Kelly2015/Project3#readme"
+}
