@@ -1,10 +1,10 @@
 import React from "react";
 
-function Header(props) {
+function Header() {
   return (
     <>
       <div className="row bg-light">
-        <Header className="text-center text-dark">{props}</Header>
+        <Header className="text-center text-dark">WeSchedule</Header>
       </div>
     </>
   );
