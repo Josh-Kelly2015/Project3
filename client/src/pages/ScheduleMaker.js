@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import EmployeeContainer from "../components/EmployeeContainer";
+import { Col, Row, Container } from "../components/Grid";
 import API from "../utils/API";
-import { List, ListItem } from "../components/EmployeeList";
+import { List, ListItem } from "../components/List";
 import { Link } from "react-router-dom";
+import Table from "../components/Table";
 class ScheduleMaker extends Component {
   state = {
     name: ""
@@ -19,9 +20,13 @@ class ScheduleMaker extends Component {
 
   render() {
     return (
-      <div className="container">
-        <EmployeeContainer>
-          <h1>Employees</h1>
+      <Container fluid>
+        <Row>
+          <Col>
+            <h1>Employees</h1>
+          </Col>
+        </Row>
+        <Container>
           <List>
             {this.state.name.map(employee => (
               <ListItem key={employee._id}>
@@ -31,8 +36,12 @@ class ScheduleMaker extends Component {
               </ListItem>
             ))}
           </List>
-        </EmployeeContainer>
-      </div>
+        </Container>
+
+        <Container>
+          <Table></Table>
+        </Container>
+      </Container>
     );
   }
 }
