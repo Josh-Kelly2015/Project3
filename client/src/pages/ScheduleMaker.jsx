@@ -1,14 +1,10 @@
 import React, { Component } from "react";
-
+import Header from "../components/Header";
 class ScheduleMaker extends Component {
   render() {
     return (
       <div className="container">
-        <div className="row">
-          <div className="col justify-content-center">
-            <h1>WeSchedule is under development :)</h1>
-          </div>
-        </div>
+        <Header>WeSchedule</Header>
       </div>
     );
   }
