@@ -4,7 +4,7 @@ function Header() {
   return (
     <>
       <div className="row bg-light">
-        <Header className="text-center text-dark">WeSchedule</Header>
+        <h1 className="text-center text-dark">WeSchedule</h1>
       </div>
     </>
   );
