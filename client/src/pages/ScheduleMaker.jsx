@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container } from "../components/Grid";
+import { Row, Container } from "../components/Grid";
 import Header from "../components/Header";
 import API from "../utils/API";
 import { List, ListItem } from "../components/List";
@@ -30,24 +30,30 @@ class ScheduleMaker extends Component {
     return (
       <Container fluid>
         <Header />
-        <Container>
-          {this.state.employees.length ? (
-            <List>
-              {this.state.employees.map(employee => (
-                <ListItem key={employee._id}>
-                  <Link to={"/employees/" + employee._id}>
-                    <strong>{employee.name}</strong>
-                  </Link>
-                </ListItem>
-              ))}
-            </List>
-          ) : (
-            <h3>No Results to Display</h3>
-          )}
-        </Container>
-        <Container>
-          <Table />
-        </Container>
+
+        <Row>
+          <div className="col-4">
+            {this.state.employees.length ? (
+              <List>
+                {this.state.employees.map(employee => (
+                  <ListItem key={employee._id}>
+                    <Link
+                      to={"/employees/" + employee._id}
+                      className="text-dark"
+                    >
+                      <strong>{employee.name}</strong>
+                    </Link>
+                  </ListItem>
+                ))}
+              </List>
+            ) : (
+              <h3>No Results to Display</h3>
+            )}
+          </div>
+          <div className="col">
+            <Table />
+          </div>
+        </Row>
 
         <Footer />
       </Container>
