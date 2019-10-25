@@ -30,28 +30,33 @@ class ScheduleMaker extends Component {
     return (
       <Container fluid>
         <Header />
-
         <Row>
-          <div className="col-4">
-            {this.state.employees.length ? (
-              <List>
-                {this.state.employees.map(employee => (
-                  <ListItem key={employee._id}>
-                    <Link
-                      to={"/employees/" + employee._id}
-                      className="text-dark"
-                    >
-                      <strong>{employee.name}</strong>
-                    </Link>
-                  </ListItem>
-                ))}
-              </List>
-            ) : (
-              <h3>No Results to Display</h3>
-            )}
+          <div className="col-2">
+            <Container>
+              <div className="col">
+                {this.state.employees.length ? (
+                  <List>
+                    {this.state.employees.map(employee => (
+                      <ListItem key={employee._id}>
+                        <Link
+                          to={"/employees/" + employee._id}
+                          className="text-dark"
+                        >
+                          <strong>{employee.name}</strong>
+                        </Link>
+                      </ListItem>
+                    ))}
+                  </List>
+                ) : (
+                  <h3>No Results to Display</h3>
+                )}
+              </div>
+            </Container>
           </div>
           <div className="col">
-            <Table />
+            <Container>
+              <Table />
+            </Container>
           </div>
         </Row>
 

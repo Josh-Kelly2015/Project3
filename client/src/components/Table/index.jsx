@@ -2,7 +2,7 @@ import React from "react";
 
 function Table() {
   return (
-    <table className="table table-bordered mt-5">
+    <table className="table table-bordered">
       <thead className="thead-dark">
         <tr>
           <th scope="col">Project</th>
