@@ -5,6 +5,7 @@ import API from "../utils/API";
 import { List, ListItem } from "../components/List";
 import Table from "../components/Table";
 import Footer from "../components/Footer";
+import SubmitButton from "../components/SubmitButton";
 import { Link } from "react-router-dom";
 class ScheduleMaker extends Component {
   state = {
@@ -56,6 +57,9 @@ class ScheduleMaker extends Component {
           <div className="col">
             <Container>
               <Table />
+              <Row>
+                <SubmitButton />
+              </Row>
             </Container>
           </div>
         </Row>
