@@ -13,20 +13,19 @@ class ScheduleMaker extends Component {
     email: "",
     rank: ""
   };
+
   componentDidMount() {
     this.loadEmployees();
   }
 
   loadEmployees = () => {
     API.getEmployees()
-      .then(res => this.setState({ employees: res.data, name: "" }))
+      .then(res =>
+        this.setState({ employees: res.data, name: "", email: "", rank: "" })
+      )
       .catch(err => console.log(err));
   };
-  getEmployeeById = () => {
-    API.getEmployee(this.props.match.params.id)
-      .then(res => this.setState({ employees: res.data }))
-      .catch(err => console.log(err));
-  };
+
   render() {
     return (
       <Container fluid>
@@ -34,21 +33,18 @@ class ScheduleMaker extends Component {
         <Container>
           {this.state.employees.length ? (
             <List>
-              {this.state.employees.map(employees => (
-                <div className="col-4">
-                  <ListItem>
-                    <Link to={"/api/employees/" + employees._id}>
-                      <strong>{employees.name}</strong>
-                    </Link>
-                  </ListItem>
-                </div>
+              {this.state.employees.map(employee => (
+                <ListItem key={employee._id}>
+                  <Link to={"/employees/" + employee._id}>
+                    <strong>{employee.name}</strong>
+                  </Link>
+                </ListItem>
               ))}
             </List>
           ) : (
             <h3>No Results to Display</h3>
           )}
         </Container>
-
         <Container>
           <Table />
         </Container>

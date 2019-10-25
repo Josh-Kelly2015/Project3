@@ -8,6 +8,7 @@ function App() {
       <div>
         <Switch>
           <Route exact path="/" component={ScheduleMaker} />
+          <Route exact path="/employees" component={ScheduleMaker} />
         </Switch>
       </div>
     </Router>
