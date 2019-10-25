@@ -1,15 +1,17 @@
 import React, { Component } from "react";
 import { Container } from "../components/Grid";
+import Header from "../components/Header";
 import API from "../utils/API";
 import { List, ListItem } from "../components/List";
 import Table from "../components/Table";
-import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
 class ScheduleMaker extends Component {
   state = {
     employees: [],
-    name: ""
+    name: "",
+    email: "",
+    rank: ""
   };
   componentDidMount() {
     this.loadEmployees();
@@ -20,28 +22,37 @@ class ScheduleMaker extends Component {
       .then(res => this.setState({ employees: res.data, name: "" }))
       .catch(err => console.log(err));
   };
+  getEmployeeById = () => {
+    API.getEmployee(this.props.match.params.id)
+      .then(res => this.setState({ employees: res.data }))
+      .catch(err => console.log(err));
+  };
   render() {
     return (
       <Container fluid>
+        <Header />
         <Container>
-          <Header />{" "}
           {this.state.employees.length ? (
             <List>
               {this.state.employees.map(employees => (
-                <ListItem key={employees._id}>
-                  <Link to={"/employees/" + employees._id}>
-                    <strong>{employees.name}</strong>
-                  </Link>
-                </ListItem>
+                <div className="col-4">
+                  <ListItem>
+                    <Link to={"/api/employees/" + employees._id}>
+                      <strong>{employees.name}</strong>
+                    </Link>
+                  </ListItem>
+                </div>
               ))}
             </List>
           ) : (
             <h3>No Results to Display</h3>
           )}
         </Container>
+
         <Container>
           <Table />
         </Container>
+
         <Footer />
       </Container>
     );

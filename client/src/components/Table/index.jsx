@@ -17,7 +17,7 @@ function Table() {
       </thead>
       <tbody>
         <tr>
-          <th scope="row">1</th>
+          <th scope="row">0001 Project Name</th>
           <td>Mark, John, George, Johnny</td>
           <td>Mark, John, George, Johnny</td>
           <td>@Mark, John, George, Johnny</td>
@@ -27,7 +27,7 @@ function Table() {
           <td>@Mark, John, George, Johnny</td>
         </tr>
         <tr>
-          <th scope="row">2</th>
+          <th scope="row">0002 Project Name</th>
           <td>Mark, John, George, Johnny</td>
           <td>Mark, John, George, Johnny</td>
           <td>@Mark, John, George, Johnny</td>
@@ -37,7 +37,7 @@ function Table() {
           <td>@Mark, John, George, Johnny</td>
         </tr>
         <tr>
-          <th scope="row">3</th>
+          <th scope="row">0003 Project Name</th>
           <td>Mark, John, George, Johnny</td>
           <td>Mark, John, George, Johnny</td>
           <td>@Mark, John, George, Johnny</td>
@@ -47,7 +47,7 @@ function Table() {
           <td>@Mark, John, George, Johnny</td>
         </tr>
         <tr>
-          <th scope="row">4</th>
+          <th scope="row">0004 Project Name</th>
           <td>Mark, John, George, Johnny</td>
           <td>Mark, John, George, Johnny</td>
           <td>@Mark, John, George, Johnny</td>
