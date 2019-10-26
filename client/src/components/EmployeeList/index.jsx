@@ -1,12 +1,15 @@
 import React from "react";
-import { ListGroup, ListGroupItem } from "reactstrap";
 
-const EmployeeList = props => {
+// This file exports both the List and ListItem components
+
+export function List({ children }) {
   return (
-    <ListGroup>
-      <ListGroupItem>{props.children}</ListGroupItem>
-    </ListGroup>
+    <div className="list-overflow-container">
+      <ul className="list-group">{children}</ul>
+    </div>
   );
-};
+}
 
-export default EmployeeList;
+export function ListItem({ children }) {
+  return <li className="list-group-item">{children}</li>;
+}

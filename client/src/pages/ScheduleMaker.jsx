@@ -1,9 +1,12 @@
 import React, { Component } from "react";
-import Board from "../components/Board";
-import Card from "../components/Card";
-// import Employee from "../components/Employee";
+import { Row, Container } from "../components/Grid";
+import Header from "../components/Header";
 import API from "../utils/API";
-import EmployeeList from "../components/EmployeeList";
+import { List, ListItem } from "../components/EmployeeList";
+import Table from "../components/Table";
+import Footer from "../components/Footer";
+import SubmitButton from "../components/SubmitButton";
+import { Link } from "react-router-dom";
 class ScheduleMaker extends Component {
   state = {
     employees: [],
@@ -15,6 +18,7 @@ class ScheduleMaker extends Component {
   componentDidMount() {
     this.loadEmployees();
   }
+
   loadEmployees = () => {
     API.getEmployees()
       .then(res =>
@@ -25,24 +29,45 @@ class ScheduleMaker extends Component {
 
   render() {
     return (
-      <div className="App">
-        <main className="flexbox">
-          {/* First Board with Card One  */}
-          <Board id="board-1" className="board">
-            <EmployeeList>
-              {this.state.employees.map(employees => (
-                <Card>
-                  <h4>{this.state.employees.name}</h4>
-                </Card>
-              ))}
-            </EmployeeList>
-          </Board>
+      <Container fluid>
+        <Header />
+        <Row>
+          <div className="col-2">
+            <Container>
+              <div className="col">
+                {this.state.employees.length ? (
+                  <List>
+                    {this.state.employees.map(employee => (
+                      <ListItem key={employee._id}>
+                        <Link
+                          to={"/employees/" + employee._id}
+                          className="text-dark"
+                        >
+                          <strong>{employee.name}</strong>
+                        </Link>
+                      </ListItem>
+                    ))}
+                  </List>
+                ) : (
+                  <h3>No Results to Display</h3>
+                )}
+              </div>
+            </Container>
+          </div>
+          <div className="col">
+            <Container>
+              <Table />
+              <Row>
+                <SubmitButton />
+              </Row>
+            </Container>
+          </div>
+        </Row>
 
-          {/* Second Board with Card Two */}
-          <Board id="board-2" className="board"></Board>
-        </main>
-      </div>
+        <Footer />
+      </Container>
     );
   }
 }
+
 export default ScheduleMaker;
