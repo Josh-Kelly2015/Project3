@@ -6,7 +6,7 @@ import {
   DropdownItem
 } from "reactstrap";
 
-const Example = props => {
+const Employee = props => {
   const [dropdownOpen, setOpen] = useState(false);
 
   const toggle = () => setOpen(!dropdownOpen);
@@ -25,4 +25,4 @@ const Example = props => {
   );
 };
 
-export default Example;
+export default Employee;

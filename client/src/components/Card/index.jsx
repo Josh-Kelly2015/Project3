@@ -1,5 +1,5 @@
 import React from "react";
-
+import Employee from "../Employee";
 function Card(props) {
   const dragStart = e => {
     const target = e.target;
@@ -15,7 +15,7 @@ function Card(props) {
     e.stopPropagation();
   };
   return (
-    <div
+    <Employee
       id={props.id}
       className={props.className}
       draggable={props.draggable}
@@ -23,7 +23,7 @@ function Card(props) {
       onDragOver={dragOver}
     >
       {props.children}
-    </div>
+    </Employee>
   );
 }
 
