@@ -2,11 +2,13 @@ import React, { Component } from "react";
 import { Row, Container } from "../components/Grid";
 import Header from "../components/Header";
 import API from "../utils/API";
-import { List, ListItem } from "../components/EmployeeList";
+// import { List, ListItem } from "../components/EmployeeList";
 import Table from "../components/Table";
 import Footer from "../components/Footer";
 import SubmitButton from "../components/SubmitButton";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import Board from "../components/Board";
+import Card from "../components/Card";
 class ScheduleMaker extends Component {
   state = {
     employees: [],
@@ -29,43 +31,21 @@ class ScheduleMaker extends Component {
 
   render() {
     return (
-      <Container fluid>
+      <>
         <Header />
-        <Row>
-          <div className="col-2">
-            <Container>
-              <div className="col">
-                {this.state.employees.length ? (
-                  <List>
-                    {this.state.employees.map(employee => (
-                      <ListItem key={employee._id}>
-                        <Link
-                          to={"/employees/" + employee._id}
-                          className="text-dark"
-                        >
-                          <strong>{employee.name}</strong>
-                        </Link>
-                      </ListItem>
-                    ))}
-                  </List>
-                ) : (
-                  <h3>No Results to Display</h3>
-                )}
-              </div>
-            </Container>
-          </div>
-          <div className="col">
-            <Container>
-              <Table />
-              <Row>
-                <SubmitButton />
-              </Row>
-            </Container>
-          </div>
-        </Row>
+        <main className="flexbox">
+          <Board id="board-1" className="board list-overflow-container">
+            {this.state.employees.map(employee => (
+              <Card id="card-1" className="card" draggable="true">
+                {employee.name}
+              </Card>
+            ))}
+          </Board>
 
+          <Table />
+        </main>
         <Footer />
-      </Container>
+      </>
     );
   }
 }
