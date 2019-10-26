@@ -7,6 +7,6 @@ const employeeSchema = new Schema({
   rank: { type: String, required: true }
 });
 
-const Employee = mongoose.model("Employee", employeeSchema);
+const Employee = mongoose.model("employee", employeeSchema);
 
 module.exports = Employee;
