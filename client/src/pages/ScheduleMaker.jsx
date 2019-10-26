@@ -45,9 +45,9 @@ class ScheduleMaker extends Component {
               </Card>
             ))}
           </Board>
-          <Container>
+          <Board id="board-2" className="board">
             <Table></Table>
-          </Container>
+          </Board>
         </main>
         <Footer />
       </>
