@@ -31,26 +31,25 @@ class ScheduleMaker extends Component {
         <Header />
         <main className="flexbox ">
           {/* List */}
-          <div className="container">
-            <Board id="board-1" className="board">
-              {this.state.employees.map(employee => (
-                <Card
-                  key={employee._id}
-                  id={employee._id}
-                  className="card"
-                  draggable="true"
-                >
-                  {employee.name}
-                </Card>
-              ))}
-            </Board>
-          </div>
+
+          <Board id="board-1" className="board">
+            {this.state.employees.map(employee => (
+              <Card
+                key={employee._id}
+                id={employee._id}
+                className="card"
+                draggable="true"
+              >
+                {employee.name}
+              </Card>
+            ))}
+          </Board>
+
           {/* Table */}
-          <div className="container">
-            <Board id="board-2" className="board">
-              <Table />
-            </Board>
-          </div>
+
+          <Board id="board-2" className="board">
+            <Table />
+          </Board>
         </main>
         <Footer />
       </div>
