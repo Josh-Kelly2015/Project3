@@ -20,7 +20,7 @@ body {
 
   background-color: black;
 
-  padding: 10px;
+  padding: 10px 10px 0px 10px;
 }
 .flexbox #board-1 {
   display: flex;
@@ -35,8 +35,7 @@ body {
 }
 .flexbox .board .card {
   padding: 0.3rem;
-  background-color: lightgray;
-
+  background-color: darkslategray;
   cursor: cell;
 
   margin: auto;

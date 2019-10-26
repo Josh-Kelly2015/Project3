@@ -5,6 +5,7 @@ import Table from "../components/Table";
 import Footer from "../components/Footer";
 import Board from "../components/Board";
 import Card from "../components/Card";
+import SubmitButton from "../components/SubmitButton/SubmitButton";
 class ScheduleMaker extends Component {
   state = {
     employees: [],
@@ -37,7 +38,7 @@ class ScheduleMaker extends Component {
               <Card
                 key={employee._id}
                 id={employee._id}
-                className="card"
+                className="card text-info"
                 draggable="true"
               >
                 {employee.name}
@@ -51,6 +52,9 @@ class ScheduleMaker extends Component {
             <Table />
           </Board>
         </main>
+        <div className="row">
+          <SubmitButton>Submit</SubmitButton>
+        </div>
         <Footer />
       </div>
     );

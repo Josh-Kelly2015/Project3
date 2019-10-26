@@ -4,7 +4,7 @@ function Table() {
   return (
     <table className="table table-bordered text-info">
       <thead className="thead-dark">
-        <tr>
+        <tr className="text-danger">
           <th scope="col">Project</th>
           <th scope="col">Monday</th>
           <th scope="col">Tuesday</th>
