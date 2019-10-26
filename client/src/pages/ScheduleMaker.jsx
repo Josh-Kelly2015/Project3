@@ -33,6 +33,7 @@ class ScheduleMaker extends Component {
         <Header />
         <Row>
           <div className="col-2">
+            {/* Board 1  */}
             <Container>
               <div className="col">
                 {this.state.employees.length ? (
