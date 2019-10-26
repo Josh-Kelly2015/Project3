@@ -10,16 +10,6 @@ body {
 
 .flexbox {
   display: flex;
-  /* justify-content: space-between; */
-
-  /* width: 100%; */
-  /* max-width: 768; */
-  /* height: 80vh; */
-
-  /* overflow: hidden; */
-
-  /* margin: auto; */
-  /* padding: auto; */
 }
 
 .flexbox #board-2 {
@@ -47,6 +37,7 @@ body {
   padding: 0.3rem;
   background-color: lightgray;
 
-  cursor: pointer;
+  cursor: cell;
+
   margin: auto;
 }
