@@ -5,39 +5,39 @@
 }
 
 body {
-  background-color: white;
+  background-color: slategrey;
 }
 
 .flexbox {
   display: flex;
-  justify-content: space-between;
-
-  width: 100%;
-  max-width: 768;
-  height: 100vh;
-
-  overflow: hidden;
-
-  margin: 0 auto;
-  padding: 15px;
 }
 
-.flexbox .board {
+.flexbox #board-2 {
   display: flex;
   flex-direction: column;
-
+  justify-content: center;
   width: 100%;
-  max-width: 300px;
 
   background-color: black;
 
-  padding: 15px;
+  padding: 10px;
 }
+.flexbox #board-1 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 50%;
 
+  background-color: black;
+
+  padding: 5px;
+}
 .flexbox .board .card {
-  padding: 15px 25px;
-  background-color: white;
+  padding: 0.3rem;
+  background-color: lightgray;
 
-  cursor: pointer;
-  margin-bottom: 15px;
+  cursor: cell;
+
+  margin: auto;
 }
