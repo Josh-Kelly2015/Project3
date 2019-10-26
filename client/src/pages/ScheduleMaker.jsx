@@ -1,11 +1,8 @@
 import React, { Component } from "react";
-import { Container } from "../components/Grid";
 import Header from "../components/Header";
 import API from "../utils/API";
-
 import Table from "../components/Table";
 import Footer from "../components/Footer";
-// import SubmitButton from "../components/SubmitButton";
 import Board from "../components/Board";
 import Card from "../components/Card";
 class ScheduleMaker extends Component {
@@ -46,7 +43,7 @@ class ScheduleMaker extends Component {
             ))}
           </Board>
           <Board id="board-2" className="board">
-            <Table></Table>
+            <Table />
           </Board>
         </main>
         <Footer />
