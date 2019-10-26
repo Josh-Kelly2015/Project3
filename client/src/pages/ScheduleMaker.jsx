@@ -31,7 +31,7 @@ class ScheduleMaker extends Component {
         <Header />
         <main className="flexbox">
           {/* List */}
-          <Board id="board-1" className="board">
+          <Board id="board-1">
             {this.state.employees.map(employee => (
               <Card
                 key={employee._id}
@@ -46,7 +46,7 @@ class ScheduleMaker extends Component {
 
           {/* Table */}
 
-          <Board id="board-2" className="board">
+          <Board id="board-2">
             <Table />
           </Board>
         </main>
