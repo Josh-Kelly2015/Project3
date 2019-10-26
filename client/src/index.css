@@ -14,7 +14,7 @@ body {
 
   /* width: 100%; */
   /* max-width: 768; */
-  /* height: 100vh; */
+  /* height: 80vh; */
 
   /* overflow: hidden; */
 
@@ -25,12 +25,12 @@ body {
 .flexbox #board-2 {
   display: flex;
   flex-direction: column;
-
+  justify-content: center;
   width: 100%;
 
   background-color: black;
 
-  padding: 15px;
+  padding: 5px;
 }
 .flexbox #board-1 {
   display: flex;
@@ -42,12 +42,12 @@ body {
 
   background-color: black;
 
-  padding: 6px;
+  /* padding: 5px; */
 }
 .flexbox .board .card {
   padding: 10px 10px;
   background-color: lightgray;
 
   cursor: pointer;
-  margin: auto;
+  margin: 0.2rem;
 }
