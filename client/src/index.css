@@ -30,7 +30,7 @@ body {
 
   background-color: black;
 
-  padding: 5px;
+  padding: 10px;
 }
 .flexbox #board-1 {
   display: flex;
