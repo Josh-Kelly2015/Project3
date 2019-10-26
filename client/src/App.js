@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import ScheduleMaker from "./pages/ScheduleMaker";
-
+import "./index.css";
 function App() {
   return (
     <Router>
