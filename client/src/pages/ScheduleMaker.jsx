@@ -1,12 +1,11 @@
 import React, { Component } from "react";
-import { Row, Container } from "../components/Grid";
+import { Container } from "../components/Grid";
 import Header from "../components/Header";
 import API from "../utils/API";
-// import { List, ListItem } from "../components/EmployeeList";
+
 import Table from "../components/Table";
 import Footer from "../components/Footer";
-import SubmitButton from "../components/SubmitButton";
-// import { Link } from "react-router-dom";
+// import SubmitButton from "../components/SubmitButton";
 import Board from "../components/Board";
 import Card from "../components/Card";
 class ScheduleMaker extends Component {
@@ -34,15 +33,21 @@ class ScheduleMaker extends Component {
       <>
         <Header />
         <main className="flexbox">
-          <Board id="board-1" className="board list-overflow-container">
+          <Board id="board-1" className="board">
             {this.state.employees.map(employee => (
-              <Card id="card-1" className="card" draggable="true">
+              <Card
+                key={employee._id}
+                id={employee._id}
+                className="card"
+                draggable="true"
+              >
                 {employee.name}
               </Card>
             ))}
           </Board>
-
-          <Table />
+          <Container>
+            <Table></Table>
+          </Container>
         </main>
         <Footer />
       </>
