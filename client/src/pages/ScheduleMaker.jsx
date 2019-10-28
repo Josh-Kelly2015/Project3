@@ -7,7 +7,7 @@ import Board from "../components/Board";
 import Card from "../components/Card";
 class ScheduleMaker extends Component {
   state = {
-    employees: [],
+    employee: [],
     name: "",
     email: "",
     rank: ""
@@ -20,7 +20,7 @@ class ScheduleMaker extends Component {
   loadEmployees = () => {
     API.getEmployees()
       .then(res =>
-        this.setState({ employees: res.data, name: "", email: "", rank: "" })
+        this.setState({ employee: res.data, name: "", email: "", rank: "" })
       )
       .catch(err => console.log(err));
   };
@@ -33,7 +33,7 @@ class ScheduleMaker extends Component {
           {/* List */}
 
           <Board id="board-1" className="board">
-            {this.state.employees.map(employee => (
+            {this.state.employee.map(employee => (
               <Card
                 key={employee._id}
                 id={employee._id}
