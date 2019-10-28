@@ -7,6 +7,7 @@ function Board(props) {
 
     const card = document.getElementById(card_id);
     card.style.display = "block";
+    card.style.backgroundColor = "black";
     e.target.appendChild(card);
   };
   const dragOver = e => {
