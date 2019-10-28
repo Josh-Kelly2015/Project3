@@ -33,7 +33,7 @@ body {
 
   padding: 5px;
 }
-.flexbox .board .card {
+.flexbox .board #card {
   padding: 0.3rem;
   background-color: lightgray;
 

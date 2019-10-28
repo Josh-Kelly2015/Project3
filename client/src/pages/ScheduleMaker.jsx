@@ -36,7 +36,7 @@ class ScheduleMaker extends Component {
             {this.state.employee.map(employee => (
               <Card
                 key={employee._id}
-                id={employee._id}
+                id="card"
                 className="card"
                 draggable="true"
               >

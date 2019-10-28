@@ -3,7 +3,7 @@ import React from "react";
 function Board(props) {
   const drop = e => {
     e.preventDefault();
-    const card_id = e.dataTransfer.getData("card_id");
+    const card_id = e.dataTransfer.getData("transfer");
 
     const card = document.getElementById(card_id);
     card.style.display = "block";
