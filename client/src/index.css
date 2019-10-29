@@ -6,6 +6,9 @@ body {
 #board-2 {
   /* width: 100%; */
   background-color: black;
+  /* flex-grow: unset; */
+  /* padding: 0px;
+  margin: 0px; */
 }
 
 #board-1 {
@@ -13,7 +16,8 @@ body {
   /* width: 50%; */
   color: aqua;
   background-color: black;
-  /* padding: 0px; */
+  /* padding: 0px;
+  margin: 0px; */
 }
 
 .card {
@@ -21,16 +25,24 @@ body {
   cursor: cell;
   /* margin: auto; */
 }
-
-th {
+.table-responsive {
+  overflow-x: unset;
+}
+.projectCol {
   color: white;
-  min-width: 250px;
+  min-width: 225px;
+}
+#projectHeader {
+  color: white;
+}
+.tableHeader {
+  color: white;
+  /* min-width: auto; */
 }
 h1 {
   color: aqua;
 }
-td {
-  /* padding: 0; */
+.cell {
   color: aqua;
   min-width: 130px;
 }

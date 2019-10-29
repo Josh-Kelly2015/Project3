@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export default {
-  // Employee APIs
+  // ----------------------- Employee APIs -------------------------- //
   getEmployees: function() {
     return axios.get("/api/employee");
   },
@@ -17,7 +17,7 @@ export default {
   saveEmployee: function(employeeData) {
     return axios.post("/api/employee", employeeData);
   },
-  // Project APIs
+  // ------------------------ Project APIs -------------------------- //
   getProjects: function() {
     return axios.get("/api/project");
   },

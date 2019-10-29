@@ -28,20 +28,22 @@ class ScheduleMaker extends Component {
   render() {
     return (
       // -------------- Draggable Container ------------ //
-      <Board id="board-1" className="board">
-        {/* ---------- Maps through seed data ----------*/}
-        {this.state.employee.map(employee => (
-          // ----------- Draggable Component ----------- //
-          <Card
-            key={employee._id}
-            id={employee._id}
-            className="card"
-            draggable="true"
-          >
-            {employee.name}
-          </Card>
-        ))}
-      </Board>
+      <div className="container">
+        <div className="row">
+          {this.state.employee.map(employee => (
+            <Board id="board-1" className="board">
+              <Card
+                key={employee._id}
+                id={employee._id}
+                className="card"
+                draggable="true"
+              >
+                {employee.name}
+              </Card>
+            </Board>
+          ))}
+        </div>
+      </div>
     );
   }
 }

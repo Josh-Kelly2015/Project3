@@ -13,13 +13,11 @@ class ScheduleMaker extends Component {
         <Header />
         {/* ------------------- Body --------------------- */}
         {/* ----------- Draggable Employees ------------ */}
-        <div className="container">
-          <EmployeeList />
-        </div>
-        {/* ------------- Schedule Table --------------- */}
-        <div className="container">
-          <TableComponent />
-        </div>
+
+        <EmployeeList />
+
+        <TableComponent />
+
         {/* ------------------ Footer -------------------- */}
         <Footer />
       </div>

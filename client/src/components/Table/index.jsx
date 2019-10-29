@@ -19,39 +19,60 @@ class TableComponent extends Component {
   };
   render(props) {
     return (
-      <div className="table-responsive">
-        <Board id="board-2" className="board">
-          <table className="table table-bordered">
-            <thead>
-              <tr>
-                <th scope="col">Project</th>
-                <th scope="col">Monday</th>
-                <th scope="col">Tuesday</th>
-                <th scope="col">Wednesday</th>
-                <th scope="col">Thursday</th>
-                <th scope="col">Friday</th>
-                <th scope="col">Saturday</th>
-                <th scope="col">Sunday</th>
-              </tr>
-            </thead>
-            <tbody>
-              {this.state.project.map(project => (
-                <tr>
-                  <th scope="row">
-                    -{project.projectNumber}- <br></br>-{project.projectName}-
-                  </th>
-                  <td>{props}</td>
-                  <td>{props}</td>
-                  <td>{props}</td>
-                  <td>{props}</td>
-                  <td>{props}</td>
-                  <td>{props}</td>
-                  <td>{props}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </Board>
+      <div className="container">
+        <div className="row">
+          <Board id="board-2" className="board">
+            <div className="table-responsive">
+              <table className="table table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col" id="projectHeader">
+                      Project
+                    </th>
+                    <th scope="col" className="tableHeader">
+                      Monday
+                    </th>
+                    <th scope="col" className="tableHeader">
+                      Tuesday
+                    </th>
+                    <th scope="col" className="tableHeader">
+                      Wednesday
+                    </th>
+                    <th scope="col" className="tableHeader">
+                      Thursday
+                    </th>
+                    <th scope="col" className="tableHeader">
+                      Friday
+                    </th>
+                    <th scope="col" className="tableHeader">
+                      Saturday
+                    </th>
+                    <th scope="col" className="tableHeader">
+                      Sunday
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {this.state.project.map(project => (
+                    <tr>
+                      <th scope="row" className="projectCol">
+                        -{project.projectNumber}- <br></br>-
+                        {project.projectName}-
+                      </th>
+                      <td className="cell">{props}</td>
+                      <td className="cell">{props}</td>
+                      <td className="cell">{props}</td>
+                      <td className="cell">{props}</td>
+                      <td className="cell">{props}</td>
+                      <td className="cell">{props}</td>
+                      <td className="cell">{props}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </Board>
+        </div>
       </div>
     );
   }

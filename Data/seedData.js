@@ -183,18 +183,6 @@ const employeeSeed = [
     name: "John Doe30",
     email: "johndoe30@gmail.com",
     rank: "employee"
-  },
-  {
-    id: "28",
-    name: "John Doe29",
-    email: "johndoe29@gmail.com",
-    rank: "employee"
-  },
-  {
-    id: "29",
-    name: "John Doe30",
-    email: "johndoe30@gmail.com",
-    rank: "employee"
   }
 ];
 db.Employee.remove({})
