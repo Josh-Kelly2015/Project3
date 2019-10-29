@@ -1,82 +1,28 @@
 import React, { Component } from "react";
-import Header from "../components/Header";
-import API from "../utils/API";
-import Footer from "../components/Footer";
-import Board from "../components/Board";
-import Card from "../components/Card";
 import TableComponent from "../components/Table";
+import EmployeeList from "../components/EmployeeList";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+
 class ScheduleMaker extends Component {
-  state = {
-    employee: [],
-    project: [],
-    projectName: "",
-    projectNumber: "",
-    name: "",
-    email: "",
-    rank: ""
-  };
-
-  componentDidMount() {
-    this.loadEmployees();
-    // this.loadProjects();
-  }
-
-  loadEmployees = () => {
-    API.getEmployees()
-      .then(res =>
-        this.setState({ employee: res.data, name: "", email: "", rank: "" })
-      )
-      .catch(err => console.log(err));
-  };
-
-  loadProjects = () => {
-    API.getProjects()
-      .then(res =>
-        this.setState({ project: res.data, projectName: "", projectNumber: "" })
-      )
-      .catch(err => console.log(err));
-  };
   render() {
     return (
+      // --------------------- Wrapper -------------------- //
       <div className="container-fluid">
+        {/* ------------------ Header -------------------- */}
         <Header />
+        {/* ------------------- Body --------------------- */}
         <main className="flexbox ">
-          {/* List */}
-
-          <Board id="board-1" className="board">
-            {this.state.employee.map(employee => (
-              <Card
-                key={employee._id}
-                id={employee._id}
-                className="card"
-                draggable="true"
-              >
-                {employee.name}
-              </Card>
-            ))}
-          </Board>
-
-          {/* Table */}
-
-          <Board id="board-2" className="board">
-            <TableComponent>
-              {this.state.project.map(project => (
-                <tr>
-                  <th scope="row">
-                    -{project.projectNumber}- <br></br>-{project.projectName}-
-                  </th>
-                  <td>A Name</td>
-                </tr>
-              ))}
-            </TableComponent>
-            {/* <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr> */}
-          </Board>
+          {/* ----------- Draggable Employees ------------ */}
+          <div className="container">
+            <EmployeeList />
+          </div>
+          {/* ------------- Schedule Table --------------- */}
+          <div className="container">
+            <TableComponent />
+          </div>
         </main>
+        {/* ------------------ Footer -------------------- */}
         <Footer />
       </div>
     );
