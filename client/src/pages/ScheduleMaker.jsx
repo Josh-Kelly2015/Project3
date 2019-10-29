@@ -1,20 +1,24 @@
 import React, { Component } from "react";
 import Header from "../components/Header";
 import API from "../utils/API";
-import Table from "../components/Table";
 import Footer from "../components/Footer";
 import Board from "../components/Board";
 import Card from "../components/Card";
+import ReactTableComponent from "../components/Table";
 class ScheduleMaker extends Component {
   state = {
     employee: [],
+    project: [],
+    projectName: "",
+    projectNumber: "",
     name: "",
     email: "",
     rank: ""
   };
 
   componentDidMount() {
-    this.loadEmployees();
+    // this.loadEmployees();
+    this.loadProjects();
   }
 
   loadEmployees = () => {
@@ -25,6 +29,13 @@ class ScheduleMaker extends Component {
       .catch(err => console.log(err));
   };
 
+  loadProjects = () => {
+    API.getProjects()
+      .then(res =>
+        this.setState({ project: res.data, projectName: "", projectNumber: "" })
+      )
+      .catch(err => console.log(err));
+  };
   render() {
     return (
       <div className="container-fluid">
@@ -48,11 +59,17 @@ class ScheduleMaker extends Component {
           {/* Table */}
 
           <Board id="board-2" className="board">
-            <Table>
-              {this.state.employee.map(employee => (
-                <th id={employee._id}>{employee.name}</th>
+            {/* <Table>
+              {this.state.project.map(project => (
+                <tr>
+                  <th scope="row">
+                    -{project.projectNumber}- <br></br>-{project.projectName}-
+                  </th>
+                  <td>A Name</td>
+                </tr>
               ))}
-            </Table>
+            </Table> */}
+            <ReactTableComponent />
           </Board>
         </main>
         <Footer />
