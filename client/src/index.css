@@ -1,43 +1,60 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
   background-color: slategrey;
+  text-align: center;
 }
 
-.flexbox {
-  display: flex;
+#board-2 {
+  /* width: 100%; */
+  /* background-color: black; */
+  /* flex-grow: unset; */
+  /* padding: 0px;
+  margin: 0px; */
+  word-wrap: break-word;
 }
 
-.flexbox #board-2 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
-
+#board-1 {
+  /* width: 50%; */
+  /* padding: 5px;
+  margin: 10px; */
+}
+.col-2 {
   background-color: black;
-
-  padding: 10px;
-}
-.flexbox #board-1 {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   justify-content: space-evenly;
-  width: 50%;
-
-  background-color: black;
-
-  padding: 5px;
+  color: aqua;
+  border-left-color: white;
+  border-right-color: white;
+  border-style: solid;
+  border-bottom-width: thin;
+  border-width: thin;
+  border-bottom-color: white;
+  border-top-color: white;
 }
-.flexbox .board .card {
-  padding: 0.3rem;
-  background-color: lightgray;
-
+.card {
+  background-color: inherit;
+  border-style: none;
   cursor: cell;
-
-  margin: auto;
+  padding: 3px;
+  /* margin: 1px; */
+}
+.table-responsive {
+  overflow-x: initial;
+}
+.projectCol {
+  color: white;
+  min-width: 225px;
+}
+#projectHeader {
+  color: whitesmoke;
+}
+.tableHeader {
+  color: whitesmoke;
+  /* min-width: auto; */
+}
+h1 {
+  color: aqua;
+}
+.cell {
+  color: aqua;
+  min-width: 150px;
+  background-color: unset;
 }
