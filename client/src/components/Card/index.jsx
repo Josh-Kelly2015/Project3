@@ -5,9 +5,6 @@ function Card(props) {
     const target = e.target;
 
     e.dataTransfer.setData("transfer", target.id);
-
-    //   target.style.display = "none";
-    // }, 0);
   };
 
   const dragOver = e => {
