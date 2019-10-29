@@ -27,7 +27,7 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  width: 50%;
+  width: 30%;
   color: aqua;
   background-color: black;
   padding: 5px;
@@ -38,15 +38,11 @@ body {
   cursor: cell;
   margin: auto;
 }
-/*table css */
-.Table {
-  border-spacing: 0px;
-  background: #fff;
-  box-shadow: 0 1px 0 0 rgba(22, 29, 37, 0.05);
+td {
+  height: 50px;
+  width: 150px;
 }
-
-.Cell {
-  border: 1px solid #f4f6f8;
-  padding: 4px;
-  text-align: left;
+th {
+  height: 50px;
+  width: 150px;
 }

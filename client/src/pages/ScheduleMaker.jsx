@@ -4,7 +4,7 @@ import API from "../utils/API";
 import Footer from "../components/Footer";
 import Board from "../components/Board";
 import Card from "../components/Card";
-import ReactTableComponent from "../components/Table";
+import TableComponent from "../components/Table";
 class ScheduleMaker extends Component {
   state = {
     employee: [],
@@ -17,8 +17,8 @@ class ScheduleMaker extends Component {
   };
 
   componentDidMount() {
-    // this.loadEmployees();
-    this.loadProjects();
+    this.loadEmployees();
+    // this.loadProjects();
   }
 
   loadEmployees = () => {
@@ -59,7 +59,7 @@ class ScheduleMaker extends Component {
           {/* Table */}
 
           <Board id="board-2" className="board">
-            {/* <Table>
+            <TableComponent>
               {this.state.project.map(project => (
                 <tr>
                   <th scope="row">
@@ -68,8 +68,13 @@ class ScheduleMaker extends Component {
                   <td>A Name</td>
                 </tr>
               ))}
-            </Table> */}
-            <ReactTableComponent />
+            </TableComponent>
+            {/* <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr> */}
           </Board>
         </main>
         <Footer />
