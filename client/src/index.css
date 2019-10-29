@@ -19,7 +19,6 @@ body {
   width: 100%;
 
   background-color: black;
-
   padding: 10px;
 }
 .flexbox #board-1 {
@@ -28,16 +27,19 @@ body {
   flex-wrap: wrap;
   justify-content: space-evenly;
   width: 50%;
-
+  color: aqua;
   background-color: black;
-
   padding: 5px;
 }
 .flexbox .board .card {
   padding: 0.3rem;
-  background-color: lightgray;
-  border: tomato;
+  background-color: black;
   cursor: cell;
-
   margin: auto;
+}
+td {
+  color: aqua;
+}
+th {
+  color: white;
 }

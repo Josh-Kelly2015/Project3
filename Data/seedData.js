@@ -125,6 +125,78 @@ const employeeSeed = [
     name: "John Doe20",
     email: "johndoe20@gmail.com",
     rank: "employee"
+  },
+  {
+    id: 20,
+    name: "John Doe21",
+    email: "johndoe1@gmail.com",
+    rank: "admin"
+  },
+  {
+    id: 21,
+    name: "John Doe22",
+    email: "johndoe22@gmail.com",
+    rank: "manager"
+  },
+  {
+    id: 22,
+    name: "John Doe23",
+    email: "johndoe23@gmail.com",
+    rank: "manager"
+  },
+  {
+    id: 23,
+    name: "John Doe24",
+    email: "johndoe24@gmail.com",
+    rank: "employee"
+  },
+  {
+    id: 24,
+    name: "John Doe25",
+    email: "johndoe25@gmail.com",
+    rank: "employee"
+  },
+  {
+    id: 25,
+    name: "John Doe26",
+    email: "johndoe26@gmail.com",
+    rank: "admin"
+  },
+  {
+    id: 26,
+    name: "John Doe27",
+    email: "johndoe27@gmail.com",
+    rank: "employee"
+  },
+  {
+    id: 27,
+    name: "John Doe28",
+    email: "johndoe28@gmail.com",
+    rank: "employee"
+  },
+  {
+    id: 28,
+    name: "John Doe29",
+    email: "johndoe29@gmail.com",
+    rank: "employee"
+  },
+  {
+    id: 29,
+    name: "John Doe30",
+    email: "johndoe30@gmail.com",
+    rank: "employee"
+  },
+  {
+    id: 28,
+    name: "John Doe29",
+    email: "johndoe29@gmail.com",
+    rank: "employee"
+  },
+  {
+    id: 29,
+    name: "John Doe30",
+    email: "johndoe30@gmail.com",
+    rank: "employee"
   }
 ];
 

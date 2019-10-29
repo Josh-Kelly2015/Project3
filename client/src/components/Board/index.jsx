@@ -6,8 +6,8 @@ function Board(props) {
     const card_id = e.dataTransfer.getData("transfer");
 
     const card = document.getElementById(card_id);
-    card.style.display = "block";
-    card.style.backgroundColor = "black";
+    card.style.display = { props };
+    card.style.backgroundColor = { props };
     e.target.appendChild(card);
   };
   const dragOver = e => {

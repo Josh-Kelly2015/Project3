@@ -2,7 +2,7 @@ import React from "react";
 // import Board from "../Board";
 function Table() {
   return (
-    <table className="table table-bordered text-info bg-black">
+    <table className="table table-bordered">
       <thead className="thead-dark">
         <tr>
           <th scope="col">Project</th>
