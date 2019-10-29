@@ -12,10 +12,22 @@ body {
   word-wrap: break-word;
 }
 
+<<<<<<< HEAD
 #board-1 {
   /* width: 50%; */
   /* padding: 5px;
   margin: 10px; */
+=======
+.flexbox #board-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+
+  background-color: black;
+
+  padding: 10px 10px 0px 10px;
+>>>>>>> e2043b6f7018d6fb77b67c1f14e5766b05cc91cd
 }
 .col-2 {
   background-color: black;
@@ -29,9 +41,15 @@ body {
   border-bottom-color: white;
   border-top-color: white;
 }
+<<<<<<< HEAD
 .card {
   background-color: inherit;
   border-style: none;
+=======
+.flexbox .board .card {
+  padding: 0.3rem;
+  background-color: darkslategray;
+>>>>>>> e2043b6f7018d6fb77b67c1f14e5766b05cc91cd
   cursor: cell;
   padding: 3px;
   /* margin: 1px; */
