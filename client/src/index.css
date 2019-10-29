@@ -12,11 +12,6 @@ body {
   word-wrap: break-word;
 }
 
-#board-1 {
-  /* width: 50%; */
-  /* padding: 5px;
-  margin: 10px; */
-}
 .col-2 {
   background-color: black;
   justify-content: space-evenly;
