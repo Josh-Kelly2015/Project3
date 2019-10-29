@@ -5,38 +5,49 @@ body {
 
 #board-2 {
   /* width: 100%; */
-  background-color: black;
+  /* background-color: black; */
   /* flex-grow: unset; */
   /* padding: 0px;
   margin: 0px; */
+  word-wrap: break-word;
 }
 
 #board-1 {
-  /* justify-content: space-evenly; */
   /* width: 50%; */
-  color: aqua;
-  background-color: black;
-  /* padding: 0px;
-  margin: 0px; */
+  /* padding: 5px;
+  margin: 10px; */
 }
-
+.col-2 {
+  background-color: black;
+  justify-content: space-evenly;
+  color: aqua;
+  border-left-color: white;
+  border-right-color: white;
+  border-style: solid;
+  border-bottom-width: thin;
+  border-width: thin;
+  border-bottom-color: white;
+  border-top-color: white;
+}
 .card {
-  /* background-color: black; */
+  background-color: inherit;
+  border-style: none;
   cursor: cell;
-  /* margin: auto; */
+  padding: 3px;
+  /* margin: 1px; */
 }
 .table-responsive {
-  overflow-x: unset;
+  overflow-x: initial;
 }
 .projectCol {
   color: white;
   min-width: 225px;
 }
 #projectHeader {
-  color: white;
+  color: whitesmoke;
 }
 .tableHeader {
-  color: white;
+  color: whitesmoke;
   /* min-width: auto; */
 }
 h1 {
@@ -44,5 +55,6 @@ h1 {
 }
 .cell {
   color: aqua;
-  min-width: 130px;
+  min-width: 150px;
+  background-color: unset;
 }

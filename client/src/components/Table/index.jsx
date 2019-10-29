@@ -19,10 +19,10 @@ class TableComponent extends Component {
   };
   render(props) {
     return (
-      <div className="container">
-        <div className="row">
-          <Board id="board-2" className="board">
-            <div className="table-responsive">
+      <div className="row mt-4">
+        <div className="col">
+          <Board id="board-2" className="board table-responsive">
+            <div className="container-fluid">
               <table className="table table-bordered">
                 <thead>
                   <tr>
