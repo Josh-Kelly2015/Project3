@@ -1,8 +1,9 @@
 import React, { Component } from "react";
+import TableComponent from "../components/Table";
+import EmployeeList from "../components/EmployeeList";
 import Header from "../components/Header";
-import API from "../utils/API";
-import Table from "../components/Table";
 import Footer from "../components/Footer";
+<<<<<<< HEAD
 import Board from "../components/Board";
 import Card from "../components/Card";
 import SubmitButton from "../components/SubmitButton/SubmitButton";
@@ -25,14 +26,20 @@ class ScheduleMaker extends Component {
       )
       .catch(err => console.log(err));
   };
+=======
+>>>>>>> 103b9e18c0632ea4df498c13efc5e2d2b3cd909a
 
+class ScheduleMaker extends Component {
   render() {
     return (
+      // --------------------- Wrapper -------------------- //
       <div className="container-fluid">
+        {/* ------------------ Header -------------------- */}
         <Header />
-        <main className="flexbox ">
-          {/* List */}
+        {/* ------------------- Body --------------------- */}
+        {/* ----------- Draggable Employees ------------ */}
 
+<<<<<<< HEAD
           <Board id="board-1" className="board">
             {this.state.employees.map(employee => (
               <Card
@@ -45,9 +52,13 @@ class ScheduleMaker extends Component {
               </Card>
             ))}
           </Board>
+=======
+        <EmployeeList />
+>>>>>>> 103b9e18c0632ea4df498c13efc5e2d2b3cd909a
 
-          {/* Table */}
+        <TableComponent />
 
+<<<<<<< HEAD
           <Board id="board-2" className="board">
             <Table />
           </Board>
@@ -55,6 +66,9 @@ class ScheduleMaker extends Component {
         <div className="row">
           <SubmitButton>Submit</SubmitButton>
         </div>
+=======
+        {/* ------------------ Footer -------------------- */}
+>>>>>>> 103b9e18c0632ea4df498c13efc5e2d2b3cd909a
         <Footer />
       </div>
     );
