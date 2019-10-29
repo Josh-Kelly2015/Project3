@@ -48,7 +48,11 @@ class ScheduleMaker extends Component {
           {/* Table */}
 
           <Board id="board-2" className="board">
-            <Table />
+            <Table>
+              {this.state.employee.map(employee => (
+                <th id={employee._id}>{employee.name}</th>
+              ))}
+            </Table>
           </Board>
         </main>
         <Footer />

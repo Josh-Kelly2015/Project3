@@ -6,6 +6,7 @@
 
 body {
   background-color: slategrey;
+  text-align: center;
 }
 
 .flexbox {
@@ -39,6 +40,8 @@ body {
 }
 td {
   color: aqua;
+  height: 110px;
+  width: 190px;
 }
 th {
   color: white;
