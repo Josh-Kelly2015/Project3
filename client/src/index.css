@@ -1,48 +1,36 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
   background-color: slategrey;
   text-align: center;
 }
 
-.flexbox {
-  display: flex;
-}
-
-.flexbox #board-2 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
-
+#board-2 {
+  /* width: 100%; */
   background-color: black;
-  padding: 10px;
 }
-.flexbox #board-1 {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  width: 30%;
+
+#board-1 {
+  /* justify-content: space-evenly; */
+  /* width: 50%; */
   color: aqua;
   background-color: black;
-  padding: 5px;
+  /* padding: 0px; */
 }
-.flexbox .board .card {
-  padding: 0.3rem;
-  background-color: black;
+
+.card {
+  /* background-color: black; */
   cursor: cell;
-  margin: auto;
+  /* margin: auto; */
+}
+
+th {
+  color: white;
+  min-width: 250px;
+}
+h1 {
+  color: aqua;
 }
 td {
-  height: 50px;
-  width: 150px;
-}
-th {
-  height: 50px;
-  width: 150px;
+  /* padding: 0; */
+  color: aqua;
+  min-width: 130px;
 }

@@ -17,10 +17,10 @@ class TableComponent extends Component {
       )
       .catch(err => console.log(err));
   };
-  render() {
+  render(props) {
     return (
       <div className="table-responsive">
-        <Board>
+        <Board id="board-2" className="board">
           <table className="table table-bordered">
             <thead>
               <tr>
@@ -40,7 +40,13 @@ class TableComponent extends Component {
                   <th scope="row">
                     -{project.projectNumber}- <br></br>-{project.projectName}-
                   </th>
-                  {/* <td></td> */}
+                  <td>{props}</td>
+                  <td>{props}</td>
+                  <td>{props}</td>
+                  <td>{props}</td>
+                  <td>{props}</td>
+                  <td>{props}</td>
+                  <td>{props}</td>
                 </tr>
               ))}
             </tbody>

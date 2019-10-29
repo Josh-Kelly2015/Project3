@@ -12,16 +12,14 @@ class ScheduleMaker extends Component {
         {/* ------------------ Header -------------------- */}
         <Header />
         {/* ------------------- Body --------------------- */}
-        <main className="flexbox ">
-          {/* ----------- Draggable Employees ------------ */}
-          <div className="container">
-            <EmployeeList />
-          </div>
-          {/* ------------- Schedule Table --------------- */}
-          <div className="container">
-            <TableComponent />
-          </div>
-        </main>
+        {/* ----------- Draggable Employees ------------ */}
+        <div className="container">
+          <EmployeeList />
+        </div>
+        {/* ------------- Schedule Table --------------- */}
+        <div className="container">
+          <TableComponent />
+        </div>
         {/* ------------------ Footer -------------------- */}
         <Footer />
       </div>
