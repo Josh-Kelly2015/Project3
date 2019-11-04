@@ -28,7 +28,7 @@ class ScheduleMaker extends Component {
   render() {
     return (
       // -------------- Draggable Container ------------ //
-      <div className="container">
+      <div className="container mb-4">
         <Board id="board-1">
           <div className="row board">
             {this.state.employee.map(employee => (
