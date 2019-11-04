@@ -3,6 +3,7 @@ import API from "../../utils/API";
 import Board from "../Board";
 class TableComponent extends Component {
   state = {
+    employees: [],
     project: [],
     projectName: "",
     projectNumber: ""
@@ -11,6 +12,13 @@ class TableComponent extends Component {
     this.loadProjects();
   }
   loadProjects = () => {
+    API.getProjects()
+      .then(res =>
+        this.setState({ project: res.data, projectName: "", projectNumber: "" })
+      )
+      .catch(err => console.log(err));
+  };
+  loadPrs = () => {
     API.getProjects()
       .then(res =>
         this.setState({ project: res.data, projectName: "", projectNumber: "" })

@@ -1,4 +1,6 @@
 module.exports = {
-  seedData: require("./seedData"),
-  moreData: require("./moreData")
+  ProjectData: require("./ProjectData"),
+  EmployeeData: require("./EmployeeData"),
+  WorkWeekData: require("./WorkWeekData"),
+  WorkDayData: require("./WorkDayData")
 };

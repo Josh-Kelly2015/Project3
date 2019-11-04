@@ -1,8 +1,11 @@
 const router = require("express").Router();
-const employeeRoutes = require("./employee");
-const projectRoutes = require("./project");
-
-router.use("/employee", employeeRoutes);
-router.use("/project", projectRoutes);
+const EmployeeRoutes = require("./Employee");
+const ProjectRoutes = require("./Project");
+const WorkDayRoutes = require("./WorkDay");
+const WorkWeekRoutes = require("./WorkWeek");
+router.use("/employee", EmployeeRoutes);
+router.use("/project", ProjectRoutes);
+router.use("/workday", WorkDayRoutes);
+router.use("/workweek", WorkWeekRoutes);
 
 module.exports = router;
