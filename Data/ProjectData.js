@@ -5,18 +5,36 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/weschedule");
 
 const ProjectSchema = [
   {
-    ProjectName: "Seed Project 1",
-    ProjectNumber: 0001,
-    DaysAssigned: [],
-    EmployeesAssigned: [],
+    Name: "Seed Project 1",
+    Employees: [
+      {
+        Name: "John Doe1",
+        Email: "johndoe1@gmail.com",
+        Rank: ["admin", "manager", "entry"]
+      },
+      {
+        Name: "John Doe2",
+        Email: "johndoe2@gmail.com",
+        Rank: ["admin", "manager", "entry"]
+      }
+    ],
     Active: true
   },
   {
-    ProjectName: "Seed Project 2 ",
-    ProjectNumber: 0002,
-    DaysAssigned: [],
-    EmployeesAssigned: [],
-    Active: true
+    Name: "Seed Project 2 ",
+    Active: true,
+    Employees: [
+      {
+        Name: "John Doe1",
+        Email: "johndoe1@gmail.com",
+        Rank: ["admin", "manager", "entry"]
+      },
+      {
+        Name: "John Doe2",
+        Email: "johndoe2@gmail.com",
+        Rank: ["admin", "manager", "entry"]
+      }
+    ]
   }
 ];
 

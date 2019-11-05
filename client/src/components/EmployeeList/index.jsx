@@ -39,7 +39,7 @@ class ScheduleMaker extends Component {
                   className="card"
                   draggable="true"
                 >
-                  {employee.name}
+                  {employee.Name}
                 </Card>
               </div>
             ))}

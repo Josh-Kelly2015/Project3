@@ -6,7 +6,45 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/weschedule");
 const WorkWeekSchema = [
   {
     Name: "Work Week One",
-    Days: []
+    Days: [
+      {
+        Name: "Monday",
+        Projects: [
+          {
+            Name: "Seed Project 1",
+            Active: true,
+            Employees: [
+              {
+                Name: "John Doe1",
+                Email: "johndoe1@gmail.com",
+                Rank: ["admin", "manager", "entry"]
+              },
+              {
+                Name: "John Doe2",
+                Email: "johndoe2@gmail.com",
+                Rank: ["admin", "manager", "entry"]
+              }
+            ]
+          },
+          {
+            Name: "Seed Project 2 ",
+            Active: true,
+            Employees: [
+              {
+                Name: "John Doe1",
+                Email: "johndoe1@gmail.com",
+                Rank: ["admin", "manager", "entry"]
+              },
+              {
+                Name: "John Doe2",
+                Email: "johndoe2@gmail.com",
+                Rank: ["admin", "manager", "entry"]
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
 ];
 db.WorkWeek.remove({})

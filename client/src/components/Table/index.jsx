@@ -47,7 +47,7 @@ class TableComponent extends Component {
               {this.state.project.map(project => (
                 <tr>
                   <th scope="row" className="projectCol">
-                    -{project.projectNumber}- <br></br>-{project.projectName}-
+                    -{project.Name}-
                   </th>
                   <td className="cell">{props}</td>
                   <td className="cell">{props}</td>

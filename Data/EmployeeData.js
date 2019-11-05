@@ -7,12 +7,12 @@ const EmployeeSchema = [
   {
     Name: "John Doe1",
     Email: "johndoe1@gmail.com",
-    Rank: "admin"
+    Rank: ["admin", "manager", "entry"]
   },
   {
     Name: "John Doe2",
     Email: "johndoe2@gmail.com",
-    Rank: "manager"
+    Rank: ["admin", "manager", "entry"]
   }
 ];
 
