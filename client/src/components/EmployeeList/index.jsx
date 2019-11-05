@@ -1,16 +1,13 @@
 // ------------------------- Import Folders ---------------------- //
 import React, { Component } from "react";
 import API from "../../utils/API";
-import Board from "../Board";
-import Card from "../Card";
+import Board from "../Target";
+import Draggable from "../Source";
 // ---------------------- Schedule App Main Page ------------------- //
 class ScheduleMaker extends Component {
   // --------------------------- Declare state ---------------------------- //
   state = {
-    employee: [],
-    name: "",
-    email: "",
-    rank: ""
+    employee: []
   };
   // --------------- Once the page loads, call loadEmployees() ------------ //
   componentDidMount() {
@@ -19,9 +16,7 @@ class ScheduleMaker extends Component {
   // --------- Make an API call to Read all data in Employees docs -------- //
   loadEmployees = () => {
     API.getEmployees()
-      .then(res =>
-        this.setState({ employee: res.data, name: "", email: "", rank: "" })
-      )
+      .then(res => this.setState({ employee: res.data }))
       .catch(err => console.log(err));
   };
 
@@ -33,14 +28,14 @@ class ScheduleMaker extends Component {
           <div className="row board">
             {this.state.employee.map(employee => (
               <div className="col-2">
-                <Card
+                <Draggable
                   key={employee._id}
                   id={employee._id}
                   className="card"
                   draggable="true"
                 >
                   {employee.Name}
-                </Card>
+                </Draggable>
               </div>
             ))}
           </div>

@@ -3,9 +3,9 @@ const Schema = mongoose.Schema;
 
 const WorkDaySchema = new Schema({
   Name: { type: String, required: true },
-  Project: { type: Array, required: true }
+  Projects: { type: Array, required: true }
 });
 
-const WorkDay = mongoose.model("WorkDay", WorkDaySchema);
+const WorkDay = mongoose.model("workday", WorkDaySchema);
 
 module.exports = WorkDay;

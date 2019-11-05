@@ -1,66 +1,24 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
-import Board from "../Board";
+import NewProject from "./NewProject";
+import Header from "./Header";
 class TableComponent extends Component {
   state = {
-    employees: [],
-    project: [],
-    projectName: "",
-    projectNumber: ""
+    project: []
   };
   componentDidMount() {
     this.loadProjects();
   }
   loadProjects = () => {
     API.getProjects()
-      .then(res =>
-        this.setState({ project: res.data, projectName: "", projectNumber: "" })
-      )
+      .then(res => this.setState({ project: res.data }))
       .catch(err => console.log(err));
   };
-  loadPrs = () => {
-    API.getProjects()
-      .then(res =>
-        this.setState({ project: res.data, projectName: "", projectNumber: "" })
-      )
-      .catch(err => console.log(err));
-  };
-  render(props) {
+  render() {
     return (
-      <div className="col">
-        <Board id="scheduleBoard" className="board">
-          <table className="table table-bordered">
-            <thead>
-              <tr>
-                <th scope="col">Project</th>
-                <th scope="col">Monday</th>
-                <th scope="col">Tuesday</th>
-                <th scope="col">Wednesday</th>
-                <th scope="col">Thursday</th>
-                <th scope="col">Friday</th>
-                <th scope="col">Saturday</th>
-                <th scope="col">Sunday</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              {this.state.project.map(project => (
-                <tr>
-                  <th scope="row" className="projectCol">
-                    -{project.Name}-
-                  </th>
-                  <td className="cell">{props}</td>
-                  <td className="cell">{props}</td>
-                  <td className="cell">{props}</td>
-                  <td className="cell">{props}</td>
-                  <td className="cell">{props}</td>
-                  <td className="cell">{props}</td>
-                  <td className="cell">{props}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </Board>
+      <div className="container">
+        <Header />
+        <NewProject project={this.state.project} />
       </div>
     );
   }

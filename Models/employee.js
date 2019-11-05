@@ -7,6 +7,6 @@ const EmployeeSchema = new Schema({
   Rank: { type: Array, required: true } // [admin, manager, employee] //
 });
 
-const Employee = mongoose.model("Employee", EmployeeSchema);
+const Employee = mongoose.model("employee", EmployeeSchema);
 
 module.exports = Employee;

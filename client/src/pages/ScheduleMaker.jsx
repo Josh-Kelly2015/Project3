@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import TableComponent from "../components/Table";
+// import Calendar from "../components/Table";
 import EmployeeList from "../components/EmployeeList";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import TableComponent from "../components/Table";
 
 class ScheduleMaker extends Component {
   render() {

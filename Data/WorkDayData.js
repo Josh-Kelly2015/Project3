@@ -10,32 +10,254 @@ const WorkDaySchema = [
       {
         Name: "Seed Project 1",
         Employees: [
-          {
-            Name: "John Doe1",
-            Email: "johndoe1@gmail.com",
-            Rank: ["admin", "manager", "entry"]
-          },
-          {
-            Name: "John Doe2",
-            Email: "johndoe2@gmail.com",
-            Rank: ["admin", "manager", "entry"]
-          }
+          // {
+          //   Name: "John Doe1",
+          //   Email: "johndoe1@gmail.com",
+          //   Rank: ["admin", "manager", "entry"]
+          // },
+          // {
+          //   Name: "John Doe2",
+          //   Email: "johndoe2@gmail.com",
+          //   Rank: ["admin", "manager", "entry"]
+          // }
         ],
         Active: true
       },
       {
         Name: "Seed Project 2 ",
         Employees: [
-          {
-            Name: "John Doe1",
-            Email: "johndoe1@gmail.com",
-            Rank: ["admin", "manager", "entry"]
-          },
-          {
-            Name: "John Doe2",
-            Email: "johndoe2@gmail.com",
-            Rank: ["admin", "manager", "entry"]
-          }
+          // {
+          //   Name: "John Doe1",
+          //   Email: "johndoe1@gmail.com",
+          //   Rank: ["admin", "manager", "entry"]
+          // },
+          // {
+          //   Name: "John Doe2",
+          //   Email: "johndoe2@gmail.com",
+          //   Rank: ["admin", "manager", "entry"]
+          // }
+        ],
+        Active: true
+      }
+    ]
+  },
+  {
+    Name: "Tuesday",
+    Projects: [
+      {
+        Name: "Seed Project 1",
+        Employees: [
+          // {
+          //   Name: "John Doe1",
+          //   Email: "johndoe1@gmail.com",
+          //   Rank: ["admin", "manager", "entry"]
+          // },
+          // {
+          //   Name: "John Doe2",
+          //   Email: "johndoe2@gmail.com",
+          //   Rank: ["admin", "manager", "entry"]
+          // }
+        ],
+        Active: true
+      },
+      {
+        Name: "Seed Project 2 ",
+        Employees: [
+          // {
+          //   Name: "John Doe1",
+          //   Email: "johndoe1@gmail.com",
+          //   Rank: ["admin", "manager", "entry"]
+          // },
+          // {
+          //   Name: "John Doe2",
+          //   Email: "johndoe2@gmail.com",
+          //   Rank: ["admin", "manager", "entry"]
+          // }
+        ],
+        Active: true
+      }
+    ]
+  },
+  {
+    Name: "Wedneday",
+    Projects: [
+      {
+        Name: "Seed Project 1",
+        Employees: [
+          // {
+          //   Name: "John Doe1",
+          //   Email: "johndoe1@gmail.com",
+          //   Rank: ["admin", "manager", "entry"]
+          // },
+          // {
+          //   Name: "John Doe2",
+          //   Email: "johndoe2@gmail.com",
+          //   Rank: ["admin", "manager", "entry"]
+          // }
+        ],
+        Active: true
+      },
+      {
+        Name: "Seed Project 2 ",
+        Employees: [
+          // {
+          //   Name: "John Doe1",
+          //   Email: "johndoe1@gmail.com",
+          //   Rank: ["admin", "manager", "entry"]
+          // },
+          // {
+          //   Name: "John Doe2",
+          //   Email: "johndoe2@gmail.com",
+          //   Rank: ["admin", "manager", "entry"]
+          // }
+        ],
+        Active: true
+      }
+    ]
+  },
+  {
+    Name: "Thursday",
+    Projects: [
+      {
+        Name: "Seed Project 1",
+        Employees: [
+          // {
+          //   Name: "John Doe1",
+          //   Email: "johndoe1@gmail.com",
+          //   Rank: ["admin", "manager", "entry"]
+          // },
+          // {
+          //   Name: "John Doe2",
+          //   Email: "johndoe2@gmail.com",
+          //   Rank: ["admin", "manager", "entry"]
+          // }
+        ],
+        Active: true
+      },
+      {
+        Name: "Seed Project 2 ",
+        Employees: [
+          // {
+          //   Name: "John Doe1",
+          //   Email: "johndoe1@gmail.com",
+          //   Rank: ["admin", "manager", "entry"]
+          // },
+          // {
+          //   Name: "John Doe2",
+          //   Email: "johndoe2@gmail.com",
+          //   Rank: ["admin", "manager", "entry"]
+          // }
+        ],
+        Active: true
+      }
+    ]
+  },
+  {
+    Name: "Friday",
+    Projects: [
+      {
+        Name: "Seed Project 1",
+        Employees: [
+          // {
+          //   Name: "John Doe1",
+          //   Email: "johndoe1@gmail.com",
+          //   Rank: ["admin", "manager", "entry"]
+          // },
+          // {
+          //   Name: "John Doe2",
+          //   Email: "johndoe2@gmail.com",
+          //   Rank: ["admin", "manager", "entry"]
+          // }
+        ],
+        Active: true
+      },
+      {
+        Name: "Seed Project 2 ",
+        Employees: [
+          // {
+          //   Name: "John Doe1",
+          //   Email: "johndoe1@gmail.com",
+          //   Rank: ["admin", "manager", "entry"]
+          // },
+          // {
+          //   Name: "John Doe2",
+          //   Email: "johndoe2@gmail.com",
+          //   Rank: ["admin", "manager", "entry"]
+          // }
+        ],
+        Active: true
+      }
+    ]
+  },
+  {
+    Name: "Saturday",
+    Projects: [
+      {
+        Name: "Seed Project 1",
+        Employees: [
+          // {
+          //   Name: "John Doe1",
+          //   Email: "johndoe1@gmail.com",
+          //   Rank: ["admin", "manager", "entry"]
+          // },
+          // {
+          //   Name: "John Doe2",
+          //   Email: "johndoe2@gmail.com",
+          //   Rank: ["admin", "manager", "entry"]
+          // }
+        ],
+        Active: true
+      },
+      {
+        Name: "Seed Project 2 ",
+        Employees: [
+          // {
+          //   Name: "John Doe1",
+          //   Email: "johndoe1@gmail.com",
+          //   Rank: ["admin", "manager", "entry"]
+          // },
+          // {
+          //   Name: "John Doe2",
+          //   Email: "johndoe2@gmail.com",
+          //   Rank: ["admin", "manager", "entry"]
+          // }
+        ],
+        Active: true
+      }
+    ]
+  },
+  {
+    Name: "Sunday",
+    Projects: [
+      {
+        Name: "Seed Project 1",
+        Employees: [
+          // {
+          //   Name: "John Doe1",
+          //   Email: "johndoe1@gmail.com",
+          //   Rank: ["admin", "manager", "entry"]
+          // },
+          // {
+          //   Name: "John Doe2",
+          //   Email: "johndoe2@gmail.com",
+          //   Rank: ["admin", "manager", "entry"]
+          // }
+        ],
+        Active: true
+      },
+      {
+        Name: "Seed Project 2 ",
+        Employees: [
+          // {
+          //   Name: "John Doe1",
+          //   Email: "johndoe1@gmail.com",
+          //   Rank: ["admin", "manager", "entry"]
+          // },
+          // {
+          //   Name: "John Doe2",
+          //   Email: "johndoe2@gmail.com",
+          //   Rank: ["admin", "manager", "entry"]
+          // }
         ],
         Active: true
       }

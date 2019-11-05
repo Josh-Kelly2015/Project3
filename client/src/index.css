@@ -24,9 +24,6 @@ body {
   border-style: none;
   cursor: cell;
 }
-.table-responsive {
-  overflow-x: inherit;
-}
 .projectCol {
   color: white;
   min-width: 225px;

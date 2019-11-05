@@ -1,6 +1,6 @@
 import React from "react";
 
-function Board(props) {
+function Target(props) {
   const drop = e => {
     e.preventDefault();
     const card_id = e.dataTransfer.getData("transfer");
@@ -24,4 +24,4 @@ function Board(props) {
   );
 }
 
-export default Board;
+export default Target;

@@ -22,7 +22,7 @@ export default {
     return axios.get("/api/project");
   },
 
-  getProject: function(id) {
+  getWorkDay: function(id) {
     return axios.get("/api/project/" + id);
   },
 
@@ -32,5 +32,21 @@ export default {
 
   saveProject: function(projectData) {
     return axios.post("/api/project", projectData);
+  },
+  // Work Days API
+  getWorkDays: function() {
+    return axios.get("/api/workday");
+  },
+
+  getWorkDay: function(id) {
+    return axios.get("/api/workday/" + id);
+  },
+
+  deleteWorkDay: function(id) {
+    return axios.delete("/api/workday/" + id);
+  },
+
+  saveWorkDay: function(workDayData) {
+    return axios.post("/api/workday", workDayData);
   }
 };
