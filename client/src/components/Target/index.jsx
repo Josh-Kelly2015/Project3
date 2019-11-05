@@ -13,14 +13,14 @@ function Target(props) {
   };
 
   return (
-    <div
+    <td
       id={props.id}
       className={props.className}
       onDrop={drop}
       onDragOver={dragOver}
     >
       {props.children}
-    </div>
+    </td>
   );
 }
 

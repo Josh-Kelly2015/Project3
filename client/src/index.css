@@ -2,50 +2,21 @@ body {
   background-color: slategrey;
   text-align: center;
 }
-
-#scheduleBoard {
-  background-color: black;
-}
-
-.col-2 {
-  background-color: black;
-  justify-content: space-evenly;
+.employees {
   color: aqua;
-  border-left-color: white;
-  border-right-color: white;
   border-style: solid;
-  border-bottom-width: thin;
   border-width: thin;
-  border-bottom-color: white;
-  border-top-color: white;
+  border-color: white;
 }
 .card {
   background-color: inherit;
-  border-style: none;
   cursor: cell;
+  border-style: none;
 }
-.projectCol {
-  color: white;
-  min-width: 225px;
-}
-
-.tableHeader {
-  min-width: 150px;
-
+th {
   color: whitesmoke;
 }
-thead {
-  color: whitesmoke;
-}
-h1 {
+h1,
+td {
   color: aqua;
-}
-.cell {
-  color: aqua;
-  min-width: 150px;
-  background-color: inherit;
-}
-.border {
-  border-style: solid;
-  border-color: white;
 }

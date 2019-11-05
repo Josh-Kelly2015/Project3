@@ -1,7 +1,6 @@
 // ------------------------- Import Folders ---------------------- //
 import React, { Component } from "react";
 import API from "../../utils/API";
-import Board from "../Target";
 import Draggable from "../Source";
 // ---------------------- Schedule App Main Page ------------------- //
 class ScheduleMaker extends Component {
@@ -24,22 +23,20 @@ class ScheduleMaker extends Component {
     return (
       // -------------- Draggable Container ------------ //
       <div className="container mb-4">
-        <Board id="board-1">
-          <div className="row board">
-            {this.state.employee.map(employee => (
-              <div className="col-2">
-                <Draggable
-                  key={employee._id}
-                  id={employee._id}
-                  className="card"
-                  draggable="true"
-                >
-                  {employee.Name}
-                </Draggable>
-              </div>
-            ))}
-          </div>
-        </Board>
+        <div className="row">
+          {this.state.employee.map(employee => (
+            <div className="col-2 employees">
+              <Draggable
+                key={employee._id}
+                id={employee._id}
+                className="card"
+                draggable="true"
+              >
+                {employee.Name}
+              </Draggable>
+            </div>
+          ))}
+        </div>
       </div>
     );
   }
