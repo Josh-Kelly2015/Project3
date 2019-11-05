@@ -23,18 +23,20 @@ class ScheduleMaker extends Component {
     return (
       // -------------- Draggable Container ------------ //
       <div className="container mb-4">
-        {this.state.employee.map(employee => (
-          <div className="col-2 employees">
-            <Draggable
-              key={employee._id}
-              id={employee._id}
-              className="card"
-              draggable="true"
-            >
-              {employee.Name}
-            </Draggable>
-          </div>
-        ))}
+        <div className="row">
+          {this.state.employee.map(employee => (
+            <div className="col-2 employees">
+              <Draggable
+                key={employee._id}
+                id={employee._id}
+                className="card"
+                draggable="true"
+              >
+                {employee.Name}
+              </Draggable>
+            </div>
+          ))}
+        </div>
       </div>
     );
   }
