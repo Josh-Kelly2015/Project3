@@ -6,9 +6,12 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/weschedule");
 const ProjectSchema = [
   {
     name: "Project Name One",
-    Active: true,
-    DatesActive: [{ days_id: 0, day: "Monday" }, { days_id: 4, day: "Friday" }],
-    EmployeesAssigned: [
+    active: true,
+    assignedDates: [
+      { days_id: 0, day: "Monday" },
+      { days_id: 4, day: "Friday" }
+    ],
+    assignedEmployees: [
       {
         employees_id: 0,
         name: "John Doe0",
@@ -20,9 +23,12 @@ const ProjectSchema = [
 
   {
     name: "Project Name Two",
-    Active: true,
-    DatesActive: [{ days_id: 0, day: "Monday" }, { days_id: 4, day: "Friday" }],
-    EmployeesAssigned: [
+    active: true,
+    assignedDates: [
+      { days_id: 0, day: "Monday" },
+      { days_id: 4, day: "Friday" }
+    ],
+    assignedEmployees: [
       {
         employees_id: 0,
         name: "John Doe0",
