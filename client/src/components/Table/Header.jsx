@@ -1,3 +1,5 @@
+// Ideally these days should be rendered via API
+
 import React from "react";
 const Header = () => (
   <thead>
