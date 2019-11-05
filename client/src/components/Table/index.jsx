@@ -16,13 +16,17 @@ class TableComponent extends Component {
   };
   render() {
     return (
-      <div className="table-responsive">
-        <table class="table table-bordered">
-          <Header />
-          <tbody>
-            <ProjectRow />
-          </tbody>
-        </table>
+      <div className="container">
+        <div className="table-responsive">
+          <table className="table table-bordered">
+            <Header />
+            <tbody>
+              {this.state.project.map(project => (
+                <ProjectRow name={this.state.project.Name} />
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     );
   }

@@ -10,39 +10,146 @@ const WorkWeekSchema = [
       {
         Name: "Monday",
         Projects: [
-          // {
-          //   Name: "Seed Project 1",
-          //   Active: true,
-          //   Employees: [
-          //     {
-          //       Name: "John Doe1",
-          //       Email: "johndoe1@gmail.com",
-          //       Rank: ["admin", "manager", "entry"]
-          //     },
-          //     {
-          //       Name: "John Doe2",
-          //       Email: "johndoe2@gmail.com",
-          //       Rank: ["admin", "manager", "entry"]
-          //     }
+          {
+            Name: "Seed Project 1",
+            Active: true,
+            Employees: [
+              {
+                Name: "John Doe1",
+                Email: "johndoe1@gmail.com",
+                Rank: ["admin", "manager", "entry"]
+              },
+              {
+                Name: "John Doe2",
+                Email: "johndoe2@gmail.com",
+                Rank: ["admin", "manager", "entry"]
+              }
+            ]
+          }
         ]
       },
       {
         Name: "Tuesday",
         Projects: [
           {
-            Name: "Seed Project 2 ",
+            Name: "Seed Project 1",
             Active: true,
             Employees: [
-              // {
-              //   Name: "John Doe1",
-              //   Email: "johndoe1@gmail.com",
-              //   Rank: ["admin", "manager", "entry"]
-              // },
-              // {
-              //   Name: "John Doe2",
-              //   Email: "johndoe2@gmail.com",
-              //   Rank: ["admin", "manager", "entry"]
-              // }
+              {
+                Name: "John Doe1",
+                Email: "johndoe1@gmail.com",
+                Rank: ["admin", "manager", "entry"]
+              },
+              {
+                Name: "John Doe2",
+                Email: "johndoe2@gmail.com",
+                Rank: ["admin", "manager", "entry"]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        Name: "Wednesday",
+        Projects: [
+          {
+            Name: "Seed Project 1",
+            Active: true,
+            Employees: [
+              {
+                Name: "John Doe1",
+                Email: "johndoe1@gmail.com",
+                Rank: ["admin", "manager", "entry"]
+              },
+              {
+                Name: "John Doe2",
+                Email: "johndoe2@gmail.com",
+                Rank: ["admin", "manager", "entry"]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        Name: "Thursday",
+        Projects: [
+          {
+            Name: "Seed Project 1",
+            Active: true,
+            Employees: [
+              {
+                Name: "John Doe1",
+                Email: "johndoe1@gmail.com",
+                Rank: ["admin", "manager", "entry"]
+              },
+              {
+                Name: "John Doe2",
+                Email: "johndoe2@gmail.com",
+                Rank: ["admin", "manager", "entry"]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        Name: "Friday",
+        Projects: [
+          {
+            Name: "Seed Project 1",
+            Active: true,
+            Employees: [
+              {
+                Name: "John Doe1",
+                Email: "johndoe1@gmail.com",
+                Rank: ["admin", "manager", "entry"]
+              },
+              {
+                Name: "John Doe2",
+                Email: "johndoe2@gmail.com",
+                Rank: ["admin", "manager", "entry"]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        Name: "Saturday",
+        Projects: [
+          {
+            Name: "Seed Project 1",
+            Active: true,
+            Employees: [
+              {
+                Name: "John Doe1",
+                Email: "johndoe1@gmail.com",
+                Rank: ["admin", "manager", "entry"]
+              },
+              {
+                Name: "John Doe2",
+                Email: "johndoe2@gmail.com",
+                Rank: ["admin", "manager", "entry"]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        Name: "Sunday",
+        Projects: [
+          {
+            Name: "Seed Project 1",
+            Active: true,
+            Employees: [
+              {
+                Name: "John Doe1",
+                Email: "johndoe1@gmail.com",
+                Rank: ["admin", "manager", "entry"]
+              },
+              {
+                Name: "John Doe2",
+                Email: "johndoe2@gmail.com",
+                Rank: ["admin", "manager", "entry"]
+              }
             ]
           }
         ]
@@ -50,6 +157,7 @@ const WorkWeekSchema = [
     ]
   }
 ];
+
 db.WorkWeek.remove({})
   .then(() => db.WorkWeek.collection.insertMany(WorkWeekSchema))
   .then(data => {
