@@ -5,39 +5,33 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/weschedule");
 
 const ProjectSchema = [
   {
-    Name: "Seed Project 1",
+    name: "Project Name One",
     Active: true,
-    Employees: [
+    DatesActive: [{ days_id: 0, day: "Monday" }, { days_id: 4, day: "Friday" }],
+    EmployeesAssigned: [
       {
-        Name: "John Doe1",
-        Email: "johndoe1@gmail.com",
-        Rank: ["admin", "manager", "entry"]
-      },
-      {
-        Name: "John Doe2",
-        Email: "johndoe2@gmail.com",
-        Rank: ["admin", "manager", "entry"]
+        employees_id: 0,
+        name: "John Doe0",
+        email: "johndoe0@gmail.com",
+        rank: "admin"
       }
     ]
   },
+
   {
-    Name: "Seed Project 2 ",
+    name: "Project Name Two",
     Active: true,
-    Employees: [
+    DatesActive: [{ days_id: 0, day: "Monday" }, { days_id: 4, day: "Friday" }],
+    EmployeesAssigned: [
       {
-        Name: "John Doe1",
-        Email: "johndoe1@gmail.com",
-        Rank: ["admin", "manager", "entry"]
-      },
-      {
-        Name: "John Doe2",
-        Email: "johndoe2@gmail.com",
-        Rank: ["admin", "manager", "entry"]
+        employees_id: 0,
+        name: "John Doe0",
+        email: "johndoe0@gmail.com",
+        rank: "admin"
       }
     ]
   }
 ];
-
 db.Project.remove({})
   .then(() => db.Project.collection.insertMany(ProjectSchema))
   .then(data => {

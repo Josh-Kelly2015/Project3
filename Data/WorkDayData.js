@@ -5,263 +5,32 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/weschedule");
 
 const WorkDaySchema = [
   {
-    Name: "Monday",
-    Projects: [
-      {
-        Name: "Seed Project 1",
-        Active: true,
-        Employees: [
-          {
-            Name: "John Doe1",
-            Email: "johndoe1@gmail.com",
-            Rank: ["admin", "manager", "entry"]
-          },
-          {
-            Name: "John Doe2",
-            Email: "johndoe2@gmail.com",
-            Rank: ["admin", "manager", "entry"]
-          }
-        ]
-      },
-      {
-        Name: "Seed Project 2 ",
-
-        Active: true,
-        Employees: [
-          {
-            Name: "John Doe1",
-            Email: "johndoe1@gmail.com",
-            Rank: ["admin", "manager", "entry"]
-          },
-          {
-            Name: "John Doe2",
-            Email: "johndoe2@gmail.com",
-            Rank: ["admin", "manager", "entry"]
-          }
-        ]
-      }
-    ]
+    id: 0,
+    day: "Monday"
   },
   {
-    Name: "Tuesday",
-    Projects: [
-      {
-        Name: "Seed Project 1",
-        Active: true,
-        Employees: [
-          {
-            Name: "John Doe1",
-            Email: "johndoe1@gmail.com",
-            Rank: ["admin", "manager", "entry"]
-          },
-          {
-            Name: "John Doe2",
-            Email: "johndoe2@gmail.com",
-            Rank: ["admin", "manager", "entry"]
-          }
-        ]
-      },
-      {
-        Name: "Seed Project 2 ",
-        Active: true,
-        Employees: [
-          {
-            Name: "John Doe1",
-            Email: "johndoe1@gmail.com",
-            Rank: ["admin", "manager", "entry"]
-          },
-          {
-            Name: "John Doe2",
-            Email: "johndoe2@gmail.com",
-            Rank: ["admin", "manager", "entry"]
-          }
-        ]
-      }
-    ]
+    id: 1,
+    day: "Tuesday"
   },
   {
-    Name: "Wedneday",
-    Projects: [
-      {
-        Name: "Seed Project 1",
-        Active: true,
-        Employees: [
-          {
-            Name: "John Doe1",
-            Email: "johndoe1@gmail.com",
-            Rank: ["admin", "manager", "entry"]
-          },
-          {
-            Name: "John Doe2",
-            Email: "johndoe2@gmail.com",
-            Rank: ["admin", "manager", "entry"]
-          }
-        ]
-      },
-      {
-        Name: "Seed Project 2 ",
-        Active: true,
-        Employees: [
-          {
-            Name: "John Doe1",
-            Email: "johndoe1@gmail.com",
-            Rank: ["admin", "manager", "entry"]
-          },
-          {
-            Name: "John Doe2",
-            Email: "johndoe2@gmail.com",
-            Rank: ["admin", "manager", "entry"]
-          }
-        ]
-      }
-    ]
+    id: 2,
+    day: "Wednesday"
   },
   {
-    Name: "Thursday",
-    Projects: [
-      {
-        Name: "Seed Project 1",
-        Active: true,
-        Employees: [
-          {
-            Name: "John Doe1",
-            Email: "johndoe1@gmail.com",
-            Rank: ["admin", "manager", "entry"]
-          },
-          {
-            Name: "John Doe2",
-            Email: "johndoe2@gmail.com",
-            Rank: ["admin", "manager", "entry"]
-          }
-        ]
-      },
-      {
-        Name: "Seed Project 2 ",
-        Active: true,
-        Employees: [
-          {
-            Name: "John Doe1",
-            Email: "johndoe1@gmail.com",
-            Rank: ["admin", "manager", "entry"]
-          },
-          {
-            Name: "John Doe2",
-            Email: "johndoe2@gmail.com",
-            Rank: ["admin", "manager", "entry"]
-          }
-        ]
-      }
-    ]
+    id: 3,
+    day: "Thursday"
   },
   {
-    Name: "Friday",
-    Projects: [
-      {
-        Name: "Seed Project 1",
-        Active: true,
-        Employees: [
-          {
-            Name: "John Doe1",
-            Email: "johndoe1@gmail.com",
-            Rank: ["admin", "manager", "entry"]
-          },
-          {
-            Name: "John Doe2",
-            Email: "johndoe2@gmail.com",
-            Rank: ["admin", "manager", "entry"]
-          }
-        ]
-      },
-      {
-        Name: "Seed Project 2 ",
-        Active: true,
-        Employees: [
-          {
-            Name: "John Doe1",
-            Email: "johndoe1@gmail.com",
-            Rank: ["admin", "manager", "entry"]
-          },
-          {
-            Name: "John Doe2",
-            Email: "johndoe2@gmail.com",
-            Rank: ["admin", "manager", "entry"]
-          }
-        ]
-      }
-    ]
+    id: 4,
+    day: "Friday"
   },
   {
-    Name: "Saturday",
-    Projects: [
-      {
-        Name: "Seed Project 1",
-        Active: true,
-        Employees: [
-          {
-            Name: "John Doe1",
-            Email: "johndoe1@gmail.com",
-            Rank: ["admin", "manager", "entry"]
-          },
-          {
-            Name: "John Doe2",
-            Email: "johndoe2@gmail.com",
-            Rank: ["admin", "manager", "entry"]
-          }
-        ]
-      },
-      {
-        Name: "Seed Project 2 ",
-        Active: true,
-        Employees: [
-          {
-            Name: "John Doe1",
-            Email: "johndoe1@gmail.com",
-            Rank: ["admin", "manager", "entry"]
-          },
-          {
-            Name: "John Doe2",
-            Email: "johndoe2@gmail.com",
-            Rank: ["admin", "manager", "entry"]
-          }
-        ]
-      }
-    ]
+    id: 5,
+    day: "Saturday"
   },
   {
-    Name: "Sunday",
-    Projects: [
-      {
-        Name: "Seed Project 1",
-        Active: true,
-        Employees: [
-          {
-            Name: "John Doe1",
-            Email: "johndoe1@gmail.com",
-            Rank: ["admin", "manager", "entry"]
-          },
-          {
-            Name: "John Doe2",
-            Email: "johndoe2@gmail.com",
-            Rank: ["admin", "manager", "entry"]
-          }
-        ]
-      },
-      {
-        Name: "Seed Project 2 ",
-        Employees: [
-          {
-            Name: "John Doe1",
-            Email: "johndoe1@gmail.com",
-            Rank: ["admin", "manager", "entry"]
-          },
-          {
-            Name: "John Doe2",
-            Email: "johndoe2@gmail.com",
-            Rank: ["admin", "manager", "entry"]
-          }
-        ]
-      }
-    ]
+    id: 6,
+    day: "Sunday"
   }
 ];
 db.WorkDay.remove({})

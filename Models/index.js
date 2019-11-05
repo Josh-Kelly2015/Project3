@@ -1,6 +1,5 @@
 module.exports = {
   Employee: require("./Employee"),
   Project: require("./Project"),
-  WorkDay: require("./WorkDay"),
-  WorkWeek: require("./WorkWeek")
+  WorkDay: require("./WorkDay")
 };

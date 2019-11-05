@@ -5,64 +5,64 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/weschedule");
 
 const EmployeeSchema = [
   {
-    Name: "John Doe1",
-    Email: "johndoe1@gmail.com",
-    Rank: ["admin", "manager", "entry"]
+    name: "John Doe1",
+    email: "johndoe1@gmail.com",
+    rank: "admin"
   },
   {
-    Name: "John Doe2",
-    Email: "johndoe2@gmail.com",
-    Rank: ["admin", "manager", "entry"]
+    name: "John Doe2",
+    email: "johndoe2@gmail.com",
+    rank: "field"
   },
   {
-    Name: "John Doe3",
-    Email: "johndoe3@gmail.com",
-    Rank: ["admin", "manager", "entry"]
+    name: "John Doe3",
+    email: "johndoe3@gmail.com",
+    rank: "manager"
   },
   {
-    Name: "John Doe4",
-    Email: "johndoe4@gmail.com",
-    Rank: ["admin", "manager", "entry"]
+    name: "John Doe4",
+    email: "johndoe4@gmail.com",
+    rank: "admin"
   },
   {
-    Name: "John Doe5",
-    Email: "johndoe5@gmail.com",
-    Rank: ["admin", "manager", "entry"]
+    name: "John Doe5",
+    email: "johndoe5@gmail.com",
+    rank: "manager"
   },
   {
-    Name: "John Doe6",
-    Email: "johndoe6@gmail.com",
-    Rank: ["admin", "manager", "entry"]
+    name: "John Doe6",
+    email: "johndoe6@gmail.com",
+    rank: "field"
   },
   {
-    Name: "John Doe7",
-    Email: "johndoe7@gmail.com",
-    Rank: ["admin", "manager", "entry"]
+    name: "John Doe7",
+    email: "johndoe7@gmail.com",
+    rank: "field"
   },
   {
-    Name: "John Doe8",
-    Email: "johndoe8@gmail.com",
-    Rank: ["admin", "manager", "entry"]
+    name: "John Doe8",
+    email: "johndoe8@gmail.com",
+    rank: "field"
   },
   {
-    Name: "John Doe9",
-    Email: "johndoe9@gmail.com",
-    Rank: ["admin", "manager", "entry"]
+    name: "John Doe9",
+    email: "johndoe9@gmail.com",
+    rank: "manager"
   },
   {
-    Name: "John Doe10",
-    Email: "johndoe10@gmail.com",
-    Rank: ["admin", "manager", "entry"]
+    name: "John Doe10",
+    email: "johndoe10@gmail.com",
+    rank: "field"
   },
   {
-    Name: "John Doe11",
-    Email: "johndoe11@gmail.com",
-    Rank: ["admin", "manager", "entry"]
+    name: "John Doe11",
+    email: "johndoe11@gmail.com",
+    rank: "manager"
   },
   {
-    Name: "John Doe12",
-    Email: "johndoe12@gmail.com",
-    Rank: ["admin", "manager", "entry"]
+    name: "John Doe12",
+    email: "johndoe12@gmail.com",
+    rank: "field"
   }
 ];
 
