@@ -45,3 +45,7 @@ h1 {
   min-width: 150px;
   background-color: inherit;
 }
+.border {
+  border-style: solid;
+  border-color: white;
+}

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
-import NewProject from "./NewProject";
 import Header from "./Header";
+import ProjectRow from "./ProjectRow";
 class TableComponent extends Component {
   state = {
     project: []
@@ -16,9 +16,13 @@ class TableComponent extends Component {
   };
   render() {
     return (
-      <div className="container">
-        <Header />
-        <NewProject project={this.state.project} />
+      <div className="table-responsive">
+        <table class="table table-bordered">
+          <Header />
+          <tbody>
+            <ProjectRow />
+          </tbody>
+        </table>
       </div>
     );
   }

@@ -1,16 +1,17 @@
 import React from "react";
-
 const Header = () => (
-  <div className="row">
-    <div className="col">Project</div>
-    <div className="col">Monday</div>
-    <div className="col">Tuesday</div>
-    <div className="col">Wednesday</div>
-    <div className="col">Thursday</div>
-    <div className="col">Friday</div>
-    <div className="col">Saturday</div>
-    <div className="col">Sunday</div>
-  </div>
+  <thead>
+    <tr>
+      <th scope="col">Project</th>
+      <th scope="col">Monday</th>
+      <th scope="col">Tuesday</th>
+      <th scope="col">Wednesday</th>
+      <th scope="col">Thursday</th>
+      <th scope="col">Friday</th>
+      <th scope="col">Saturday</th>
+      <th scope="col">Sunday</th>
+    </tr>
+  </thead>
 );
 
 export default Header;

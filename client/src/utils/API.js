@@ -22,7 +22,7 @@ export default {
     return axios.get("/api/project");
   },
 
-  getWorkDay: function(id) {
+  getProject: function(id) {
     return axios.get("/api/project/" + id);
   },
 
