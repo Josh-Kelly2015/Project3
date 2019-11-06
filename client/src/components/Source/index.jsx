@@ -1,6 +1,6 @@
 import React from "react";
 
-function Card(props) {
+function Draggable(props) {
   const dragStart = e => {
     const target = e.target;
 
@@ -23,4 +23,4 @@ function Card(props) {
   );
 }
 
-export default Card;
+export default Draggable;

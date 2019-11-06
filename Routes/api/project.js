@@ -1,14 +1,14 @@
 const router = require("express").Router();
-const projectController = require("../../Controllers/projectController");
+const ProjectController = require("../../Controllers/ProjectController");
 router
   .route("/")
-  .get(projectController.findAll)
-  .post(projectController.create);
+  .get(ProjectController.findAll)
+  .post(ProjectController.create);
 
 router
   .route("/:id")
-  .get(projectController.findById)
-  .put(projectController.update)
-  .delete(projectController.remove);
+  .get(ProjectController.findById)
+  .put(ProjectController.update)
+  .delete(ProjectController.remove);
 
 module.exports = router;

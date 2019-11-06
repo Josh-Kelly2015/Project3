@@ -2,6 +2,7 @@ body {
   background-color: slategrey;
   text-align: center;
 }
+<<<<<<< HEAD
 
 #board-2 {
   /* width: 100%; */
@@ -32,15 +33,15 @@ body {
 .col-2 {
   background-color: black;
   justify-content: space-evenly;
+=======
+.employees {
+>>>>>>> 9d8d081fd1edcd1a3e68ba09ba792878788bb246
   color: aqua;
-  border-left-color: white;
-  border-right-color: white;
   border-style: solid;
-  border-bottom-width: thin;
   border-width: thin;
-  border-bottom-color: white;
-  border-top-color: white;
+  border-color: white;
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 .card {
   background-color: inherit;
@@ -67,12 +68,13 @@ body {
 .tableHeader {
   color: whitesmoke;
   /* min-width: auto; */
+=======
+.card {
+  background-color: inherit;
+  border-style: none;
+>>>>>>> 9d8d081fd1edcd1a3e68ba09ba792878788bb246
 }
+
 h1 {
   color: aqua;
-}
-.cell {
-  color: aqua;
-  min-width: 150px;
-  background-color: unset;
 }

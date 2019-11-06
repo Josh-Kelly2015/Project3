@@ -1,4 +1,5 @@
 module.exports = {
-  Employee: require("./employeeController"),
-  Project: require("./projectController")
+  Employee: require("./EmployeeController"),
+  Project: require("./ProjectController")
+  // WorkDay: require("./WorkDayController")
 };

@@ -1,82 +1,40 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 9d8d081fd1edcd1a3e68ba09ba792878788bb246
 import React, { Component } from "react";
 import API from "../../utils/API";
-import Board from "../Board";
+import Header from "./Header";
+import ProjectRow from "./ProjectRow";
 class TableComponent extends Component {
   state = {
-    project: [],
-    projectName: "",
-    projectNumber: ""
+    project: []
   };
   componentDidMount() {
     this.loadProjects();
   }
   loadProjects = () => {
     API.getProjects()
-      .then(res =>
-        this.setState({ project: res.data, projectName: "", projectNumber: "" })
-      )
+      .then(res => this.setState({ project: res.data }))
       .catch(err => console.log(err));
   };
-  render(props) {
+  render() {
     return (
-      <div className="row mt-4">
-        <div className="col">
-          <Board id="board-2" className="board table-responsive">
-            <div className="container-fluid">
-              <table className="table table-bordered">
-                <thead>
-                  <tr>
-                    <th scope="col" id="projectHeader">
-                      Project
-                    </th>
-                    <th scope="col" className="tableHeader">
-                      Monday
-                    </th>
-                    <th scope="col" className="tableHeader">
-                      Tuesday
-                    </th>
-                    <th scope="col" className="tableHeader">
-                      Wednesday
-                    </th>
-                    <th scope="col" className="tableHeader">
-                      Thursday
-                    </th>
-                    <th scope="col" className="tableHeader">
-                      Friday
-                    </th>
-                    <th scope="col" className="tableHeader">
-                      Saturday
-                    </th>
-                    <th scope="col" className="tableHeader">
-                      Sunday
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {this.state.project.map(project => (
-                    <tr>
-                      <th scope="row" className="projectCol">
-                        -{project.projectNumber}- <br></br>-
-                        {project.projectName}-
-                      </th>
-                      <td className="cell">{props}</td>
-                      <td className="cell">{props}</td>
-                      <td className="cell">{props}</td>
-                      <td className="cell">{props}</td>
-                      <td className="cell">{props}</td>
-                      <td className="cell">{props}</td>
-                      <td className="cell">{props}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </Board>
+      <div className="container">
+        <div className="table-responsive">
+          <table className="table table-bordered">
+            <Header />
+            <tbody>
+              {this.state.project.map(project => (
+                <ProjectRow name={this.state.project} />
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
     );
   }
+<<<<<<< HEAD
 =======
 import React from "react";
 // import Board from "../Board";
@@ -140,6 +98,8 @@ function Table() {
     </table>
   );
 >>>>>>> e2043b6f7018d6fb77b67c1f14e5766b05cc91cd
+=======
+>>>>>>> 9d8d081fd1edcd1a3e68ba09ba792878788bb246
 }
 
 export default TableComponent;

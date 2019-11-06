@@ -1,6 +1,6 @@
 import React from "react";
 
-function Board(props) {
+function Target(props) {
   const drop = e => {
     e.preventDefault();
     const card_id = e.dataTransfer.getData("transfer");
@@ -13,15 +13,15 @@ function Board(props) {
   };
 
   return (
-    <div
+    <td
       id={props.id}
       className={props.className}
       onDrop={drop}
       onDragOver={dragOver}
     >
       {props.children}
-    </div>
+    </td>
   );
 }
 
-export default Board;
+export default Target;
