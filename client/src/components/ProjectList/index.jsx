@@ -53,6 +53,7 @@ class ProjectList extends Component {
                   </div>
                 ))}
               </div>
+              {/* Add a select dropdown that includes, every employee in the database. */}
 
               <div className="row">
                 <h3>Add new employee to this project?</h3>
@@ -80,7 +81,6 @@ class ProjectList extends Component {
                     <div className="col-md-4"></div>
                   </div>
                 </div>
-                {/* Add a select dropdown that includes, every employee in the database. */}
               </div>
             </>
           ))}
