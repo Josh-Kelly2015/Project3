@@ -7,10 +7,6 @@ const ProjectSchema = [
   {
     name: "Project Name One",
     active: true,
-    assignedDates: [
-      { days_id: 0, day: "Monday" },
-      { days_id: 4, day: "Friday" }
-    ],
     assignedEmployees: [
       {
         employees_id: 0,
@@ -24,10 +20,6 @@ const ProjectSchema = [
   {
     name: "Project Name Two",
     active: true,
-    assignedDates: [
-      { days_id: 0, day: "Monday" },
-      { days_id: 4, day: "Friday" }
-    ],
     assignedEmployees: [
       {
         employees_id: 0,

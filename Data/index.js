@@ -1,5 +1,5 @@
 module.exports = {
   ProjectData: require("./ProjectData"),
-  EmployeeData: require("./EmployeeData"),
-  WorkDayData: require("./WorkDayData")
+  EmployeeData: require("./EmployeeData")
+  // WorkDayData: require("./WorkDayData")
 };

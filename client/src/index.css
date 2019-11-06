@@ -10,13 +10,9 @@ body {
 }
 .card {
   background-color: inherit;
-  cursor: cell;
   border-style: none;
 }
-th {
-  color: whitesmoke;
-}
-h1,
-td {
+
+h1 {
   color: aqua;
 }

@@ -6,7 +6,6 @@ const EmployeeSchema = new Schema({
   email: { type: String, required: true }, // johndoe@gmail.com //
   rank: { type: String, required: true } // [admin, manager, employee] //
 });
-
 const Employee = mongoose.model("employee", EmployeeSchema);
 
 module.exports = Employee;

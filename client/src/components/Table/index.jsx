@@ -22,7 +22,7 @@ class TableComponent extends Component {
             <Header />
             <tbody>
               {this.state.project.map(project => (
-                <ProjectRow name={this.state.project.Name} />
+                <ProjectRow name={this.state.project} />
               ))}
             </tbody>
           </table>
