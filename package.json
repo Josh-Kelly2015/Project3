@@ -9,7 +9,7 @@
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"yarn run client\"",
     "client": "cd client && yarn run start",
     "seed": "node Data/EmployeeData.js && node Data/ProjectData.js ",
-    "install": "cd client && yarn install",
+    "install": "cd client && yarn add",
     "build": "cd client && yarn run build",
     "heroku-postbuild": "yarn run build"
   },
@@ -32,6 +32,6 @@
     "mongoose": "^5.7.6",
     "nodemon": "^1.19.4",
     "path": "^0.12.7",
-    "reactstrap": "^8.1.1"
+    "react-select": "^3.0.8"
   }
 }

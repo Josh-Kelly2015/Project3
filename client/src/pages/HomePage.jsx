@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import ProjectList from "../components/ProjectList";
-import EmployeeList from "../components/EmployeeList";
+
+// import EmployeeList from "../components/EmployeeList";
 class HomePage extends Component {
   render() {
     return (
       <div>
         <ProjectList />
-        <EmployeeList />
+        {/* <EmployeeList /> */}
       </div>
     );
   }
