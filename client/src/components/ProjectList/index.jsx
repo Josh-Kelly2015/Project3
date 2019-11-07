@@ -28,7 +28,6 @@ class ProjectList extends Component {
       .then(res => this.setState({ projects: res.data }))
       .catch(err => console.log(err));
   };
-
   handleChange = selectedOption => {
     this.setState({ selectedOption }, () => {
       API.getEmployee(selectedOption.value)
@@ -36,7 +35,6 @@ class ProjectList extends Component {
         .catch(err => console.log(err));
     });
   };
-
   addToProject = projectIndex => {
     const newState = this.state;
     console.log(this.state.selectedOption.value);
@@ -45,9 +43,20 @@ class ProjectList extends Component {
     );
     this.setState(newState);
   };
-
+  addNewProject = () => {
+    console.log(this.state.projectName);
+  };
   handleNewProject = event => {
     this.setState({ projectName: event.target.value });
+  };
+
+  addNewEmployee = () => {
+    console.log(this.state.employeeName, this.state.email, this.state.rank);
+  };
+  handleNewEmployee = event => {
+    this.setState({
+      employeeName: event.target.value
+    });
   };
   handleNewRank = event => {
     this.setState({
@@ -59,19 +68,13 @@ class ProjectList extends Component {
       email: event.target.value
     });
   };
-  handleNewEmployee = event => {
-    this.setState({
-      employeeName: event.target.value
-    });
-  };
-  addNewProject = () => {
-    console.log(this.state.projectName);
-  };
-  addNewEmployee = () => {
-    console.log(this.state.employeeName, this.state.email, this.state.rank);
-  };
-  deleteEmployee = () => {
-    console.log(this.state.employees);
+
+  // Delete EMployee button
+  deleteEmployee = employeeIndex => {
+    const newState = this.state;
+    console.log(this.state.selectedOption.value);
+    newState.employees[employeeIndex].push(this.state.selectedOption.value);
+    this.setState(newState);
   };
   // Save selectedOption in a different named variable?
   handleDeleteEmployee = selectedOption => {
