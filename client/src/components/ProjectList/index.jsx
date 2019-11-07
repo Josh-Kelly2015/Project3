@@ -52,9 +52,8 @@ class ProjectList extends Component {
   };
   addNewProject = () => {
     console.log(this.state.projectName);
-    const projectData = {
-      projectName: this.state.projectName
-    };
+    const projectData = this.state.projectName;
+
     API.saveProject(projectData)
       .then(res => console.log(res.data))
       .catch(err => console.log(err));
@@ -193,7 +192,7 @@ class ProjectList extends Component {
                   {/* Project Name */}
 
                   <h1>
-                    {project.name} {/* Delete Project Button */}
+                    {project.projectName} {/* Delete Project Button */}
                     <button
                       className="btn btn-danger btn-sm"
                       onClick={() => this.deleteProject(index)}
