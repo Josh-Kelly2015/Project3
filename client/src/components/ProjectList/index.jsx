@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import Select from "react-select";
+
 class ProjectList extends Component {
   state = {
-    project: [],
+    projects: [],
     employees: [],
     selectedOption: ""
   };
@@ -15,7 +16,7 @@ class ProjectList extends Component {
   }
   loadProjects = () => {
     API.getProjects()
-      .then(res => this.setState({ project: res.data }))
+      .then(res => this.setState({ projects: res.data }))
       .catch(err => console.log(err));
   };
 
@@ -29,7 +30,8 @@ class ProjectList extends Component {
 
   addToProject = projectIndex => {
     const newState = this.state;
-    newState.project[projectIndex].assignedEmployees.push(
+    console.log(this.state.selectedOption.value);
+    newState.projects[projectIndex].assignedEmployees.push(
       this.state.selectedOption.value
     );
     this.setState(newState);
@@ -39,7 +41,7 @@ class ProjectList extends Component {
     return (
       <div className="container-fluid">
         <div className="container">
-          {this.state.project.map((project, index) => (
+          {this.state.projects.map((project, index) => (
             <>
               <div className="row">
                 <div key={project._id} id={project._id} className="col">
@@ -53,6 +55,7 @@ class ProjectList extends Component {
                   </div>
                 ))}
               </div>
+              {/* Add a select dropdown that includes, every employee in the database. */}
 
               <div className="row">
                 <h3>Add new employee to this project?</h3>
@@ -80,7 +83,6 @@ class ProjectList extends Component {
                     <div className="col-md-4"></div>
                   </div>
                 </div>
-                {/* Add a select dropdown that includes, every employee in the database. */}
               </div>
             </>
           ))}
