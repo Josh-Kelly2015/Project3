@@ -36,12 +36,11 @@ class ProjectList extends Component {
     });
   };
   addToProject = projectIndex => {
-    const newState = this.state;
-    console.log(this.state.selectedOption.value);
-    newState.projects[projectIndex].assignedEmployees.push(
-      this.state.selectedOption.value
-    );
-    this.setState(newState);
+    console.log(this.state.projects[projectIndex].assignedEmployees);
+    let projectData = this.state.projects[projectIndex].assignedEmployees;
+    API.saveProject(projectData)
+      .then(res => console.log(res.data))
+      .catch(err => console.log(err));
   };
   deleteProject = projectIndex => {
     console.log(this.state.projects[projectIndex]._id);
@@ -52,7 +51,7 @@ class ProjectList extends Component {
   };
   addNewProject = () => {
     console.log(this.state.projectName);
-    const projectData = this.state.projectName;
+    let projectData = this.state.projectName;
 
     API.saveProject(projectData)
       .then(res => console.log(res.data))
@@ -78,7 +77,7 @@ class ProjectList extends Component {
   };
   addNewEmployee = () => {
     console.log(this.state.employeeName, this.state.email, this.state.rank);
-    const employeeData = {
+    let employeeData = {
       employeeName: this.state.employeeName,
       email: this.state.email,
       rank: this.state.rank
@@ -88,11 +87,12 @@ class ProjectList extends Component {
       .catch(err => console.log(err));
   };
   // Delete EMployee button
-  deleteEmployee = employeeIndex => {
-    const newState = this.state;
+  deleteEmployee = () => {
     console.log(this.state.selectedOption.value);
-    newState.employees[employeeIndex].push(this.state.selectedOption.value);
-    this.setState(newState);
+    let id = this.state.selectedOption.value;
+    API.deleteEmployee(id)
+      .then(res => console.log(res.data))
+      .catch(err => console.log(err));
   };
   // Save selectedOption in a different named variable?
   handleDeleteEmployee = selectedOption => {
@@ -168,7 +168,7 @@ class ProjectList extends Component {
                 options={this.state.employees.map(employee => {
                   return {
                     value: employee._id,
-                    label: employee.name
+                    label: employee.employeeName
                   };
                 })}
                 onChange={this.handleDeleteEmployee}
@@ -192,6 +192,14 @@ class ProjectList extends Component {
                   {/* Project Name */}
 
                   <h1>
+                    <button
+                      className="btn btn-danger btn-sm"
+                      onClick={() => {
+                        this.deleteEmployee();
+                      }}
+                    >
+                      Delete Assigned Employee
+                    </button>
                     {project.projectName} {/* Delete Project Button */}
                     <button
                       className="btn btn-danger btn-sm"
@@ -226,7 +234,7 @@ class ProjectList extends Component {
                         options={this.state.employees.map(employee => {
                           return {
                             value: employee._id,
-                            label: employee.name
+                            label: employee.employeeName
                           };
                         })}
                         onChange={this.handleChange}
@@ -239,14 +247,6 @@ class ProjectList extends Component {
                         }}
                       >
                         Add to Project
-                      </button>
-                      <button
-                        className="btn btn-danger"
-                        onClick={() => {
-                          this.deleteEmployee();
-                        }}
-                      >
-                        Delete Employee
                       </button>
                     </div>
                   </div>
