@@ -31,13 +31,21 @@ class ProjectList extends Component {
   handleChange = selectedOption => {
     this.setState({ selectedOption }, () => {
       API.getEmployee(selectedOption.value)
-        .then(res => console.log(res.data))
+        .then(res => console.log(res.data._id))
         .catch(err => console.log(err));
     });
   };
   addToProject = projectIndex => {
-    console.log(this.state.projects[projectIndex].assignedEmployees);
+    console.log("selectedOption.Value = .. " + this.state.selectedOption.value);
+    this.state.projects[projectIndex].assignedEmployees.push(
+      this.state.selectedOption.value
+    );
+    console.log(
+      "assignedEmployees = .. " +
+        this.state.projects[projectIndex].assignedEmployees
+    );
     let projectData = this.state.projects[projectIndex].assignedEmployees;
+    console.log(projectData);
     API.saveProject(projectData)
       .then(res => console.log(res.data))
       .catch(err => console.log(err));
