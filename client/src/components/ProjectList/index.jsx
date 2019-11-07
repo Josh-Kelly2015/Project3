@@ -6,7 +6,17 @@ class ProjectList extends Component {
   state = {
     projects: [],
     employees: [],
-    selectedOption: ""
+    selectedOption: "",
+    projectName: "",
+    employeeName: "",
+    email: "",
+    rank: "",
+    employeeId: ""
+    // newEmployee: [{
+    //   employeeName: "",
+    //   email: "",
+    //   rank: "",
+    // }]
   };
   componentDidMount() {
     this.loadProjects();
@@ -37,21 +47,142 @@ class ProjectList extends Component {
     this.setState(newState);
   };
 
+  handleNewProject = event => {
+    this.setState({ projectName: event.target.value });
+  };
+  handleNewRank = event => {
+    this.setState({
+      rank: event.target.value
+    });
+  };
+  handleNewEmail = event => {
+    this.setState({
+      email: event.target.value
+    });
+  };
+  handleNewEmployee = event => {
+    this.setState({
+      employeeName: event.target.value
+    });
+  };
+  addNewProject = () => {
+    console.log(this.state.projectName);
+  };
+  addNewEmployee = () => {
+    console.log(this.state.employeeName, this.state.email, this.state.rank);
+  };
+  deleteEmployee = () => {
+    console.log();
+  };
   render() {
     return (
       <div className="container-fluid">
         <div className="container">
+          <div className="row">
+            <div className="col">
+              <form>
+                <input
+                  type="text"
+                  name="projectName"
+                  value={this.state.projectName}
+                  onChange={this.handleNewProject}
+                ></input>
+                {/* submit button to add new project */}
+                <button
+                  className="btn btn-light"
+                  type="submit"
+                  onClick={() => {
+                    this.addNewProject();
+                  }}
+                >
+                  Add New Project
+                </button>
+              </form>
+            </div>
+            {/* form to enter new employee info */}
+            <div className="col">
+              <form>
+                <input
+                  type="text"
+                  name="employeeName"
+                  value={this.state.employeeName}
+                  onChange={this.handleNewEmployee}
+                ></input>
+                <input
+                  type="text"
+                  name="email"
+                  value={this.state.email}
+                  onChange={this.handleNewEmail}
+                ></input>
+                <input
+                  type="text"
+                  name="rank"
+                  value={this.state.rank}
+                  onChange={this.handleNewRank}
+                ></input>
+                {/* Submit button to add a new employee */}
+                <button
+                  className="btn btn-light"
+                  type="submit"
+                  onClick={() => {
+                    this.addNewEmployee();
+                  }}
+                >
+                  Add New Employee
+                </button>
+              </form>
+            </div>
+            {/* Delete Employee using Drop Down and button */}
+
+            <div className="col">
+              {/* Drop Down Select */}
+              <Select
+                options={this.state.employees.map(employee => {
+                  return {
+                    value: employee._id,
+                    label: employee.name
+                  };
+                })}
+                onChange={this.handleChange}
+              />
+              {/* Add Employee To Project Button */}
+              <button
+                className="btn btn-danger"
+                onClick={() => {
+                  this.deleteEmployee();
+                }}
+              >
+                Delete Employee
+              </button>
+            </div>
+          </div>
+          {/* Map through projects */}
           {this.state.projects.map((project, index) => (
             <>
               <div className="row">
                 <div key={project._id} id={project._id} className="col">
-                  <h1>{project.name}</h1>
+                  {/* Project Name */}
+
+                  <h1>
+                    {project.name} {/* Delete Project Button */}
+                    <button
+                      className="btn btn-danger btn-sm"
+                      onClick={() => this.deleteProject()}
+                    >
+                      Delete Project
+                    </button>
+                  </h1>
                 </div>
               </div>
+              {/* Mapping through assignedEmployees array */}
               <div className="row">
-                {project.assignedEmployees.map(employee => (
-                  <div className="col" key={employee._id} id={employee._id}>
-                    {employee.name}
+                {project.assignedEmployees.map(assignedEmployee => (
+                  <div
+                    className="col"
+                    key={assignedEmployee._id}
+                    id={assignedEmployee._id}
+                  >
+                    {assignedEmployee.name}
                   </div>
                 ))}
               </div>
@@ -61,8 +192,8 @@ class ProjectList extends Component {
                 <h3>Add new employee to this project?</h3>
                 <div className="container">
                   <div className="row">
-                    <div className="col-md-4"></div>
                     <div className="col-md-4">
+                      {/* Drop Down Select */}
                       <Select
                         options={this.state.employees.map(employee => {
                           return {
@@ -72,15 +203,24 @@ class ProjectList extends Component {
                         })}
                         onChange={this.handleChange}
                       />
+                      {/* Add Employee To Project Button */}
                       <button
+                        className="btn btn-light"
                         onClick={() => {
                           this.addToProject(index);
                         }}
                       >
                         Add to Project
                       </button>
+                      <button
+                        className="btn btn-danger"
+                        onClick={() => {
+                          this.deleteEmployee();
+                        }}
+                      >
+                        Delete Employee
+                      </button>
                     </div>
-                    <div className="col-md-4"></div>
                   </div>
                 </div>
               </div>

@@ -5,26 +5,26 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/weschedule");
 
 const ProjectSchema = [
   {
-    name: "Project Name One",
-    active: true,
+    projectName: "Project Name One",
+    // active: true,
     assignedEmployees: [
       {
-        name: "John Doe9",
+        employeeName: "John Doe9",
         email: "johndoe9@gmail.com",
         rank: "manager"
       },
       {
-        name: "John Doe10",
+        employeeName: "John Doe10",
         email: "johndoe10@gmail.com",
         rank: "field"
       },
       {
-        name: "John Doe11",
+        employeeName: "John Doe11",
         email: "johndoe11@gmail.com",
         rank: "manager"
       },
       {
-        name: "John Doe12",
+        employeeName: "John Doe12",
         email: "johndoe12@gmail.com",
         rank: "field"
       }
@@ -32,156 +32,156 @@ const ProjectSchema = [
   },
 
   {
-    name: "Project Name Two",
-    active: true,
+    projectName: "Project Name Two",
+    // active: true,
     assignedEmployees: [
       {
-        name: "John Doe0",
+        employeeName: "John Doe0",
         email: "johndoe0@gmail.com",
         rank: "admin"
       },
       {
-        name: "John Doe6",
+        employeeName: "John Doe6",
         email: "johndoe6@gmail.com",
         rank: "field"
       },
       {
-        name: "John Doe7",
+        employeeName: "John Doe7",
         email: "johndoe7@gmail.com",
         rank: "field"
       },
       {
-        name: "John Doe8",
+        employeeName: "John Doe8",
         email: "johndoe8@gmail.com",
         rank: "field"
       }
     ]
   },
   {
-    name: "Project Name Three",
-    active: true,
+    projectName: "Project Name Three",
+    // active: true,
     assignedEmployees: [
       {
-        name: "John Doe0",
+        employeeName: "John Doe0",
         email: "johndoe0@gmail.com",
         rank: "admin"
       },
       {
-        name: "John Doe6",
+        employeeName: "John Doe6",
         email: "johndoe6@gmail.com",
         rank: "field"
       },
       {
-        name: "John Doe7",
+        employeeName: "John Doe7",
         email: "johndoe7@gmail.com",
         rank: "field"
       },
       {
-        name: "John Doe8",
+        employeeName: "John Doe8",
         email: "johndoe8@gmail.com",
         rank: "field"
       }
     ]
   },
   {
-    name: "Project Name Four",
-    active: true,
+    projectName: "Project Name Four",
+    // active: true,
     assignedEmployees: [
       {
-        name: "John Doe0",
+        employeeName: "John Doe0",
         email: "johndoe0@gmail.com",
         rank: "admin"
       },
       {
-        name: "John Doe6",
+        employeeName: "John Doe6",
         email: "johndoe6@gmail.com",
         rank: "field"
       },
       {
-        name: "John Doe7",
+        employeeName: "John Doe7",
         email: "johndoe7@gmail.com",
         rank: "field"
       },
       {
-        name: "John Doe8",
+        employeeName: "John Doe8",
         email: "johndoe8@gmail.com",
         rank: "field"
       }
     ]
   },
   {
-    name: "Project Name Five",
-    active: true,
+    projectName: "Project Name Five",
+    // active: true,
     assignedEmployees: [
       {
-        name: "John Doe0",
+        employeeName: "John Doe0",
         email: "johndoe0@gmail.com",
         rank: "admin"
       },
       {
-        name: "John Doe6",
+        employeeName: "John Doe6",
         email: "johndoe6@gmail.com",
         rank: "field"
       },
       {
-        name: "John Doe7",
+        employeeName: "John Doe7",
         email: "johndoe7@gmail.com",
         rank: "field"
       },
       {
-        name: "John Doe8",
+        employeeName: "John Doe8",
         email: "johndoe8@gmail.com",
         rank: "field"
       }
     ]
   },
   {
-    name: "Project Name Six",
-    active: true,
+    projectName: "Project Name Six",
+    // active: true,
     assignedEmployees: [
       {
-        name: "John Doe0",
+        employeeName: "John Doe0",
         email: "johndoe0@gmail.com",
         rank: "admin"
       },
       {
-        name: "John Doe6",
+        employeeName: "John Doe6",
         email: "johndoe6@gmail.com",
         rank: "field"
       },
       {
-        name: "John Doe7",
+        employeeName: "John Doe7",
         email: "johndoe7@gmail.com",
         rank: "field"
       },
       {
-        name: "John Doe8",
+        employeeName: "John Doe8",
         email: "johndoe8@gmail.com",
         rank: "field"
       }
     ]
   },
   {
-    name: "Project Name Seven",
-    active: true,
+    projectName: "Project Name Seven",
+    // active: true,
     assignedEmployees: [
       {
-        name: "John Doe0",
+        employeeName: "John Doe0",
         email: "johndoe0@gmail.com",
         rank: "admin"
       },
       {
-        name: "John Doe6",
+        employeeName: "John Doe6",
         email: "johndoe6@gmail.com",
         rank: "field"
       },
       {
-        name: "John Doe7",
+        employeeName: "John Doe7",
         email: "johndoe7@gmail.com",
         rank: "field"
       },
       {
-        name: "John Doe8",
+        employeeName: "John Doe8",
         email: "johndoe8@gmail.com",
         rank: "field"
       }
