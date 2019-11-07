@@ -11,11 +11,11 @@ class ProjectList extends Component {
     employeeName: "",
     email: "",
     rank: ""
-    // newEmployee: [{
+    // newEmployee: {
     //   employeeName: "",
     //   email: "",
     //   rank: "",
-    // }]
+    // }
   };
   componentDidMount() {
     this.loadProjects();
@@ -43,21 +43,27 @@ class ProjectList extends Component {
     );
     this.setState(newState);
   };
+  deleteProject = projectIndex => {
+    console.log(this.state.projects[projectIndex]._id);
+    let id = this.state.projects[projectIndex]._id;
+    API.deleteProject(id)
+      .then(res => console.log(res))
+      .catch(err => console.log(err));
+  };
   addNewProject = () => {
     console.log(this.state.projectName);
+    const projectData = {
+      projectName: this.state.projectName
+    };
+    API.saveProject(projectData)
+      .then(res => console.log(res.data))
+      .catch(err => console.log(err));
   };
   handleNewProject = event => {
     this.setState({ projectName: event.target.value });
   };
 
-  addNewEmployee = () => {
-    console.log(this.state.employeeName, this.state.email, this.state.rank);
-  };
-  handleNewEmployee = event => {
-    this.setState({
-      employeeName: event.target.value
-    });
-  };
+  // Add new employee using state of name email and rank
   handleNewRank = event => {
     this.setState({
       rank: event.target.value
@@ -68,7 +74,20 @@ class ProjectList extends Component {
       email: event.target.value
     });
   };
-
+  handleNewEmployee = event => {
+    this.setState({ employeeName: event.target.value });
+  };
+  addNewEmployee = () => {
+    console.log(this.state.employeeName, this.state.email, this.state.rank);
+    const employeeData = {
+      employeeName: this.state.employeeName,
+      email: this.state.email,
+      rank: this.state.rank
+    };
+    API.saveEmployee(employeeData)
+      .then(res => console.log(res.data))
+      .catch(err => console.log(err));
+  };
   // Delete EMployee button
   deleteEmployee = employeeIndex => {
     const newState = this.state;
@@ -177,7 +196,7 @@ class ProjectList extends Component {
                     {project.name} {/* Delete Project Button */}
                     <button
                       className="btn btn-danger btn-sm"
-                      onClick={() => this.deleteProject()}
+                      onClick={() => this.deleteProject(index)}
                     >
                       Delete Project
                     </button>
