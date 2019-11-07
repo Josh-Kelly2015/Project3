@@ -6,12 +6,11 @@ class ProjectList extends Component {
   state = {
     projects: [],
     employees: [],
-    selectedOption: "",
+    selectedOption: {},
     projectName: "",
     employeeName: "",
     email: "",
-    rank: "",
-    employeeId: ""
+    rank: ""
     // newEmployee: [{
     //   employeeName: "",
     //   email: "",
@@ -72,7 +71,15 @@ class ProjectList extends Component {
     console.log(this.state.employeeName, this.state.email, this.state.rank);
   };
   deleteEmployee = () => {
-    console.log();
+    console.log(this.state.employees);
+  };
+  // Save selectedOption in a different named variable?
+  handleDeleteEmployee = selectedOption => {
+    this.setState({ selectedOption }, () => {
+      API.getEmployee(selectedOption.value)
+        .then(res => console.log(res.data))
+        .catch(err => console.log(err));
+    });
   };
   render() {
     return (
@@ -87,17 +94,17 @@ class ProjectList extends Component {
                   value={this.state.projectName}
                   onChange={this.handleNewProject}
                 ></input>
-                {/* submit button to add new project */}
-                <button
-                  className="btn btn-light"
-                  type="submit"
-                  onClick={() => {
-                    this.addNewProject();
-                  }}
-                >
-                  Add New Project
-                </button>
               </form>
+              {/* submit button to add new project */}
+              <button
+                className="btn btn-light"
+                type="submit"
+                onClick={() => {
+                  this.addNewProject();
+                }}
+              >
+                Add New Project
+              </button>
             </div>
             {/* form to enter new employee info */}
             <div className="col">
@@ -120,17 +127,17 @@ class ProjectList extends Component {
                   value={this.state.rank}
                   onChange={this.handleNewRank}
                 ></input>
-                {/* Submit button to add a new employee */}
-                <button
-                  className="btn btn-light"
-                  type="submit"
-                  onClick={() => {
-                    this.addNewEmployee();
-                  }}
-                >
-                  Add New Employee
-                </button>
               </form>
+              {/* Submit button to add a new employee */}
+              <button
+                className="btn btn-light"
+                type="submit"
+                onClick={() => {
+                  this.addNewEmployee();
+                }}
+              >
+                Add New Employee
+              </button>
             </div>
             {/* Delete Employee using Drop Down and button */}
 
@@ -143,7 +150,7 @@ class ProjectList extends Component {
                     label: employee.name
                   };
                 })}
-                onChange={this.handleChange}
+                onChange={this.handleDeleteEmployee}
               />
               {/* Add Employee To Project Button */}
               <button
