@@ -66,7 +66,6 @@ class ProjectList extends Component {
       })
       .catch(err => console.log(err));
   };
-  // Add new employee using state of name email and rank
   handleNewRank = event => {
     this.setState({
       rank: event.target.value
@@ -80,6 +79,7 @@ class ProjectList extends Component {
   handleNewEmployee = event => {
     this.setState({ employeeName: event.target.value });
   };
+
   addNewEmployee = () => {
     console.log(this.state.employeeName, this.state.email, this.state.rank);
     let employeeData = {
@@ -94,7 +94,6 @@ class ProjectList extends Component {
       })
       .catch(err => console.log(err));
   };
-  // Delete EMployee button
   deleteEmployee = () => {
     console.log(this.state.selectedOption.value);
     let id = this.state.selectedOption.value;
@@ -105,7 +104,6 @@ class ProjectList extends Component {
       })
       .catch(err => console.log(err));
   };
-  // Save selectedOption in a different named variable?
   handleDeleteEmployee = selectedOption => {
     this.setState({ selectedOption }, () => {
       API.getEmployee(selectedOption.value)
@@ -113,7 +111,6 @@ class ProjectList extends Component {
         .catch(err => console.log(err));
     });
   };
-  // Delete an assigned EMployee
   deleteAssignedEmployee = (projectIndex, employeeId) => {
     console.log(this.state.projects[projectIndex].employees);
     let projectToUpdate = this.state.projects[projectIndex];
@@ -138,6 +135,7 @@ class ProjectList extends Component {
       <div className="container-fluid">
         <div className="container">
           <div className="row">
+            {/* Form to create new project */}
             <div className="col">
               <form>
                 <input
@@ -192,9 +190,7 @@ class ProjectList extends Component {
               </button>
             </div>
             {/* Delete Employee using Drop Down and button */}
-
             <div className="col">
-              {/* Drop Down Select */}
               <Select
                 options={this.state.employees.map(employee => {
                   return {
@@ -256,7 +252,6 @@ class ProjectList extends Component {
                 ))}
               </div>
               {/* Add a select dropdown that includes, every employee in the database. */}
-
               <div className="row">
                 <h3>Add new employee to this project?</h3>
                 <div className="container">
