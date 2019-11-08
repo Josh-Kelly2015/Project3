@@ -11,11 +11,6 @@ class ProjectList extends Component {
     employeeName: "",
     email: "",
     rank: ""
-    // newEmployee: {
-    //   employeeName: "",
-    //   email: "",
-    //   rank: "",
-    // }
   };
   componentDidMount() {
     this.loadProjects();
@@ -36,37 +31,47 @@ class ProjectList extends Component {
     });
   };
   addToProject = projectIndex => {
-    console.log("selectedOption.Value = .. " + this.state.selectedOption.value);
-    this.state.projects[projectIndex].assignedEmployees.push(
-      this.state.selectedOption.value
-    );
-    console.log(
-      "assignedEmployees = .. " +
-        this.state.projects[projectIndex].assignedEmployees
-    );
-    let projectData = this.state.projects[projectIndex].assignedEmployees;
-    console.log(projectData);
-    API.saveProject(projectData)
-      .then(res => console.log(res.data))
-      .catch(err => console.log(err));
+    console.log("selectedOption.value = " + this.state.selectedOption.value);
+    // const newState = this.state;
+    // newState.projects[projectIndex].assignedEmployees.push(
+    //   this.state.selectedOption.value
+    // );
+    // this.setState(newState);
+    const newProject = this.state.projects[projectIndex];
+    newProject.employees.push(this.state.selectedOption.value);
+    API.updateProject(newProject)
+      .then(response => {
+        console.log(response);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+    // let projectData = this.state.projects[projectIndex].assignedEmployees;
+    // console.log(projectData);
+    // API.saveProject(projectData)
+    //   .then(res => console.log(res.data))
+    //   .catch(err => console.log(err));
   };
   deleteProject = projectIndex => {
     console.log(this.state.projects[projectIndex]._id);
     let id = this.state.projects[projectIndex]._id;
     API.deleteProject(id)
-      .then(res => console.log(res))
-      .catch(err => console.log(err));
-  };
-  addNewProject = () => {
-    console.log(this.state.projectName);
-    let projectData = this.state.projectName;
-
-    API.saveProject(projectData)
-      .then(res => console.log(res.data))
+      .then(res => {
+        console.log(res);
+        window.location.reload();
+      })
       .catch(err => console.log(err));
   };
   handleNewProject = event => {
     this.setState({ projectName: event.target.value });
+  };
+  addNewProject = () => {
+    console.log(this.state.projectName);
+    const projectData = this.state.projectName;
+
+    API.saveProject(projectData)
+      .then(res => console.log(res.data))
+      .catch(err => console.log(err));
   };
 
   // Add new employee using state of name email and rank
@@ -114,84 +119,6 @@ class ProjectList extends Component {
     return (
       <div className="container-fluid">
         <div className="container">
-          <div className="row">
-            <div className="col">
-              <form>
-                <input
-                  type="text"
-                  name="projectName"
-                  value={this.state.projectName}
-                  onChange={this.handleNewProject}
-                ></input>
-              </form>
-              {/* submit button to add new project */}
-              <button
-                className="btn btn-light"
-                type="submit"
-                onClick={() => {
-                  this.addNewProject();
-                }}
-              >
-                Add New Project
-              </button>
-            </div>
-            {/* form to enter new employee info */}
-            <div className="col">
-              <form>
-                <input
-                  type="text"
-                  name="employeeName"
-                  value={this.state.employeeName}
-                  onChange={this.handleNewEmployee}
-                ></input>
-                <input
-                  type="text"
-                  name="email"
-                  value={this.state.email}
-                  onChange={this.handleNewEmail}
-                ></input>
-                <input
-                  type="text"
-                  name="rank"
-                  value={this.state.rank}
-                  onChange={this.handleNewRank}
-                ></input>
-              </form>
-              {/* Submit button to add a new employee */}
-              <button
-                className="btn btn-light"
-                type="submit"
-                onClick={() => {
-                  this.addNewEmployee();
-                }}
-              >
-                Add New Employee
-              </button>
-            </div>
-            {/* Delete Employee using Drop Down and button */}
-
-            <div className="col">
-              {/* Drop Down Select */}
-              <Select
-                options={this.state.employees.map(employee => {
-                  return {
-                    value: employee._id,
-                    label: employee.employeeName
-                  };
-                })}
-                onChange={this.handleDeleteEmployee}
-              />
-              {/* Add Employee To Project Button */}
-              <button
-                className="btn btn-danger"
-                onClick={() => {
-                  this.deleteEmployee();
-                }}
-              >
-                Delete Employee
-              </button>
-            </div>
-          </div>
           {/* Map through projects */}
           {this.state.projects.map((project, index) => (
             <>
@@ -220,7 +147,7 @@ class ProjectList extends Component {
               </div>
               {/* Mapping through assignedEmployees array */}
               <div className="row">
-                {project.assignedEmployees.map(assignedEmployee => (
+                {project.employees.map(assignedEmployee => (
                   <div
                     className="col"
                     key={assignedEmployee._id}

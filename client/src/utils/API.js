@@ -33,6 +33,11 @@ export default {
   saveProject: function(projectData) {
     return axios.post("/api/project", projectData);
   },
+
+  updateProject: function(projectData) {
+    console.log("Hit the update route", projectData);
+    return axios.put(`/api/project/${projectData._id}`, projectData);
+  },
   // Work Days API
   getWorkDays: function() {
     return axios.get("/api/workday");
