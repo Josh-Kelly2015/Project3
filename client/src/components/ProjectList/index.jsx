@@ -32,25 +32,16 @@ class ProjectList extends Component {
   };
   addToProject = projectIndex => {
     console.log("selectedOption.value = " + this.state.selectedOption.value);
-    // const newState = this.state;
-    // newState.projects[projectIndex].assignedEmployees.push(
-    //   this.state.selectedOption.value
-    // );
-    // this.setState(newState);
     const newProject = this.state.projects[projectIndex];
     newProject.employees.push(this.state.selectedOption.value);
     API.updateProject(newProject)
-      .then(response => {
-        console.log(response);
+      .then(res => {
+        console.log(res);
+        window.location.reload();
       })
       .catch(err => {
         console.log(err);
       });
-    // let projectData = this.state.projects[projectIndex].assignedEmployees;
-    // console.log(projectData);
-    // API.saveProject(projectData)
-    //   .then(res => console.log(res.data))
-    //   .catch(err => console.log(err));
   };
   deleteProject = projectIndex => {
     console.log(this.state.projects[projectIndex]._id);
@@ -68,12 +59,13 @@ class ProjectList extends Component {
   addNewProject = () => {
     console.log(this.state.projectName);
     const projectData = this.state.projectName;
-
     API.saveProject(projectData)
-      .then(res => console.log(res.data))
+      .then(res => {
+        console.log(res);
+        window.location.reload();
+      })
       .catch(err => console.log(err));
   };
-
   // Add new employee using state of name email and rank
   handleNewRank = event => {
     this.setState({
@@ -96,7 +88,10 @@ class ProjectList extends Component {
       rank: this.state.rank
     };
     API.saveEmployee(employeeData)
-      .then(res => console.log(res.data))
+      .then(res => {
+        console.log(res);
+        window.location.reload();
+      })
       .catch(err => console.log(err));
   };
   // Delete EMployee button
@@ -104,7 +99,10 @@ class ProjectList extends Component {
     console.log(this.state.selectedOption.value);
     let id = this.state.selectedOption.value;
     API.deleteEmployee(id)
-      .then(res => console.log(res.data))
+      .then(res => {
+        console.log(res);
+        window.location.reload();
+      })
       .catch(err => console.log(err));
   };
   // Save selectedOption in a different named variable?
@@ -114,6 +112,26 @@ class ProjectList extends Component {
         .then(res => console.log(res.data))
         .catch(err => console.log(err));
     });
+  };
+  // Delete an assigned EMployee
+  deleteAssignedEmployee = (projectIndex, employeeId) => {
+    console.log(this.state.projects[projectIndex].employees);
+    let projectToUpdate = this.state.projects[projectIndex];
+    const newEmployeeArray = projectToUpdate.employees.map(employee => {
+      return employee._id;
+    });
+    const newEmployeeFiltered = newEmployeeArray.filter(employee => {
+      return employee !== employeeId;
+    });
+    console.log(newEmployeeFiltered);
+    projectToUpdate.employees = newEmployeeFiltered;
+    console.log(projectToUpdate);
+    API.updateProject(projectToUpdate)
+      .then(res => {
+        console.log(res);
+        window.location.reload();
+      })
+      .catch(err => console.log(err));
   };
   render() {
     return (
@@ -125,16 +143,7 @@ class ProjectList extends Component {
               <div className="row">
                 <div key={project._id} id={project._id} className="col">
                   {/* Project Name */}
-
                   <h1>
-                    <button
-                      className="btn btn-danger btn-sm"
-                      onClick={() => {
-                        this.deleteEmployee();
-                      }}
-                    >
-                      Delete Assigned Employee
-                    </button>
                     {project.projectName} {/* Delete Project Button */}
                     <button
                       className="btn btn-danger btn-sm"
@@ -153,7 +162,18 @@ class ProjectList extends Component {
                     key={assignedEmployee._id}
                     id={assignedEmployee._id}
                   >
-                    {assignedEmployee.name}
+                    {assignedEmployee.employeeName}
+                    <button
+                      className="btn btn-danger btn-sm"
+                      onClick={() => {
+                        this.deleteAssignedEmployee(
+                          index,
+                          assignedEmployee._id
+                        );
+                      }}
+                    >
+                      x
+                    </button>
                   </div>
                 ))}
               </div>

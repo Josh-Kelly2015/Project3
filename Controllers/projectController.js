@@ -22,9 +22,14 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   update: function(req, res) {
+    console.log("Update function");
     console.log(req.body);
     db.Project.findOneAndUpdate({ _id: req.params.id }, req.body)
-      .then(dbModel => res.json(dbModel))
+      .then(dbModel => {
+        console.log("Returned");
+        console.log(dbModel);
+        res.json(dbModel);
+      })
       .catch(err => {
         console.log(err);
         res.status(422).json(err);
