@@ -287,5 +287,4 @@ class ProjectList extends Component {
     );
   }
 }
-
 export default ProjectList;
