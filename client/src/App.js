@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import ProjectList from "./components/ProjectList";
+import Home from "./components/Home";
 function App() {
   return (
     <Router>
-      <Route exact path="/" component={ProjectList} />
+      <Route exact path="/" component={Home} />
     </Router>
   );
 }

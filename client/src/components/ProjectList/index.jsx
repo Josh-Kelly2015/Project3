@@ -1,13 +1,11 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import Select from "react-select";
-
 class ProjectList extends Component {
   state = {
     projects: [],
     employees: [],
     selectedOption: {},
-    projectName: "",
     employeeName: "",
     email: "",
     rank: ""
@@ -23,6 +21,7 @@ class ProjectList extends Component {
       .then(res => this.setState({ projects: res.data }))
       .catch(err => console.log(err));
   };
+
   handleChange = selectedOption => {
     this.setState({ selectedOption }, () => {
       API.getEmployee(selectedOption.value)
@@ -53,19 +52,7 @@ class ProjectList extends Component {
       })
       .catch(err => console.log(err));
   };
-  handleNewProject = event => {
-    this.setState({ projectName: event.target.value });
-  };
-  addNewProject = () => {
-    console.log(this.state.projectName);
-    const projectData = { projectName: this.state.projectName };
-    API.saveProject(projectData)
-      .then(res => {
-        console.log(res);
-        window.location.reload();
-      })
-      .catch(err => console.log(err));
-  };
+
   handleNewRank = event => {
     this.setState({
       rank: event.target.value
@@ -130,32 +117,12 @@ class ProjectList extends Component {
       })
       .catch(err => console.log(err));
   };
+
   render() {
     return (
       <div className="container-fluid">
         <div className="container">
           <div className="row">
-            {/* Form to create new project */}
-            <div className="col">
-              <form>
-                <input
-                  type="text"
-                  name="projectName"
-                  value={this.state.projectName}
-                  onChange={this.handleNewProject}
-                ></input>
-              </form>
-              {/* submit button to add new project */}
-              <button
-                className="btn btn-light"
-                type="submit"
-                onClick={() => {
-                  this.addNewProject();
-                }}
-              >
-                Add New Project
-              </button>
-            </div>
             {/* form to enter new employee info */}
             <div className="col">
               <form>
@@ -211,6 +178,7 @@ class ProjectList extends Component {
               </button>
             </div>
           </div>
+
           {/* Map through projects */}
           {this.state.projects.map((project, index) => (
             <>
