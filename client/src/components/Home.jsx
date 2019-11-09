@@ -3,6 +3,7 @@ import NewProjectForm from "./NewProject";
 import NewEmployeeForm from "./NewEmployee";
 import AssignUser from "./AssignUser";
 import API from "../utils/API";
+import { Paper } from "@material-ui/core";
 
 class Home extends Component {
   state = {
@@ -27,12 +28,16 @@ class Home extends Component {
     return (
       <div className="container-fluid">
         <div className="container">
-          <div className="col">
-            <NewProjectForm></NewProjectForm>
-          </div>
-          <div className="col">
-            <NewEmployeeForm></NewEmployeeForm>
-          </div>
+          <Paper>
+            <div className="row">
+              <div className="col">
+                <NewProjectForm></NewProjectForm>
+              </div>
+              <div className="col">
+                <NewEmployeeForm></NewEmployeeForm>
+              </div>
+            </div>
+          </Paper>
         </div>
         <div className="col">
           <AssignUser></AssignUser>

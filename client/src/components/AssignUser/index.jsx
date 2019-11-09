@@ -5,6 +5,7 @@ import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import DeleteIcon from "@material-ui/icons/Delete";
 import Typography from "@material-ui/core/Typography";
+import Paper from "@material-ui/core/Paper";
 class AssignUser extends Component {
   state = {
     projects: [],
@@ -68,64 +69,63 @@ class AssignUser extends Component {
   render() {
     return (
       <>
-        {this.state.projects.map((project, index) => (
-          <div
-            className="row border border-color-danger"
-            key={project._id}
-            id={project._id}
-          >
-            <div className="col">
-              <Typography>{project.projectName}</Typography>
-              <IconButton
-                aria-label="delete"
-                onClick={() => this.deleteProject(index)}
-              >
-                <DeleteIcon />
-              </IconButton>
-            </div>
-
-            {/* Assigned EMployees */}
-            <div className="col">
-              {project.employees.map(assignedEmployee => (
-                <div
-                  className="col"
-                  key={assignedEmployee._id}
-                  id={assignedEmployee._id}
+        <Paper>
+          {this.state.projects.map((project, index) => (
+            <div
+              className="row border border-color-danger m-4"
+              key={project._id}
+            >
+              <div className="col">
+                <Typography>{project.projectName}</Typography>
+                <IconButton
+                  aria-label="delete"
+                  onClick={() => this.deleteProject(index)}
                 >
-                  {assignedEmployee.employeeName}
-                  <Button
-                    onClick={() => {
-                      this.deleteAssignedEmployee(index, assignedEmployee._id);
-                    }}
-                  >
-                    x
-                  </Button>
-                </div>
-              ))}
-            </div>
+                  <DeleteIcon />
+                </IconButton>
+              </div>
 
-            <div className="col">
-              <Select
-                options={this.state.employees.map(employee => {
-                  return {
-                    value: employee._id,
-                    label: employee.employeeName
-                  };
-                })}
-                onChange={this.handleChange}
-              />
+              <div className="col">
+                {project.employees.map(assignedEmployee => (
+                  <div className="col">
+                    {assignedEmployee.employeeName}
+                    <Button
+                      onClick={() => {
+                        this.deleteAssignedEmployee(
+                          index,
+                          assignedEmployee._id
+                        );
+                      }}
+                    >
+                      x
+                    </Button>
+                  </div>
+                ))}
+              </div>
+
+              <div className="col">
+                <Select
+                  options={this.state.employees.map(employee => {
+                    return {
+                      value: employee._id,
+                      label: employee.employeeName
+                    };
+                  })}
+                  onChange={this.handleChange}
+                />
+              </div>
+              <div className="col">
+                <Button
+                  onClick={() => {
+                    this.addToProject(index);
+                  }}
+                >
+                  Add to Project
+                </Button>
+              </div>
             </div>
-            <div className="col">
-              <Button
-                onClick={() => {
-                  this.addToProject(index);
-                }}
-              >
-                Add to Project
-              </Button>
-            </div>
-          </div>
-        ))}
+          ))}
+        </Paper>
       </>
     );
   }

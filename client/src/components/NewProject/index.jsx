@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
+import { TextField, Button, Paper } from "@material-ui/core";
 
 class NewProject extends Component {
   state = {
@@ -22,25 +23,25 @@ class NewProject extends Component {
   render() {
     return (
       <>
-        <form>
-          <div className="row">
-            <input
+        <Paper>
+          <form>
+            <TextField
               type="text"
               name="projectName"
               value={this.state.projectName}
               onChange={this.handleNewProject}
-            ></input>
+            ></TextField>
+          </form>
+          <div className="col">
+            <Button
+              className="btn btn-light"
+              type="submit"
+              onClick={this.addNewProject}
+            >
+              Create Project
+            </Button>
           </div>
-        </form>
-        <div className="col">
-          <button
-            className="btn btn-light"
-            type="submit"
-            onClick={this.addNewProject}
-          >
-            Create Project
-          </button>
-        </div>
+        </Paper>
       </>
     );
   }

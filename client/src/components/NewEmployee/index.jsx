@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
+import { TextField, Button, Paper } from "@material-ui/core";
 
 class NewEmployee extends Component {
   state = {
@@ -37,43 +38,45 @@ class NewEmployee extends Component {
   render() {
     return (
       <>
-        <form>
+        <Paper>
+          <form>
+            <div className="col">
+              <TextField
+                type="text"
+                name="employeeName"
+                value={this.state.employeeName}
+                onChange={this.handleNewEmployee}
+              ></TextField>
+            </div>
+            <div className="col">
+              <TextField
+                type="text"
+                name="email"
+                value={this.state.email}
+                onChange={this.handleNewEmail}
+              ></TextField>
+            </div>
+            <div className="col">
+              <TextField
+                type="text"
+                name="rank"
+                value={this.state.rank}
+                onChange={this.handleNewRank}
+              ></TextField>
+            </div>
+          </form>
           <div className="col">
-            <input
-              type="text"
-              name="employeeName"
-              value={this.state.employeeName}
-              onChange={this.handleNewEmployee}
-            ></input>
+            <Button
+              className="btn btn-light"
+              type="submit"
+              onClick={() => {
+                this.addNewEmployee();
+              }}
+            >
+              Create Employee
+            </Button>
           </div>
-          <div className="col">
-            <input
-              type="text"
-              name="email"
-              value={this.state.email}
-              onChange={this.handleNewEmail}
-            ></input>
-          </div>
-          <div className="col">
-            <input
-              type="text"
-              name="rank"
-              value={this.state.rank}
-              onChange={this.handleNewRank}
-            ></input>
-          </div>
-        </form>
-        <div className="col">
-          <button
-            className="btn btn-light"
-            type="submit"
-            onClick={() => {
-              this.addNewEmployee();
-            }}
-          >
-            Create Employee
-          </button>
-        </div>
+        </Paper>
       </>
     );
   }
