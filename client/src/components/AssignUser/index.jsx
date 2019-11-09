@@ -38,30 +38,44 @@ class AssignUser extends Component {
   };
   render() {
     return (
-      <>
+      <div className="container">
         {this.state.projects.map((project, index) => (
-          <div key={project._id} id={project._id}>
-            {project.projectName}
-            <Select
-              options={this.state.employees.map(employee => {
-                return {
-                  value: employee._id,
-                  label: employee.employeeName
-                };
-              })}
-              onChange={this.handleChange}
-            />
-            <button
-              className="btn btn-light"
-              onClick={() => {
-                this.addToProject(index);
-              }}
-            >
-              Add to Project
-            </button>
+          <div className="row" key={project._id} id={project._id}>
+            <div className="col">
+              <button
+                className="btn btn-danger btn-sm"
+                onClick={() => this.deleteProject(index)}
+              >
+                x
+              </button>
+            </div>
+            <div className="col">
+              <h1>{project.projectName}</h1>
+            </div>
+            <div className="col-8">
+              <Select
+                options={this.state.employees.map(employee => {
+                  return {
+                    value: employee._id,
+                    label: employee.employeeName
+                  };
+                })}
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className="col-2">
+              <button
+                className="btn btn-light"
+                onClick={() => {
+                  this.addToProject(index);
+                }}
+              >
+                Add to Project
+              </button>
+            </div>
           </div>
         ))}
-      </>
+      </div>
     );
   }
 }

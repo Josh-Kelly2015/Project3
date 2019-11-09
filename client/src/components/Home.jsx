@@ -38,14 +38,9 @@ class Home extends Component {
         <div className="container">
           <NewEmployee></NewEmployee>
         </div>
-        <div className="container">
-          <DeleteEmployee></DeleteEmployee>
-        </div>
+
         <div className="container">
           <AssignUser></AssignUser>
-        </div>
-        <div className="container">
-          <DeleteAssignedUser></DeleteAssignedUser>
         </div>
       </>
     );
