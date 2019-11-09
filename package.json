@@ -10,7 +10,7 @@
     "client": "cd client && yarn run start",
     "seed": "node Data/EmployeeData.js && node Data/ProjectData.js ",
     "install": "cd client && yarn add",
-    "build": "cd client && yarn run build",
+    "build": "cd client && yarn run build .",
     "heroku-postbuild": "yarn run build"
   },
   "repository": {
