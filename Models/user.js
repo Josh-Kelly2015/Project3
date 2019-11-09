@@ -6,6 +6,6 @@ const UserSchema = new Schema({
   email: { type: String, required: true }, // johndoe@gmail.com //
   password: { type: Array, required: true } // [admin, manager, employee] //
 });
-const User = mongoose.model("User", UserSchema);
+// const User = mongoose.model("User", UserSchema);
 
-module.exports = User;
+module.exports = User = mongoose.model('users', UserSchema)

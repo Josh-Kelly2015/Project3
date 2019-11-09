@@ -60,11 +60,4 @@ export default {
     return axios.put(`/api/user/${userData._id}`, userData);
   },
 
-  // deleteWorkDay: function(id) {
-  //   return axios.delete("/api/workday/" + id);
-  // },
-
-  // saveWorkDay: function(workDayData) {
-  //   return axios.post("/api/workday", workDayData);
-  // }
 };

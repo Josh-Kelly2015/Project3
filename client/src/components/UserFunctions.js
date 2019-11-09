@@ -5,20 +5,20 @@ import axios from 'axios'
 
 export const login = user => {
   return axios
-    .get('userData/login', {
+    .get('user/Login', {
       email: user.email,
       password: user.password
     })
-    .then(response => {
-      localStorage.setItem('usertoken', response.data)
-      return response.data
+    .then(user => {
+      localStorage.setItem('usertoken', user.data)
+      return user.data
     })
     .catch(err => {
       console.log(err)
     })
 }
 
-export const getProfile = userData => {
+export const getProfile = user => {
   return axios
     .get('users/profile', {
       // headers: { Authorization: ` ${this.getToken()}` }
