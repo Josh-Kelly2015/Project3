@@ -86,7 +86,7 @@ class AssignUser extends Component {
                 </IconButton>
               </div>
 
-              <div className="col">
+              <div className="row">
                 {project.employees.map(assignedEmployee => (
                   <Card>
                     {assignedEmployee.employeeName}

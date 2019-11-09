@@ -10,7 +10,6 @@ class Header extends Component {
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6">The App</Typography>
-          <Button color="inherit"></Button>
         </Toolbar>
       </AppBar>
     );

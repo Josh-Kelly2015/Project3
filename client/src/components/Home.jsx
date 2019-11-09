@@ -29,18 +29,15 @@ class Home extends Component {
     return (
       <div className="container-fluid ">
         <Header className="mb-5"></Header>
-
         <div className="container mt-5">
-          <Paper>
-            <div className="row">
-              <div className="col">
-                <NewProjectForm></NewProjectForm>
-              </div>
-              <div className="col">
-                <NewEmployeeForm></NewEmployeeForm>
-              </div>
+          <div className="row">
+            <div className="col">
+              <NewProjectForm></NewProjectForm>
             </div>
-          </Paper>
+            <div className="col">
+              <NewEmployeeForm></NewEmployeeForm>
+            </div>
+          </div>
         </div>
         <div className="col">
           <AssignUser></AssignUser>
