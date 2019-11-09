@@ -41,15 +41,15 @@ class AssignUser extends Component {
       <div className="container">
         {this.state.projects.map((project, index) => (
           <div className="row" key={project._id} id={project._id}>
-            <div className="col">
+            <div className="col-6">
               <button
                 className="btn btn-danger btn-sm"
                 onClick={() => this.deleteProject(index)}
               >
                 x
               </button>
+              {project.projectName}
             </div>
-            <div className="col-6">{project.projectName}</div>
 
             <div className="col-4">
               <Select
