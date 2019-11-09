@@ -49,10 +49,9 @@ class AssignUser extends Component {
                 x
               </button>
             </div>
-            <div className="col">
-              <h1>{project.projectName}</h1>
-            </div>
-            <div className="col-8">
+            <div className="col-6">{project.projectName}</div>
+
+            <div className="col-4">
               <Select
                 options={this.state.employees.map(employee => {
                   return {
@@ -63,7 +62,7 @@ class AssignUser extends Component {
                 onChange={this.handleChange}
               />
             </div>
-            <div className="col-2">
+            <div className="col">
               <button
                 className="btn btn-light"
                 onClick={() => {

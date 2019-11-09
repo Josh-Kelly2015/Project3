@@ -1,10 +1,7 @@
 import React, { Component } from "react";
-import NewProject from "./NewProject";
-import NewEmployee from "./NewEmployee";
+import NewProjectForm from "./NewProject";
+import NewEmployeeForm from "./NewEmployee";
 import AssignUser from "./AssignUser";
-import DeleteAssignedUser from "./DeleteAssignedUser";
-import DeleteProject from "./DeleteProject";
-import DeleteEmployee from "./DeleteEmployee";
 import API from "../utils/API";
 
 class Home extends Component {
@@ -29,19 +26,9 @@ class Home extends Component {
   render() {
     return (
       <>
-        <div className="container">
-          <NewProject></NewProject>
-        </div>
-        <div className="container">
-          <DeleteProject></DeleteProject>
-        </div>
-        <div className="container">
-          <NewEmployee></NewEmployee>
-        </div>
-
-        <div className="container">
-          <AssignUser></AssignUser>
-        </div>
+        <NewProjectForm></NewProjectForm>
+        <NewEmployeeForm></NewEmployeeForm>
+        <AssignUser></AssignUser>
       </>
     );
   }

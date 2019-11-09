@@ -21,23 +21,25 @@ class NewProject extends Component {
   };
   render() {
     return (
-      <div className="col">
-        <form>
-          <input
-            type="text"
-            name="projectName"
-            value={this.state.projectName}
-            onChange={this.handleNewProject}
-          ></input>
-        </form>
-        {/* submit button to add new project */}
-        <button
-          className="btn btn-light"
-          type="submit"
-          onClick={this.addNewProject}
-        >
-          Add New Project
-        </button>
+      <div className="container">
+        <div className="col">
+          <form>
+            <input
+              type="text"
+              name="projectName"
+              value={this.state.projectName}
+              onChange={this.handleNewProject}
+            ></input>
+          </form>
+          {/* submit button to add new project */}
+          <button
+            className="btn btn-light"
+            type="submit"
+            onClick={this.addNewProject}
+          >
+            Create Project
+          </button>
+        </div>
       </div>
     );
   }
