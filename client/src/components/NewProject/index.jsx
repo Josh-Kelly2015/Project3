@@ -21,17 +21,18 @@ class NewProject extends Component {
   };
   render() {
     return (
-      <div className="container">
-        <div className="col">
-          <form>
+      <>
+        <form>
+          <div className="row">
             <input
               type="text"
               name="projectName"
               value={this.state.projectName}
               onChange={this.handleNewProject}
             ></input>
-          </form>
-          {/* submit button to add new project */}
+          </div>
+        </form>
+        <div className="col">
           <button
             className="btn btn-light"
             type="submit"
@@ -40,7 +41,7 @@ class NewProject extends Component {
             Create Project
           </button>
         </div>
-      </div>
+      </>
     );
   }
 }

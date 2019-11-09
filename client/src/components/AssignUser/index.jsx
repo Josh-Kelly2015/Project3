@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import Select from "react-select";
+import Button from "@material-ui/core/Button";
+import IconButton from "@material-ui/core/IconButton";
+import DeleteIcon from "@material-ui/icons/Delete";
+import Typography from "@material-ui/core/Typography";
 class AssignUser extends Component {
   state = {
     projects: [],
@@ -24,34 +28,83 @@ class AssignUser extends Component {
     });
   };
   addToProject = projectIndex => {
-    console.log("selectedOption.value = " + this.state.selectedOption.value);
     const projectData = this.state.projects[projectIndex];
     projectData.employees.push(this.state.selectedOption.value);
     API.updateProject(projectData)
       .then(res => {
-        console.log(res);
         window.location.reload();
       })
       .catch(err => {
         console.log(err);
       });
   };
+  deleteProject = projectIndex => {
+    let id = this.state.projects[projectIndex]._id;
+    API.deleteProject(id)
+      .then(res => {
+        window.location.reload();
+      })
+      .catch(err => console.log(err));
+  };
+  deleteAssignedEmployee = (projectIndex, employeeId) => {
+    console.log(this.state.projects[projectIndex].employees);
+    let projectToUpdate = this.state.projects[projectIndex];
+    const newEmployeeArray = projectToUpdate.employees.map(employee => {
+      return employee._id;
+    });
+    const newEmployeeFiltered = newEmployeeArray.filter(employee => {
+      return employee !== employeeId;
+    });
+    console.log(newEmployeeFiltered);
+    projectToUpdate.employees = newEmployeeFiltered;
+    console.log(projectToUpdate);
+    API.updateProject(projectToUpdate)
+      .then(res => {
+        console.log(res);
+        window.location.reload();
+      })
+      .catch(err => console.log(err));
+  };
   render() {
     return (
-      <div className="container">
+      <>
         {this.state.projects.map((project, index) => (
-          <div className="row" key={project._id} id={project._id}>
-            <div className="col-6">
-              <button
-                className="btn btn-danger btn-sm"
+          <div
+            className="row border border-color-danger"
+            key={project._id}
+            id={project._id}
+          >
+            <div className="col">
+              <Typography>{project.projectName}</Typography>
+              <IconButton
+                aria-label="delete"
                 onClick={() => this.deleteProject(index)}
               >
-                x
-              </button>
-              {project.projectName}
+                <DeleteIcon />
+              </IconButton>
             </div>
 
-            <div className="col-4">
+            {/* Assigned EMployees */}
+            <div className="col">
+              {project.employees.map(assignedEmployee => (
+                <div
+                  className="col"
+                  key={assignedEmployee._id}
+                  id={assignedEmployee._id}
+                >
+                  {assignedEmployee.employeeName}
+                  <Button
+                    onClick={() => {
+                      this.deleteAssignedEmployee(index, assignedEmployee._id);
+                    }}
+                  >
+                    x
+                  </Button>
+                </div>
+              ))}
+            </div>
+
+            <div className="col">
               <Select
                 options={this.state.employees.map(employee => {
                   return {
@@ -63,18 +116,17 @@ class AssignUser extends Component {
               />
             </div>
             <div className="col">
-              <button
-                className="btn btn-light"
+              <Button
                 onClick={() => {
                   this.addToProject(index);
                 }}
               >
                 Add to Project
-              </button>
+              </Button>
             </div>
           </div>
         ))}
-      </div>
+      </>
     );
   }
 }

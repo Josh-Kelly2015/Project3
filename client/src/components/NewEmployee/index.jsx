@@ -36,36 +36,34 @@ class NewEmployee extends Component {
   };
   render() {
     return (
-      <div className="container">
-        <div className="row">
-          <form>
-            <div className="row">
-              <input
-                type="text"
-                name="employeeName"
-                value={this.state.employeeName}
-                onChange={this.handleNewEmployee}
-              ></input>
-            </div>
-            <div className="row">
-              <input
-                type="text"
-                name="email"
-                value={this.state.email}
-                onChange={this.handleNewEmail}
-              ></input>
-            </div>
-            <div className="row">
-              <input
-                type="text"
-                name="rank"
-                value={this.state.rank}
-                onChange={this.handleNewRank}
-              ></input>
-            </div>
-          </form>
-        </div>
-        <div className="row">
+      <>
+        <form>
+          <div className="col">
+            <input
+              type="text"
+              name="employeeName"
+              value={this.state.employeeName}
+              onChange={this.handleNewEmployee}
+            ></input>
+          </div>
+          <div className="col">
+            <input
+              type="text"
+              name="email"
+              value={this.state.email}
+              onChange={this.handleNewEmail}
+            ></input>
+          </div>
+          <div className="col">
+            <input
+              type="text"
+              name="rank"
+              value={this.state.rank}
+              onChange={this.handleNewRank}
+            ></input>
+          </div>
+        </form>
+        <div className="col">
           <button
             className="btn btn-light"
             type="submit"
@@ -75,16 +73,8 @@ class NewEmployee extends Component {
           >
             Create Employee
           </button>
-          <button
-            className="btn btn-danger"
-            onClick={() => {
-              this.deleteEmployee();
-            }}
-          >
-            Delete Employee
-          </button>
         </div>
-      </div>
+      </>
     );
   }
 }

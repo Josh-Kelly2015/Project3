@@ -25,11 +25,19 @@ class Home extends Component {
 
   render() {
     return (
-      <>
-        <NewProjectForm></NewProjectForm>
-        <NewEmployeeForm></NewEmployeeForm>
-        <AssignUser></AssignUser>
-      </>
+      <div className="container-fluid">
+        <div className="container">
+          <div className="col">
+            <NewProjectForm></NewProjectForm>
+          </div>
+          <div className="col">
+            <NewEmployeeForm></NewEmployeeForm>
+          </div>
+        </div>
+        <div className="col">
+          <AssignUser></AssignUser>
+        </div>
+      </div>
     );
   }
 }
