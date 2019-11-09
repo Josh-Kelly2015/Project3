@@ -6,6 +6,7 @@ import IconButton from "@material-ui/core/IconButton";
 import DeleteIcon from "@material-ui/icons/Delete";
 import Typography from "@material-ui/core/Typography";
 import Paper from "@material-ui/core/Paper";
+import Card from "@material-ui/core/Card";
 class AssignUser extends Component {
   state = {
     projects: [],
@@ -87,7 +88,7 @@ class AssignUser extends Component {
 
               <div className="col">
                 {project.employees.map(assignedEmployee => (
-                  <div className="col">
+                  <Card>
                     {assignedEmployee.employeeName}
                     <Button
                       onClick={() => {
@@ -99,7 +100,7 @@ class AssignUser extends Component {
                     >
                       x
                     </Button>
-                  </div>
+                  </Card>
                 ))}
               </div>
 
