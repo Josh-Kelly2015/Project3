@@ -4,11 +4,7 @@ import Select from "react-select";
 class ProjectList extends Component {
   state = {
     projects: [],
-    employees: [],
-    selectedOption: {},
-    employeeName: "",
-    email: "",
-    rank: ""
+    employees: []
   };
   componentDidMount() {
     this.loadProjects();
@@ -22,26 +18,6 @@ class ProjectList extends Component {
       .catch(err => console.log(err));
   };
 
-  handleChange = selectedOption => {
-    this.setState({ selectedOption }, () => {
-      API.getEmployee(selectedOption.value)
-        .then(res => console.log(res.data._id))
-        .catch(err => console.log(err));
-    });
-  };
-  addToProject = projectIndex => {
-    console.log("selectedOption.value = " + this.state.selectedOption.value);
-    const newProject = this.state.projects[projectIndex];
-    newProject.employees.push(this.state.selectedOption.value);
-    API.updateProject(newProject)
-      .then(res => {
-        console.log(res);
-        window.location.reload();
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  };
   deleteProject = projectIndex => {
     console.log(this.state.projects[projectIndex]._id);
     let id = this.state.projects[projectIndex]._id;
@@ -53,34 +29,6 @@ class ProjectList extends Component {
       .catch(err => console.log(err));
   };
 
-  handleNewRank = event => {
-    this.setState({
-      rank: event.target.value
-    });
-  };
-  handleNewEmail = event => {
-    this.setState({
-      email: event.target.value
-    });
-  };
-  handleNewEmployee = event => {
-    this.setState({ employeeName: event.target.value });
-  };
-
-  addNewEmployee = () => {
-    console.log(this.state.employeeName, this.state.email, this.state.rank);
-    let employeeData = {
-      employeeName: this.state.employeeName,
-      email: this.state.email,
-      rank: this.state.rank
-    };
-    API.saveEmployee(employeeData)
-      .then(res => {
-        console.log(res);
-        window.location.reload();
-      })
-      .catch(err => console.log(err));
-  };
   deleteEmployee = () => {
     console.log(this.state.selectedOption.value);
     let id = this.state.selectedOption.value;
@@ -123,60 +71,7 @@ class ProjectList extends Component {
       <div className="container-fluid">
         <div className="container">
           <div className="row">
-            {/* form to enter new employee info */}
-            <div className="col">
-              <form>
-                <input
-                  type="text"
-                  name="employeeName"
-                  value={this.state.employeeName}
-                  onChange={this.handleNewEmployee}
-                ></input>
-                <input
-                  type="text"
-                  name="email"
-                  value={this.state.email}
-                  onChange={this.handleNewEmail}
-                ></input>
-                <input
-                  type="text"
-                  name="rank"
-                  value={this.state.rank}
-                  onChange={this.handleNewRank}
-                ></input>
-              </form>
-              {/* Submit button to add a new employee */}
-              <button
-                className="btn btn-light"
-                type="submit"
-                onClick={() => {
-                  this.addNewEmployee();
-                }}
-              >
-                Add New Employee
-              </button>
-            </div>
             {/* Delete Employee using Drop Down and button */}
-            <div className="col">
-              <Select
-                options={this.state.employees.map(employee => {
-                  return {
-                    value: employee._id,
-                    label: employee.employeeName
-                  };
-                })}
-                onChange={this.handleDeleteEmployee}
-              />
-              {/* Add Employee To Project Button */}
-              <button
-                className="btn btn-danger"
-                onClick={() => {
-                  this.deleteEmployee();
-                }}
-              >
-                Delete Employee
-              </button>
-            </div>
           </div>
 
           {/* Map through projects */}
