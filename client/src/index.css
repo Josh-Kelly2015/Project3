@@ -106,8 +106,12 @@ section {
   display: block;
 }
 body {
-  line-height: 1;
+  background: url("./Images/Blue_Background.svg");
+  background-size: contain;
+  background-position: top;
+  background: cover;
 }
+
 ol,
 ul {
   list-style: none;
@@ -122,6 +126,10 @@ q:before,
 q:after {
   content: "";
   content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 table {
   border-collapse: collapse;
