@@ -5,62 +5,62 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/weschedule");
 
 const EmployeeSchema = [
   {
-    name: "John Doe1",
+    employeeName: "John Doe1",
     email: "johndoe1@gmail.com",
     rank: "admin"
   },
   {
-    name: "John Doe2",
+    employeeName: "John Doe2",
     email: "johndoe2@gmail.com",
     rank: "field"
   },
   {
-    name: "John Doe3",
+    employeeName: "John Doe3",
     email: "johndoe3@gmail.com",
     rank: "manager"
   },
   {
-    name: "John Doe4",
+    employeeName: "John Doe4",
     email: "johndoe4@gmail.com",
     rank: "admin"
   },
   {
-    name: "John Doe5",
+    employeeName: "John Doe5",
     email: "johndoe5@gmail.com",
     rank: "manager"
   },
   {
-    name: "John Doe6",
+    employeeName: "John Doe6",
     email: "johndoe6@gmail.com",
     rank: "field"
   },
   {
-    name: "John Doe7",
+    employeeName: "John Doe7",
     email: "johndoe7@gmail.com",
     rank: "field"
   },
   {
-    name: "John Doe8",
+    employeeName: "John Doe8",
     email: "johndoe8@gmail.com",
     rank: "field"
   },
   {
-    name: "John Doe9",
+    employeeName: "John Doe9",
     email: "johndoe9@gmail.com",
     rank: "manager"
   },
   {
-    name: "John Doe10",
+    employeeName: "John Doe10",
     email: "johndoe10@gmail.com",
     rank: "field"
   },
   {
-    name: "John Doe11",
+    employeeName: "John Doe11",
     email: "johndoe11@gmail.com",
     rank: "manager"
   },
   {
-    name: "John Doe12",
+    employeeName: "John Doe12",
     email: "johndoe12@gmail.com",
     rank: "field"
   }

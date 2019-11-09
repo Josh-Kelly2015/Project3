@@ -10,5 +10,4 @@ router
   .get(ProjectController.findById)
   .put(ProjectController.update)
   .delete(ProjectController.remove);
-
 module.exports = router;

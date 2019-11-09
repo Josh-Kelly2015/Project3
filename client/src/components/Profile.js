@@ -5,8 +5,7 @@ class Profile extends Component {
   constructor() {
     super()
     this.state = {
-      first_name: '',
-      last_name: '',
+      id: '',
       email: '',
       errors: {}
     }
@@ -16,9 +15,8 @@ class Profile extends Component {
     const token = localStorage.usertoken
     const decoded = jwt_decode(token)
     this.setState({
-      first_name: decoded.first_name,
-      last_name: decoded.last_name,
-      email: decoded.email
+      id: decoded.id,
+     email: decoded.email
     })
   }
 
@@ -32,14 +30,10 @@ class Profile extends Component {
           <table className="table col-md-6 mx-auto">
             <tbody>
               <tr>
-                <td>Fist Name</td>
-                <td>{this.state.first_name}</td>
+                <td>id</td>
+                <td>{this.state.id}</td>
               </tr>
-              <tr>
-                <td>Last Name</td>
-                <td>{this.state.last_name}</td>
-              </tr>
-              <tr>
+            <tr>
                 <td>Email</td>
                 <td>{this.state.email}</td>
               </tr>

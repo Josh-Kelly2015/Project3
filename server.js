@@ -27,7 +27,7 @@ app.use(routes);
 //Require user routes
 var Users = require('./Routes/api/user')
 
-app.use('/users', Users)
+app.use('/', Users)
 // // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/weschedule");
 
