@@ -37,50 +37,52 @@ class NewEmployee extends Component {
   render() {
     return (
       <div className="container">
-        <div className="col">
+        <div className="row">
           <form>
-            <input
-              type="text"
-              name="employeeName"
-              value={this.state.employeeName}
-              onChange={this.handleNewEmployee}
-            ></input>
-            <input
-              type="text"
-              name="email"
-              value={this.state.email}
-              onChange={this.handleNewEmail}
-            ></input>
-            <input
-              type="text"
-              name="rank"
-              value={this.state.rank}
-              onChange={this.handleNewRank}
-            ></input>
+            <div className="row">
+              <input
+                type="text"
+                name="employeeName"
+                value={this.state.employeeName}
+                onChange={this.handleNewEmployee}
+              ></input>
+            </div>
+            <div className="row">
+              <input
+                type="text"
+                name="email"
+                value={this.state.email}
+                onChange={this.handleNewEmail}
+              ></input>
+            </div>
+            <div className="row">
+              <input
+                type="text"
+                name="rank"
+                value={this.state.rank}
+                onChange={this.handleNewRank}
+              ></input>
+            </div>
           </form>
-          <div className="row">
-            <div className="col-2">
-              <button
-                className="btn btn-light"
-                type="submit"
-                onClick={() => {
-                  this.addNewEmployee();
-                }}
-              >
-                Create Employee
-              </button>
-            </div>
-            <div className="col-2">
-              <button
-                className="btn btn-danger"
-                onClick={() => {
-                  this.deleteEmployee();
-                }}
-              >
-                Delete Employee
-              </button>
-            </div>
-          </div>
+        </div>
+        <div className="row">
+          <button
+            className="btn btn-light"
+            type="submit"
+            onClick={() => {
+              this.addNewEmployee();
+            }}
+          >
+            Create Employee
+          </button>
+          <button
+            className="btn btn-danger"
+            onClick={() => {
+              this.deleteEmployee();
+            }}
+          >
+            Delete Employee
+          </button>
         </div>
       </div>
     );
