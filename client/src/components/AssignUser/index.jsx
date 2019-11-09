@@ -69,8 +69,8 @@ class AssignUser extends Component {
   render() {
     return (
       <>
-        <Paper>
-          {this.state.projects.map((project, index) => (
+        {this.state.projects.map((project, index) => (
+          <Paper>
             <div
               className="row border border-color-danger m-4"
               key={project._id}
@@ -124,8 +124,8 @@ class AssignUser extends Component {
                 </Button>
               </div>
             </div>
-          ))}
-        </Paper>
+          </Paper>
+        ))}
       </>
     );
   }

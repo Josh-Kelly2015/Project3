@@ -106,8 +106,12 @@ section {
   display: block;
 }
 body {
-  line-height: 1;
+  background: url("./Images//BackGround_Image.jpg");
+  background-size: contain;
+  background-position: top;
+  background: cover;
 }
+
 ol,
 ul {
   list-style: none;

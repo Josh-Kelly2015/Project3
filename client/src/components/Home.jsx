@@ -4,6 +4,7 @@ import NewEmployeeForm from "./NewEmployee";
 import AssignUser from "./AssignUser";
 import API from "../utils/API";
 import { Paper } from "@material-ui/core";
+import Header from "./Header";
 
 class Home extends Component {
   state = {
@@ -26,8 +27,10 @@ class Home extends Component {
 
   render() {
     return (
-      <div className="container-fluid">
-        <div className="container">
+      <div className="container-fluid ">
+        <Header className="mb-5"></Header>
+
+        <div className="container mt-5">
           <Paper>
             <div className="row">
               <div className="col">
