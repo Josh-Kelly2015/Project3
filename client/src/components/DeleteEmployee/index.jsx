@@ -24,28 +24,14 @@ class DeleteUser extends Component {
   };
   render() {
     return (
-      <>
-        <div className="col">
-          <Select
-            options={this.state.employees.map(employee => {
-              return {
-                value: employee._id,
-                label: employee.employeeName
-              };
-            })}
-            onChange={this.handleDeleteEmployee}
-          />
-          {/* Add Employee To Project Button */}
-          <button
-            className="btn btn-danger"
-            onClick={() => {
-              this.deleteEmployee();
-            }}
-          >
-            Delete Employee
-          </button>
-        </div>
-      </>
+      <button
+        className="btn btn-danger"
+        onClick={() => {
+          this.deleteEmployee();
+        }}
+      >
+        Delete Employee
+      </button>
     );
   }
 }

@@ -6,6 +6,7 @@ class NewProject extends Component {
     projectName: ""
   };
   handleNewProject = event => {
+    console.log(this.state.projectName);
     this.setState({ projectName: event.target.value });
   };
   addNewProject = () => {

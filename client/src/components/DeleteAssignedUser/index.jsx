@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 
-class DeleteAssignedEmployee extends Component {
+class DeleteAssignedUser extends Component {
   state = {
     projects: [],
     employees: []
@@ -38,23 +38,17 @@ class DeleteAssignedEmployee extends Component {
   render() {
     return (
       <>
-        {this.state.projects.map((project, index) => (
-          <div className="row">
-            {project.employees.map(assignedEmployee => (
-              <button
-                className="btn btn-danger btn-sm"
-                onClick={() => {
-                  this.deleteAssignedEmployee(index, assignedEmployee._id);
-                }}
-              >
-                x
-              </button>
-            ))}
-          </div>
-        ))}
+        <button
+          className="btn btn-danger btn-sm"
+          onClick={() => {
+            // this.deleteAssignedEmployee(index, assignedEmployee._id);
+          }}
+        >
+          x
+        </button>
       </>
     );
   }
 }
 
-export default DeleteAssignedEmployee;
+export default DeleteAssignedUser;

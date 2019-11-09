@@ -57,7 +57,6 @@ class NewEmployee extends Component {
             onChange={this.handleNewRank}
           ></input>
         </form>
-        {/* Submit button to add a new employee */}
         <button
           className="btn btn-light"
           type="submit"
