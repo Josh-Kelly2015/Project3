@@ -41,21 +41,14 @@ class DeleteAssignedEmployee extends Component {
         {this.state.projects.map((project, index) => (
           <div className="row">
             {project.employees.map(assignedEmployee => (
-              <div
-                className="col"
-                key={assignedEmployee._id}
-                id={assignedEmployee._id}
+              <button
+                className="btn btn-danger btn-sm"
+                onClick={() => {
+                  this.deleteAssignedEmployee(index, assignedEmployee._id);
+                }}
               >
-                {assignedEmployee.employeeName}
-                <button
-                  className="btn btn-danger btn-sm"
-                  onClick={() => {
-                    this.deleteAssignedEmployee(index, assignedEmployee._id);
-                  }}
-                >
-                  x
-                </button>
-              </div>
+                x
+              </button>
             ))}
           </div>
         ))}

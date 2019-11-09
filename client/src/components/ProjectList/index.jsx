@@ -3,8 +3,7 @@ import API from "../../utils/API";
 class ProjectList extends Component {
   state = {
     projects: [],
-    employees: [],
-    projectName: ""
+    employees: []
   };
   componentDidMount() {
     API.getProjects()
@@ -21,7 +20,7 @@ class ProjectList extends Component {
         <div className="container">
           <div className="row">
             {this.state.projects.map(project => (
-              <div key={project._id} className="col">
+              <div key={project._id} id={project._id} className="col">
                 {project.projectName}
               </div>
             ))}

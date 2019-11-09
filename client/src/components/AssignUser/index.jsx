@@ -36,36 +36,34 @@ class AssignUser extends Component {
         console.log(err);
       });
   };
-
   render() {
     return (
       <>
         {this.state.projects.map((project, index) => (
-          <div className="row">
-            <h3>Add new employee to this project?</h3>
-            <div className="col-md-4">
-              <Select
-                options={this.state.employees.map(employee => {
-                  return {
-                    value: employee._id,
-                    label: employee.employeeName
-                  };
-                })}
-                onChange={this.handleChange}
-              />
-              <button
-                className="btn btn-light"
-                onClick={() => {
-                  this.addToProject(index);
-                }}
-              >
-                Add to Project
-              </button>
-            </div>
+          <div key={project._id} id={project._id}>
+            {project.projectName}
+            <Select
+              options={this.state.employees.map(employee => {
+                return {
+                  value: employee._id,
+                  label: employee.employeeName
+                };
+              })}
+              onChange={this.handleChange}
+            />
+            <button
+              className="btn btn-light"
+              onClick={() => {
+                this.addToProject(index);
+              }}
+            >
+              Add to Project
+            </button>
           </div>
         ))}
       </>
     );
   }
 }
+
 export default AssignUser;
