@@ -11,4 +11,4 @@ router
   .put(EmployeeController.update)
   .delete(EmployeeController.remove);
 
-module.exports = router;
+module.exports = router

@@ -106,6 +106,7 @@ section {
   display: block;
 }
 body {
+
   background: url("./Images/Blue_Background.svg");
   background-size: contain;
   background-position: top;

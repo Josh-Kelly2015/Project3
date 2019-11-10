@@ -1,4 +1,6 @@
 module.exports = {
-  ProjectData: require("./ProjectData"),
-  EmployeeData: require("./EmployeeData")
+  Employee: require("./EmployeeData"),
+  Project: require("./ProjectData"),
+  User: require("./UserData")
 };
+

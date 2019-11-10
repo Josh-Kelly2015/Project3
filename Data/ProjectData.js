@@ -1,15 +1,12 @@
 const mongoose = require("mongoose");
-const db = require("../Models");
+const Schema = mongoose.Schema;
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/weschedule");
+const ProjectSchema = new Schema({
+  projectName: { type: String, required: true },
+  employees: [{ type: Schema.Types.ObjectId, ref: "employee" }]
+});
+const Project = mongoose.model("project", ProjectSchema);
 
-const ProjectSchema = [
-  {
-    projectName: "Project Name One",
-    // active: true,
-    employees: []
-  }
-];
 db.Project.remove({})
   .then(() => db.Project.collection.insertMany(ProjectSchema))
   .then(data => {
@@ -20,3 +17,7 @@ db.Project.remove({})
     console.error(err);
     process.exit(1);
   });
+module.exports = Project;
+
+
+
