@@ -3,7 +3,6 @@ import NewProjectForm from "./NewProject";
 import NewEmployeeForm from "./NewEmployee";
 import AssignUser from "./AssignUser";
 import API from "../utils/API";
-import { Paper } from "@material-ui/core";
 import Header from "./Header";
 
 class Home extends Component {
