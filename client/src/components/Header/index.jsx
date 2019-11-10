@@ -1,13 +1,18 @@
-import React from "react";
+import React, { Component } from "react";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
+import Button from "@material-ui/core/Button";
 
-function Header() {
-  return (
-    <div className="row bg-dark mb-4">
-      <div className="col">
-        <h1 className="text-center">WeSchedule</h1>
-      </div>
-    </div>
-  );
+class Header extends Component {
+  render() {
+    return (
+      <AppBar position="static">
+        <Toolbar>
+          <Typography variant="h6">The App</Typography>
+        </Toolbar>
+      </AppBar>
+    );
+  }
 }
-
 export default Header;
