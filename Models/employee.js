@@ -7,6 +7,7 @@ const EmployeeSchema = new Schema({
   rank: { type: String, required: true }, // [admin, manager, employee] //
   password: {type: Array, required: true}
 });
+
 const Employee = mongoose.model("employee", EmployeeSchema);
 
 module.exports = Employee;

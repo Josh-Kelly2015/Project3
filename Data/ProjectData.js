@@ -7,4 +7,17 @@ const ProjectSchema = new Schema({
 });
 const Project = mongoose.model("project", ProjectSchema);
 
+db.Project.remove({})
+  .then(() => db.Project.collection.insertMany(ProjectSchema))
+  .then(data => {
+    console.log(data.result.n + " project records inserted!");
+    process.exit(0);
+  })
+  .catch(err => {
+    console.error(err);
+    process.exit(1);
+  });
 module.exports = Project;
+
+
+
