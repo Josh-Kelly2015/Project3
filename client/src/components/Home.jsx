@@ -3,8 +3,11 @@ import NewProjectForm from "./NewProject";
 import NewEmployeeForm from "./NewEmployee";
 import AssignUser from "./AssignUser";
 import API from "../utils/API";
-import { Paper } from "@material-ui/core";
 import Header from "./Header";
+import Login from "./UserAuth/Login";
+import Navbar from "./UserAuth/Navbar";
+import Profile from "./UserAuth/Profile";
+import Register from "./UserAuth/Register";
 
 class Home extends Component {
   state = {
@@ -28,19 +31,21 @@ class Home extends Component {
   render() {
     return (
       <div className="container-fluid ">
-        <Header className="mb-5"></Header>
+        {/* <Header className="mb-5"></Header> */}
+        <Navbar></Navbar>
         <div className="container mt-5">
           <div className="row">
+            <div className="col">{/* <NewProjectForm></NewProjectForm> */}</div>
+            <Login></Login>
             <div className="col">
-              <NewProjectForm></NewProjectForm>
-            </div>
-            <div className="col">
-              <NewEmployeeForm></NewEmployeeForm>
+              {/* <NewEmployeeForm></NewEmployeeForm> */}
+              <Profile></Profile>
             </div>
           </div>
         </div>
         <div className="col">
-          <AssignUser></AssignUser>
+          {/* <AssignUser></AssignUser> */}
+          <Register></Register>
         </div>
       </div>
     );
