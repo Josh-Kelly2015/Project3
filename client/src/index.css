@@ -107,9 +107,9 @@ section {
 }
 body {
   background: url("./Images/Blue_Background.svg");
-  background-size: contain;
+  /* background-size: contain;
   background-position: top;
-  background: cover;
+  background: cover; */
 }
 
 ol,
