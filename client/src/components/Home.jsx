@@ -31,21 +31,23 @@ class Home extends Component {
   render() {
     return (
       <div className="container-fluid ">
-        {/* <Header className="mb-5"></Header> */}
-        <Navbar></Navbar>
+        <Header className="mb-5"></Header>
+        {/* <Navbar></Navbar> */}
         <div className="container mt-5">
           <div className="row">
-            <div className="col">{/* <NewProjectForm></NewProjectForm> */}</div>
-            <Login></Login>
             <div className="col">
-              {/* <NewEmployeeForm></NewEmployeeForm> */}
-              <Profile></Profile>
+              <NewProjectForm></NewProjectForm>
+              {/* <Login></Login> */}
+            </div>
+            <div className="col">
+              <NewEmployeeForm></NewEmployeeForm>
+              {/* <Profile></Profile> */}
             </div>
           </div>
         </div>
         <div className="col">
-          {/* <AssignUser></AssignUser> */}
-          <Register></Register>
+          <AssignUser></AssignUser>
+          {/* <Register></Register> */}
         </div>
       </div>
     );
