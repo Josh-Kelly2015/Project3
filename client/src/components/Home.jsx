@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import NewProjectForm from "./NewProject";
-import NewEmployeeForm from "./NewEmployee";
-import AssignUser from "./AssignUser";
+// import NewProjectForm from "./NewProject";
+// import NewEmployeeForm from "./NewEmployee";
+// import AssignUser from "./AssignUser";
 import API from "../utils/API";
 import Header from "./Header";
 
