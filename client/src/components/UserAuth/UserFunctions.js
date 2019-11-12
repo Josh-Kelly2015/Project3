@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const login = user => {
   return axios
-    .get("user/Login", {
+    .get("user/login", {
       email: user.email,
       password: user.password
     })

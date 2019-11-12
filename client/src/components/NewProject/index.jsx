@@ -6,8 +6,11 @@ class NewProject extends Component {
   state = {
     projectName: ""
   };
-  handleNewProject = event => {
-    this.setState({ projectName: event.target.value });
+  handleNewProject = e => {
+    e.preventDefault();
+    this.setState({ projectName: e.target.value });
+    console.log(e);
+    console.log(e.target.value);
   };
   addNewProject = () => {
     const projectData = { projectName: this.state.projectName };

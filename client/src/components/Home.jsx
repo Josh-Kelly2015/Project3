@@ -13,7 +13,7 @@ class Home extends Component {
     employeeName: "",
     email: "",
     rank: "",
-    selectedOption: {}
+    selectedOption: ""
   };
   componentDidMount() {
     API.getProjects()
@@ -27,19 +27,31 @@ class Home extends Component {
   render() {
     return (
       <div className="container-fluid ">
-        <Header className="mb-5"></Header>
+        <Header className="mb-5" />
         <div className="container mt-5">
           <div className="row">
+            {/* ----------------- New Project Form ------------------- */}
             <div className="col">
-              <NewProjectForm></NewProjectForm>
+              <NewProjectForm projectName={this.state.projectName} />
             </div>
+            {/* ----------------- New Employee Form ------------------- */}
             <div className="col">
-              <NewEmployeeForm></NewEmployeeForm>
+              <NewEmployeeForm
+                employeeName={this.state.employeeName}
+                email={this.state.email}
+                rank={this.state.rank}
+              />
             </div>
           </div>
         </div>
+        {/* ----------------- Assign User ------------------- */}
         <div className="col">
-          <AssignUser></AssignUser>
+          <AssignUser
+            projects={this.state.projects}
+            employees={this.state.employees}
+            selectedOption={this.state.selectedOption}
+            projectName={this.state.projectName}
+          />
         </div>
       </div>
     );
