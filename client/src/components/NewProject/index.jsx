@@ -43,5 +43,4 @@ class NewProject extends Component {
     );
   }
 }
-
 export default NewProject;
