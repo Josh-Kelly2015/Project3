@@ -5,14 +5,14 @@ class Landing extends Component {
   logOut(e) {
     e.preventDefault();
     localStorage.removeItem("usertoken");
-    this.props.history.push(`/Login`);
+    this.props.history.push(`/login`);
   }
 
   render() {
     const loginRegLink = (
       <ul className="navbar-nav">
         <li className="nav-item">
-          <Link to="/login" className="nav-link">
+          <Link to="/" className="nav-link">
             Login
           </Link>
         </li>
@@ -22,12 +22,16 @@ class Landing extends Component {
     const userLink = (
       <ul className="navbar-nav">
         <li className="nav-item">
-          <Link to="/" className="nav-link">
+          {/* <Link to="/" className="nav-link">
             User
-          </Link>
+          </Link> */}
         </li>
         <li className="nav-item">
-          <a href="/" onClick={this.logOut.bind(this)} className="nav-link">
+          <a
+            href="/login"
+            onClick={this.logOut.bind(this)}
+            className="nav-link"
+          >
             Logout
           </a>
         </li>

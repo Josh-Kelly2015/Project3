@@ -35,7 +35,6 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.7.9",
     "nodemon": "^1.19.4",
-    "path": "^0.12.7",
-    "react-select": "^3.0.8"
+    "path": "^0.12.7"
   }
 }
