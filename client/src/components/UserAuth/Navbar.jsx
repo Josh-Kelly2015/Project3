@@ -16,18 +16,13 @@ class Landing extends Component {
             Login
           </Link>
         </li>
-        <li className="nav-item">
-          <Link to="/register" className="nav-link">
-            Register
-          </Link>
-        </li>
       </ul>
     );
 
     const userLink = (
       <ul className="navbar-nav">
         <li className="nav-item">
-          <Link to="/profile" className="nav-link">
+          <Link to="/" className="nav-link">
             User
           </Link>
         </li>

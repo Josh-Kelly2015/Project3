@@ -131,5 +131,4 @@ class AssignUser extends Component {
     );
   }
 }
-
 export default AssignUser;
