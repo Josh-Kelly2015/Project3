@@ -3,7 +3,7 @@ import axios from "axios";
 export default {
   // ----------------------- Employee APIs -------------------------- //
   getEmployees: function() {
-    return axios.get("/api/employee");
+    return axios.get("/api/employees");
   },
 
   getEmployee: function(id) {
@@ -17,7 +17,7 @@ export default {
   saveEmployee: function(employeeData) {
     return axios.post("/api/employee", employeeData);
   },
-  
+
   // ------------------------ Project APIs -------------------------- //
   getProjects: function() {
     return axios.get("/api/project");
@@ -58,6 +58,5 @@ export default {
   updateUser: function(userData) {
     console.log("Hit the update route", userData);
     return axios.put(`/api/user/${userData._id}`, userData);
-  },
-
+  }
 };
