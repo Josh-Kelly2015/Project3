@@ -17,6 +17,7 @@ class Login extends Component {
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value })
   }
+  
   onSubmit(e) {
     e.preventDefault()
 
@@ -27,7 +28,7 @@ class Login extends Component {
 
     login(user).then(res => {
       if (res) {
-        this.props.history.push(`/`);
+        this.props.history.push(`/main`);
       }
     })
   }
