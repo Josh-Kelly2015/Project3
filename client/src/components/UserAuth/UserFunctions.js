@@ -1,19 +1,19 @@
-// import axios from "axios";
+import axios from "axios";
 
-// export const login = user => {
-//   return axios
-//     .get("user/Login", {
-//       email: user.email,
-//       password: user.password
-//     })
-//     .then(user => {
-//       localStorage.setItem("usertoken", user.data);
-//       return user.data;
-//     })
-//     .catch(err => {
-//       console.log(err);
-//     });
-// };
+export const login = user => {
+  return axios
+    .get("user/Login", {
+      email: user.email,
+      password: user.password
+    })
+    .then(user => {
+      localStorage.setItem("usertoken", user.data);
+      return user.data;
+    })
+    .catch(err => {
+      console.log(err);
+    });
+};
 
 // export const getProfile = user => {
 //   return axios
