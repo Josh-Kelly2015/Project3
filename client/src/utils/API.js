@@ -3,7 +3,7 @@ import axios from "axios";
 export default {
   // ----------------------- Employee APIs -------------------------- //
   getEmployees: function() {
-    return axios.get("/api/employees");
+    return axios.get("/api/employee");
   },
 
   getEmployee: function(id) {
@@ -38,25 +38,25 @@ export default {
   updateProject: function(projectData) {
     console.log("Hit the update route", projectData);
     return axios.put(`/api/project/${projectData._id}`, projectData);
-  },
-  // Work Days API
-  getUsers: function() {
-    return axios.get("/api/user");
-  },
-
-  getUser: function(id) {
-    return axios.get("/api/user/" + id);
-  },
-  deleteUser: function(id) {
-    return axios.delete("/api/user/" + id);
-  },
-
-  saveUser: function(userData) {
-    return axios.post("/api/user", userData);
-  },
-
-  updateUser: function(userData) {
-    console.log("Hit the update route", userData);
-    return axios.put(`/api/user/${userData._id}`, userData);
   }
+  //   // Work Days API
+  //   getUsers: function() {
+  //     return axios.get("/api/user");
+  //   },
+
+  //   getUser: function(id) {
+  //     return axios.get("/api/user/" + id);
+  //   },
+  //   deleteUser: function(id) {
+  //     return axios.delete("/api/user/" + id);
+  //   },
+
+  //   saveUser: function(userData) {
+  //     return axios.post("/api/user", userData);
+  //   },
+
+  //   updateUser: function(userData) {
+  //     console.log("Hit the update route", userData);
+  //     return axios.put(`/api/user/${userData._id}`, userData);
+  //   }
 };
