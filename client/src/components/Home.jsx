@@ -4,6 +4,10 @@ import React, { Component } from "react";
 // import AssignUser from "./AssignUser";
 import API from "../utils/API";
 import Header from "./Header";
+// import Login from "./UserAuth/Login";
+// import Navbar from "./UserAuth/Navbar";
+// import Profile from "./UserAuth/Profile";
+// import Register from "./UserAuth/Register";
 
 class Home extends Component {
   state = {
