@@ -7,15 +7,12 @@ class NewProject extends Component {
     projectName: ""
   };
   handleNewProject = event => {
-    console.log(this.state.projectName);
     this.setState({ projectName: event.target.value });
   };
   addNewProject = () => {
-    console.log(this.state.projectName);
     const projectData = { projectName: this.state.projectName };
     API.saveProject(projectData)
       .then(res => {
-        console.log(res);
         window.location.reload();
       })
       .catch(err => console.log(err));
