@@ -1,19 +1,30 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Main from "./components/Home";
-import Login from "./components/Login";
-// import Profile from "./components/UserAuth/Profile";
-import Register from "./components/Register";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import HomePage from "./components/HomePage";
+import LoginPage from "./components/LoginPage";
+import RegisterPage from "./components/RegisterPage";
+import NewProjectForm from "./components/NewProjectForm";
+import NewUserForm from "./components/NewUserForm";
+import Header from "./components/Header";
+// import WrongWay from "./components/WrongWay";
+// import ProjectList from "./components/ProjectList";
+
 function App() {
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/main" component={Main} />
-        <Route exact path="/" component={Login} />
-        {/* <Route exact path="/profile" component={Profile} /> */}
-        <Route exact path="/register" component={Register} />
-      </Switch>
-    </Router>
+    <>
+      <Router>
+        <div className="App">
+          <Header />
+          <Route exact path="/" component={HomePage} />
+          <Route exact path="/login" component={LoginPage} />
+          <Route exact path="/register" component={RegisterPage} />
+          {/* <Route exact path="/projectlist" component={ProjectList} /> */}
+          <Route exact path="/createproject" component={NewProjectForm} />
+          <Route exact path="/createuser" component={NewUserForm} />
+          {/* <Route path="*" component={WrongWay} /> */}
+        </div>
+      </Router>
+    </>
   );
 }
 

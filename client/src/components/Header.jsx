@@ -10,24 +10,26 @@ class Header extends Component {
       <AppBar position="static">
         <Toolbar>
           <Link to="/">
-            <Typography variant="h6">Login</Typography>
+            <Typography variant="h4">Home</Typography>
           </Link>
-
-          <Link to="/main">
-            <Typography variant="h6">Project List</Typography>
+          <Link to="/login">
+            <Typography variant="h4">Login</Typography>
           </Link>
-
-          <Link to="/">
-            <Typography variant="h6">New Project</Typography>
-          </Link>
-
           <Link to="/register">
-            <Typography variant="h6">Register</Typography>
+            <Typography variant="h4">Register</Typography>
           </Link>
-
-          <Link to="/">
-            <Typography variant="h6">New Employee</Typography>
+          <Link to="/projectlist">
+            <Typography variant="h4">Projects</Typography>
           </Link>
+          <Link to="/createproject">
+            <Typography variant="h4">Create Project</Typography>
+          </Link>
+          <Link to="/createuser">
+            <Typography variant="h4">Create User</Typography>
+          </Link>
+          {/* <Link to="*">
+            <Typography variant="h4"></Typography>
+          </Link> */}
         </Toolbar>
       </AppBar>
     );

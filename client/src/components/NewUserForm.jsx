@@ -1,39 +1,43 @@
 import React, { Component } from "react";
-import API from "../../utils/API";
+// import API from "../../utils/API";
 import { TextField, Button, Paper } from "@material-ui/core";
 
-class NewEmployee extends Component {
-  state = {
-    employeeName: "",
-    email: "",
-    rank: ""
+class NewUserForm extends Component {
+  //   state = {
+  //     employeeName: "",
+  //     email: "",
+  //     rank: ""
+  //   };
+  handleNewRank = e => {
+    // this.setState({
+    //   rank: event.target.value
+    // });
+    console.log(e);
   };
-  handleNewRank = event => {
-    this.setState({
-      rank: event.target.value
-    });
+  handleNewEmail = e => {
+    // this.setState({
+    //   email: event.target.value
+    // });
+    console.log(e);
   };
-  handleNewEmail = event => {
-    this.setState({
-      email: event.target.value
-    });
-  };
-  handleNewEmployee = event => {
-    this.setState({ employeeName: event.target.value });
+  handleNewEmployee = e => {
+    // this.setState({ employeeName: event.target.value });
+    console.log(e);
   };
   addNewEmployee = () => {
-    console.log(this.state.employeeName, this.state.email, this.state.rank);
-    let employeeData = {
-      employeeName: this.state.employeeName,
-      email: this.state.email,
-      rank: this.state.rank
-    };
-    API.saveEmployee(employeeData)
-      .then(res => {
-        console.log(res);
-        window.location.reload();
-      })
-      .catch(err => console.log(err));
+    console.log("Successfully created new user!");
+    // console.log(this.state.employeeName, this.state.email, this.state.rank);
+    // let employeeData = {
+    //   employeeName: this.state.employeeName,
+    //   email: this.state.email,
+    //   rank: this.state.rank
+    // };
+    // API.saveEmployee(employeeData)
+    //   .then(res => {
+    //     console.log(res);
+    //     window.location.reload();
+    //   })
+    //   .catch(err => console.log(err));
   };
   render() {
     return (
@@ -44,7 +48,7 @@ class NewEmployee extends Component {
               <TextField
                 type="text"
                 name="employeeName"
-                value={this.state.employeeName}
+                // value={this.state.employeeName}
                 onChange={this.handleNewEmployee}
               ></TextField>
             </div>
@@ -52,7 +56,7 @@ class NewEmployee extends Component {
               <TextField
                 type="text"
                 name="email"
-                value={this.state.email}
+                // value={this.state.email}
                 onChange={this.handleNewEmail}
               ></TextField>
             </div>
@@ -60,7 +64,7 @@ class NewEmployee extends Component {
               <TextField
                 type="text"
                 name="rank"
-                value={this.state.rank}
+                // value={this.state.rank}
                 onChange={this.handleNewRank}
               ></TextField>
             </div>
@@ -81,4 +85,4 @@ class NewEmployee extends Component {
     );
   }
 }
-export default NewEmployee;
+export default NewUserForm;

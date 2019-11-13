@@ -1,41 +1,27 @@
 import React, { Component } from "react";
-import { login } from "./UserFunctions";
-import Header from "./Header";
-class Login extends Component {
-  constructor() {
-    super();
-    this.state = {
-      email: "",
-      password: "",
-      errors: {}
-    };
-
-    this.onChange = this.onChange.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
-  }
-
+import Button from "@material-ui/core/Button";
+class LoginPage extends Component {
   onChange(e) {
-    this.setState({ [e.target.name]: e.target.value });
+    console.log(e);
   }
   onSubmit(e) {
     e.preventDefault();
+    console.log(e);
+    // const user = {
+    //   email: this.state.email,
+    //   password: this.state.password
+    // };
 
-    const user = {
-      email: this.state.email,
-      password: this.state.password
-    };
-
-    login(user).then(res => {
-      if (res) {
-        this.props.history.push(`/main`);
-      }
-    });
+    // login(user).then(res => {
+    //   if (res) {
+    //     this.props.history.push(`/main`);
+    //   }
+    // });
   }
 
   render() {
     return (
       <div className="container">
-        <Header />
         <div className="row">
           <div className="col-md-6 mt-5 mx-auto">
             <form noValidate onSubmit={this.onSubmit}>
@@ -47,7 +33,7 @@ class Login extends Component {
                   className="form-control"
                   name="email"
                   placeholder="Enter email"
-                  value={this.state.email}
+                  //   value={this.state.email}
                   onChange={this.onChange}
                 />
               </div>
@@ -58,16 +44,11 @@ class Login extends Component {
                   className="form-control"
                   name="password"
                   placeholder="Password"
-                  value={this.state.password}
+                  //   value={this.state.password}
                   onChange={this.onChange}
                 />
               </div>
-              <button
-                type="submit"
-                className="btn btn-lg btn-primary btn-block"
-              >
-                Sign in
-              </button>
+              <Button type="submit">Sign in</Button>
             </form>
           </div>
         </div>
@@ -76,4 +57,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default LoginPage;
