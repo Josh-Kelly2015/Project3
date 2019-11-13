@@ -4,7 +4,6 @@ import NewEmployeeForm from "./NewEmployee";
 import AssignUser from "./AssignUser";
 import API from "../utils/API";
 import Header from "./Header";
-
 class Home extends Component {
   state = {
     projectName: "",
@@ -22,8 +21,12 @@ class Home extends Component {
     API.getEmployees()
       .then(res => this.setState({ employees: res.data }))
       .catch(err => console.log(err));
+    // console.log(this.state.projects);
   }
-
+  handleNewProject = event => {
+    this.setState({ projectName: event.target.value });
+    console.log(this.state.projectName);
+  };
   render() {
     return (
       <div className="container-fluid ">
@@ -32,7 +35,10 @@ class Home extends Component {
           <div className="row">
             {/* ----------------- New Project Form ------------------- */}
             <div className="col">
-              <NewProjectForm projectName={this.state.projectName} />
+              <NewProjectForm
+                projectName={this.state.projectName}
+                onChange={this.handleNewProject}
+              />
             </div>
             {/* ----------------- New Employee Form ------------------- */}
             <div className="col">

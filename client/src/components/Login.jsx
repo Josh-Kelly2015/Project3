@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { login } from "./UserFunctions";
-
+import Header from "./Header";
 class Login extends Component {
   constructor() {
     super();
@@ -35,6 +35,7 @@ class Login extends Component {
   render() {
     return (
       <div className="container">
+        <Header />
         <div className="row">
           <div className="col-md-6 mt-5 mx-auto">
             <form noValidate onSubmit={this.onSubmit}>

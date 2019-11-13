@@ -6,8 +6,8 @@ class NewProject extends Component {
   state = {
     projectName: ""
   };
-  handleNewProject = e => {
-    this.setState({ projectName: e.target.value });
+  handleNewProject = event => {
+    this.setState({ projectName: event.target.value });
   };
   addNewProject = () => {
     const projectData = { projectName: this.state.projectName };

@@ -14,14 +14,14 @@ class AssignUser extends Component {
     selectedOption: {},
     projectName: ""
   };
-  componentDidMount() {
-    API.getProjects()
-      .then(res => this.setState({ projects: res.data }))
-      .catch(err => console.log(err));
-    API.getEmployees()
-      .then(res => this.setState({ employees: res.data }))
-      .catch(err => console.log(err));
-  }
+  // componentDidMount() {
+  //   API.getProjects()
+  //     .then(res => this.setState({ projects: res.data }))
+  //     .catch(err => console.log(err));
+  //   API.getEmployees()
+  //     .then(res => this.setState({ employees: res.data }))
+  //     .catch(err => console.log(err));
+  // }
   handleChange = selectedOption => {
     this.setState({ selectedOption }, () => {
       API.getEmployee(selectedOption.value)
