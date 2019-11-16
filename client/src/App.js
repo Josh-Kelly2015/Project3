@@ -7,22 +7,20 @@ import NewProjectForm from "./components/NewProjectForm";
 import NewUserForm from "./components/NewUserForm";
 import Header from "./components/Header";
 // import WrongWay from "./components/WrongWay";
-// import ProjectList from "./components/ProjectList";
+import ProjectList from "./components/ProjectList";
 
 function App() {
   return (
     <>
       <Router>
-        <div className="App">
-          <Header />
-          <Route exact path="/" component={HomePage} />
-          <Route exact path="/login" component={LoginPage} />
-          <Route exact path="/register" component={RegisterPage} />
-          {/* <Route exact path="/projectlist" component={ProjectList} /> */}
-          <Route exact path="/createproject" component={NewProjectForm} />
-          <Route exact path="/createuser" component={NewUserForm} />
-          {/* <Route path="*" component={WrongWay} /> */}
-        </div>
+        <Header />
+        <Route exact path="/" component={HomePage} />
+        <Route exact path="/login" component={LoginPage} />
+        <Route exact path="/register" component={RegisterPage} />
+        <Route exact path="/createproject" component={NewProjectForm} />
+        <Route exact path="/createuser" component={NewUserForm} />
+        <Route exact path="/projectlist" component={ProjectList} />
+        {/* <Route path="*" component={WrongWay} /> */}
       </Router>
     </>
   );

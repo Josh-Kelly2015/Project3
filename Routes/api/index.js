@@ -1,6 +1,6 @@
 const router = require("express").Router();
-const EmployeeRoutes = require("./Employee");
-const ProjectRoutes = require("./Project");
+const EmployeeRoutes = require("./employee");
+const ProjectRoutes = require("./project");
 // const UserRoutes = require("./user");
 router.use("/employee", EmployeeRoutes);
 router.use("/project", ProjectRoutes);
