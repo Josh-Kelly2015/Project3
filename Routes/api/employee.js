@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const EmployeeController = require("../../Controllers/EmployeeController");
+const EmployeeController = require("../../Controllers/employeeController");
 router
   .route("/")
   .get(EmployeeController.findAll)
@@ -11,4 +11,4 @@ router
   .put(EmployeeController.update)
   .delete(EmployeeController.remove);
 
-module.exports = router
+module.exports = router;
