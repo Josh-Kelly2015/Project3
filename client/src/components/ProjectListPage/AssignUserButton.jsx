@@ -1,25 +1,41 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
 import API from "../../utils/API";
-const AddToProject = ({ userToAssign, id }) => {
-  console.log({ userToAssign, id });
+const AddToProject = ({ userToAssign, projectId }) => {
+  console.log({ userToAssign, projectId });
+
+  let id = projectId;
   API.getProject(id)
     .then(res => {
-      const projectData = res.data;
-      projectData.assignedUsers.push(userToAssign._id);
-      API.updateProject(projectData)
-        .then(res => console.log(res.data))
-        .catch(err => console.log(err));
+      let projectData = res.data;
+      console.log(projectData);
+      let id = userToAssign._id;
+
+      API.getUser(id).then(res => {
+        let assignedUser = res.data;
+        console.log(assignedUser);
+        projectData.assignedUsers.push(assignedUser);
+        console.log(projectData);
+
+        API.updateProject(projectData)
+          .then(res => console.log(res.data))
+          .catch(err => console.log(err));
+      });
+
+      // projectData.assignedUsers.push(userToAssign);
+      // API.updateProject(projectData)
+      //   .then(res => console.log(res.data))
+      //   .catch(err => console.log(err));
       // console.log(projectData);
     })
     .catch(err => console.log(err));
 };
-const AssignUserButton = ({ userToAssign, id }) => {
+const AssignUserButton = ({ userToAssign, projectId }) => {
   // console.log(props);
   return (
     <Button
       onClick={() => {
-        AddToProject({ userToAssign, id });
+        AddToProject({ userToAssign, projectId });
       }}
     >
       Add to Project

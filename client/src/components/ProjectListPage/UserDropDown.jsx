@@ -34,7 +34,7 @@ class UserDropDown extends Component {
         />
         <AssignUserButton
           userToAssign={this.state.selectedOption}
-          id={this.props.id}
+          projectId={this.props.projectId}
         />
       </div>
     );

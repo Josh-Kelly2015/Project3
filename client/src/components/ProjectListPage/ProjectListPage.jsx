@@ -23,9 +23,9 @@ class ProjectListPage extends Component {
           <Paper key={_id}>
             <ProjectName name={name} />
             <DeleteProjectButton id={_id} />
-            <AssignedUser name={assignedUsers} />
+            <AssignedUser assignedUsers={assignedUsers} />
             <DeleteAssignedUserButton id={_id} />
-            <UserDropDown id={_id} />
+            <UserDropDown projectId={_id} />
           </Paper>
         ))}
       </div>
