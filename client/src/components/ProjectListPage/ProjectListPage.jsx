@@ -6,35 +6,26 @@ import AssignedUser from "./AssignedUser";
 import DeleteProjectButton from "./DeleteProject";
 import ProjectName from "./ProjectName";
 import DeleteAssignedUserButton from "./DeleteAssignedUser";
-import AssignUserButton from "./AssignUserButton";
 class ProjectListPage extends Component {
   state = {
-    projects: [],
-    employees: []
+    projects: []
   };
   componentDidMount() {
     API.getProjects()
       .then(res => this.setState({ projects: res.data }))
-      .catch(err => console.log(err));
-    API.getEmployees()
-      .then(res => this.setState({ employees: res.data }))
       .catch(err => console.log(err));
   }
 
   render() {
     return (
       <div className="container">
-        {this.state.projects.map(project => (
-          <Paper key={project._id}>
-            <ProjectName name={project.projectName} />
-            <DeleteProjectButton id={project._id} />
-            <AssignedUser name={project.employees} />
-            <DeleteAssignedUserButton id={project._id} />
-            <UserDropDown allUsers={this.state.employees} />
-            <AssignUserButton
-              assignedUsers={project.employees}
-              id={project._id}
-            />
+        {this.state.projects.map(({ name, _id, assignedUsers }) => (
+          <Paper key={_id}>
+            <ProjectName name={name} />
+            <DeleteProjectButton id={_id} />
+            <AssignedUser name={assignedUsers} />
+            <DeleteAssignedUserButton id={_id} />
+            <UserDropDown id={_id} />
           </Paper>
         ))}
       </div>

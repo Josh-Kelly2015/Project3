@@ -5,7 +5,7 @@ import LoginPage from "./components/LoginPage";
 import RegisterPage from "./components/RegisterPage";
 import NewProjectForm from "./components/NewProjectForm";
 import NewUserForm from "./components/NewUserForm";
-import Header from "./components/Header";
+// import Header from "./components/Header";
 // import WrongWay from "./components/WrongWay";
 import ProjectListPage from "./components/ProjectListPage/ProjectListPage";
 
@@ -13,7 +13,7 @@ function App() {
   return (
     <>
       <Router>
-        <Header />
+        {/* <Header /> */}
 
         <Route exact path="/" component={HomePage} />
         <Route exact path="/login" component={LoginPage} />

@@ -3,7 +3,7 @@ const db = require("../Models");
 module.exports = {
   findAll: function(req, res) {
     db.Project.find(req.query)
-      .populate({ path: "employees", model: "employee" })
+      .populate({ path: "user", model: "user" })
       .sort({ _id: 1 })
       .then(dbModel => {
         console.log(dbModel);

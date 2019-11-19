@@ -7,10 +7,10 @@ const deleteProject = id => {
     .then(res => console.log(res))
     .catch(err => console.log(err));
 };
-const ProjectName = props => {
+const ProjectName = ({ id }) => {
   return (
     <div className="col">
-      <IconButton aria-label="delete" onClick={() => deleteProject(props.id)}>
+      <IconButton aria-label="delete" onClick={() => deleteProject(id)}>
         <DeleteIcon />
       </IconButton>
     </div>

@@ -1,10 +1,10 @@
 import React from "react";
 import { Typography } from "@material-ui/core";
 
-const ProjectName = props => {
+const ProjectName = ({ name }) => {
   return (
     <div className="col">
-      <Typography>{props.name}</Typography>
+      <Typography>{name}</Typography>
     </div>
   );
 };

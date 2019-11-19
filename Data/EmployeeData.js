@@ -3,73 +3,83 @@ const db = require("../Models");
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/weschedule");
 
-const EmployeeSchema = [
+const UserSchema = [
   {
-    employeeName: "John Doe1",
+    name: "John Doe1",
     email: "johndoe1@gmail.com",
-    rank: "admin"
+    rank: "admin",
+    password: "manager"
   },
   {
-    employeeName: "John Doe2",
+    name: "John Doe2",
     email: "johndoe2@gmail.com",
     rank: "field"
   },
   {
-    employeeName: "John Doe3",
+    name: "John Doe3",
     email: "johndoe3@gmail.com",
     rank: "manager"
   },
   {
-    employeeName: "John Doe4",
+    name: "John Doe4",
     email: "johndoe4@gmail.com",
-    rank: "admin"
+    rank: "admin",
+    password: "manager"
   },
   {
-    employeeName: "John Doe5",
+    name: "John Doe5",
     email: "johndoe5@gmail.com",
-    rank: "manager"
+    rank: "manager",
+    password: "manager"
   },
   {
-    employeeName: "John Doe6",
+    name: "John Doe6",
     email: "johndoe6@gmail.com",
-    rank: "field"
+    rank: "field",
+    password: "manager"
   },
   {
-    employeeName: "John Doe7",
+    name: "John Doe7",
     email: "johndoe7@gmail.com",
-    rank: "field"
+    rank: "field",
+    password: "manager"
   },
   {
-    employeeName: "John Doe8",
+    name: "John Doe8",
     email: "johndoe8@gmail.com",
-    rank: "field"
+    rank: "field",
+    password: "manager"
   },
   {
-    employeeName: "John Doe9",
+    name: "John Doe9",
     email: "johndoe9@gmail.com",
-    rank: "manager"
+    rank: "manager",
+    password: "manager"
   },
   {
-    employeeName: "John Doe10",
+    name: "John Doe10",
     email: "johndoe10@gmail.com",
-    rank: "field"
+    rank: "field",
+    password: "manager"
   },
   {
-    employeeName: "John Doe11",
+    name: "John Doe11",
     email: "johndoe11@gmail.com",
-    rank: "manager"
+    rank: "manager",
+    password: "manager"
   },
   {
-    employeeName: "John Doe12",
+    name: "John Doe12",
     email: "johndoe12@gmail.com",
-    rank: "field"
+    rank: "field",
+    password: "manager"
   }
 ];
 
-db.Employee.remove({})
-  .then(() => db.Employee.collection.insertMany(EmployeeSchema))
+db.User.remove({})
+  .then(() => db.User.collection.insertMany(UserSchema))
   .then(data => {
-    console.log(data.result.n + " employee records inserted!");
+    console.log(data.result.n + " user records inserted!");
     process.exit(0);
   })
   .catch(err => {

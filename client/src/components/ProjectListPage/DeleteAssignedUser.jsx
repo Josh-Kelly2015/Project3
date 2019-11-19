@@ -7,11 +7,11 @@ const DeleteAssignedUser = id => {
     .then(res => console.log(res))
     .catch(err => console.log(err));
 };
-const DeleteAssignedUserButton = props => {
+const DeleteAssignedUserButton = ({ id }) => {
   return (
     <Button
       onClick={() => {
-        DeleteAssignedUser(props.id);
+        DeleteAssignedUser(id);
       }}
     >
       x

@@ -1,5 +1,5 @@
 module.exports = {
-  Employee: require("./employee"),
+  User: require("./user"),
   Project: require("./project")
   // User: require("./user")
 };

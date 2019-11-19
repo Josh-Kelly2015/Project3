@@ -1,10 +1,10 @@
 import React from "react";
 import { Card } from "@material-ui/core";
 
-const AssignedUser = props => {
+const AssignedUser = ({ name, _id }) => {
   return (
-    <Card key={props.id}>
-      {props.employeeName}
+    <Card key={_id}>
+      {name}
       User Name
     </Card>
   );
