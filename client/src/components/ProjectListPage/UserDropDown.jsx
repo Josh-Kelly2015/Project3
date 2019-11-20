@@ -13,14 +13,17 @@ class UserDropDown extends Component {
       .then(res => this.setState({ users: res.data }))
       .catch(err => console.log(err));
   }
-  render() {
-    const handleChange = selectedOption => {
-      let id = selectedOption.value;
-      API.getUser(id)
-        .then(res => this.setState({ selectedOption: res.data }))
-        .catch(err => console.log(err));
-    };
 
+  handleChange = selectedOption => {
+    let id = selectedOption.value;
+    API.getUser(id)
+      .then(res => {
+        this.setState({ selectedOption: res.data });
+        console.log(res.data);
+      })
+      .catch(err => console.log(err));
+  };
+  render() {
     return (
       <div className="col">
         <Select
@@ -30,11 +33,11 @@ class UserDropDown extends Component {
               label: user.name
             };
           })}
-          onChange={selectedOption => handleChange(selectedOption)}
+          onChange={selectedOption => this.handleChange(selectedOption)}
         />
         <AssignUserButton
           userToAssign={this.state.selectedOption}
-          projectId={this.props.projectId}
+          projectId={this.props.getProjectId}
         />
       </div>
     );

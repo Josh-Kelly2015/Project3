@@ -5,7 +5,6 @@ import UserDropDown from "./UserDropDown";
 import AssignedUser from "./AssignedUser";
 import DeleteProjectButton from "./DeleteProject";
 import ProjectName from "./ProjectName";
-import DeleteAssignedUserButton from "./DeleteAssignedUser";
 class ProjectListPage extends Component {
   state = {
     projects: []
@@ -15,17 +14,30 @@ class ProjectListPage extends Component {
       .then(res => this.setState({ projects: res.data }))
       .catch(err => console.log(err));
   }
-
+  deleteProject = id => {
+    API.deleteProject(id)
+      .then(res => console.log(res))
+      .catch(err => console.log(err));
+  };
+  getProject = id => {
+    API.getProject(id)
+      .then(res => console.log(res.data))
+      .catch(err => console.log(err));
+  };
   render() {
     return (
       <div className="container">
-        {this.state.projects.map(({ name, _id, assignedUsers }) => (
+        {this.state.projects.map(({ _id, name, assignedUsers }) => (
           <Paper key={_id}>
             <ProjectName name={name} />
-            <DeleteProjectButton id={_id} />
+            <DeleteProjectButton
+              deleteProject={() => this.deleteProject(_id)}
+            />
+
+            {/* How the fuck do i update the project, with the user ?!! */}
+
             <AssignedUser assignedUsers={assignedUsers} />
-            <DeleteAssignedUserButton id={_id} />
-            <UserDropDown projectId={_id} />
+            <UserDropDown getProjectId={() => this.getProject(_id)} />
           </Paper>
         ))}
       </div>

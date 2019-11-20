@@ -4,14 +4,14 @@ import Button from "@material-ui/core/Button";
 
 const DeleteAssignedUser = id => {
   API.deleteEmployee(id)
-    .then(res => console.log(res))
+    .then(res => console.log(res.data))
     .catch(err => console.log(err));
 };
-const DeleteAssignedUserButton = ({ id }) => {
+const DeleteAssignedUserButton = ({ userId }) => {
   return (
     <Button
       onClick={() => {
-        DeleteAssignedUser(id);
+        DeleteAssignedUser(userId);
       }}
     >
       x

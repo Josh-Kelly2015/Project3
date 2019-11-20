@@ -1,46 +1,36 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
-import API from "../../utils/API";
-const AddToProject = ({ userToAssign, projectId }) => {
-  console.log({ userToAssign, projectId });
+// import API from "../../utils/API";
+// const updatedProject = ({ userToAssign, getProjectId }) => {
+// ---------- GET PROJECT BY ID ---------
+// let id = getProjectId;
+// console.log(id, userToAssign);
+// API.getProject(id)
+//   .then(res => {
+//     console.log(`Project To Update: ${res.data}`);
 
-  let id = projectId;
-  API.getProject(id)
-    .then(res => {
-      let projectData = res.data;
-      console.log(projectData);
-      let id = userToAssign._id;
+//       let ProjectToUpdate = res.data;
+//       // ------------ GET USER BY ID -----------
+//       let id = userToAssign._id;
+//       API.getUser(id)
+//         .then(res => {
+//           console.log(`Selected User to Update Project: ${res.data}`);
+//           let UserToUpdate = res.data;
 
-      API.getUser(id).then(res => {
-        let assignedUser = res.data;
-        console.log(assignedUser);
-        projectData.assignedUsers.push(assignedUser);
-        console.log(projectData);
-
-        API.updateProject(projectData)
-          .then(res => console.log(res.data))
-          .catch(err => console.log(err));
-      });
-
-      // projectData.assignedUsers.push(userToAssign);
-      // API.updateProject(projectData)
-      //   .then(res => console.log(res.data))
-      //   .catch(err => console.log(err));
-      // console.log(projectData);
-    })
-    .catch(err => console.log(err));
-};
-const AssignUserButton = ({ userToAssign, projectId }) => {
-  // console.log(props);
-  return (
-    <Button
-      onClick={() => {
-        AddToProject({ userToAssign, projectId });
-      }}
-    >
-      Add to Project
-    </Button>
-  );
+//           console.log(`User: ${UserToUpdate}, Project: ${ProjectToUpdate}`);
+//           // ---- UPDATE PROJECT BY ID WITH USER BY ID ----
+//           // const updatedProject = ProjectToUpdate.assignedUsers.push(UserToUpdate);
+//           // console.log(updatedProject);
+//           // API.updateProject(projectData)
+//           // .then( res => console.log(res.data))
+//           // .catch(err => console.log(err));
+//         })
+//         .catch(err => console.log(err));
+// })
+// .catch(err => console.log(err));
+// };
+const AssignUserButton = ({ projectId }) => {
+  return <Button onClick={projectId}>Add to Project</Button>;
 };
 
 export default AssignUserButton;
