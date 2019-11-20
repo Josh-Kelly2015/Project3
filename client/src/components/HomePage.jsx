@@ -1,20 +1,22 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Button from "@material-ui/core/Button";
-import Header from "./Header";
 const HomePage = () => {
   return (
     <div className="container-fluid">
-      <Header />
-
       <div className="container">
         <div className="col">
           <div className="row">
-            <Button className="btn btn-success">Login</Button>
+            <Link to="/login">
+              <Button>Login</Button>
+            </Link>
           </div>
         </div>
         <div className="col">
           <div className="row">
-            <Button className="btn btn-danger">Register</Button>
+            <Link to="/register">
+              <Button>Register</Button>
+            </Link>
           </div>
         </div>
       </div>

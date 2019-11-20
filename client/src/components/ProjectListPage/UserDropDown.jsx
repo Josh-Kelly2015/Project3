@@ -19,7 +19,6 @@ class UserDropDown extends Component {
     API.getUser(id)
       .then(res => {
         this.setState({ selectedOption: res.data });
-        console.log(res.data);
       })
       .catch(err => console.log(err));
   };

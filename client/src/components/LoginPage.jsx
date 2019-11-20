@@ -1,16 +1,20 @@
 import React, { Component } from "react";
 import Button from "@material-ui/core/Button";
 class LoginPage extends Component {
-  onChange(e) {
-    console.log(e);
-  }
+  state = {
+    email: "",
+    password: ""
+  };
+  onChange = e => {
+    this.setState({ email: e.target.value });
+  };
   onSubmit(e) {
     e.preventDefault();
-    console.log(e);
-    // const user = {
-    //   email: this.state.email,
-    //   password: this.state.password
-    // };
+    const user = {
+      email: this.state.email,
+      password: this.state.password
+    };
+    console.log(user);
 
     // login(user).then(res => {
     //   if (res) {
@@ -33,8 +37,8 @@ class LoginPage extends Component {
                   className="form-control"
                   name="email"
                   placeholder="Enter email"
-                  //   value={this.state.email}
-                  onChange={this.onChange}
+                  value={this.state.email}
+                  onChange={e => this.onChange(e)}
                 />
               </div>
               <div className="form-group">
@@ -44,8 +48,8 @@ class LoginPage extends Component {
                   className="form-control"
                   name="password"
                   placeholder="Password"
-                  //   value={this.state.password}
-                  onChange={this.onChange}
+                  value={this.state.password}
+                  onChange={() => this.onChange}
                 />
               </div>
               <Button type="submit">Sign in</Button>
