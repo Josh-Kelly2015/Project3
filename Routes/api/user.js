@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const express = require("express");
 const users = express.Router();
 // const cors = require('cors')
@@ -59,3 +60,19 @@ users.get("/profile", (req, res) => {
 });
 
 module.exports = users;
+=======
+const router = require("express").Router();
+const UserController = require("../../Controllers/userController");
+router
+  .route("/")
+  .get(UserController.findAll)
+  .post(UserController.create);
+
+router
+  .route("/:id")
+  .get(UserController.findById)
+  .put(UserController.update)
+  .delete(UserController.remove);
+
+module.exports = router;
+>>>>>>> b6d8c461b621a660f1881b21fb54b6a10d0a799c
