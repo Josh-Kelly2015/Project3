@@ -2,6 +2,8 @@ const mongoose = require("mongoose");
 const db = require("../Models");
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/weschedule");
+<<<<<<< HEAD
+=======
 
 const ProjectSchema = [
   {
@@ -49,7 +51,15 @@ const ProjectSchema = [
     assignedUsers: []
   }
 ];
+>>>>>>> b6d8c461b621a660f1881b21fb54b6a10d0a799c
 
+const ProjectSchema = [
+  {
+    projectName: "Project Name One",
+    // active: true,
+    employees: []
+  }
+];
 db.Project.remove({})
   .then(() => db.Project.collection.insertMany(ProjectSchema))
   .then(data => {
@@ -60,3 +70,8 @@ db.Project.remove({})
     console.error(err);
     process.exit(1);
   });
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> b6d8c461b621a660f1881b21fb54b6a10d0a799c
