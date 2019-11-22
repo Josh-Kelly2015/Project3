@@ -12,7 +12,6 @@ class NavBar extends Component {
           <Link to="/">
             <Typography variant="h4">Home</Typography>
           </Link>
-
           <Link to="/projectlist">
             <Typography variant="h4">Projects</Typography>
           </Link>
