@@ -33,9 +33,7 @@ class ProjectListPage extends Component {
             <DeleteProjectButton
               deleteProject={() => this.deleteProject(_id)}
             />
-
-            {/* How the fuck do i update the project, with the user ?!! */}
-
+            {/* How do i update the project, with the user ?!! */}
             <AssignedUser assignedUsers={assignedUsers} />
             <UserDropDown getProjectId={() => this.getProject(_id)} />
           </Paper>
