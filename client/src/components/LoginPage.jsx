@@ -61,8 +61,4 @@ class LoginPage extends Component {
   }
 }
 
-<<<<<<< HEAD:client/src/components/UserAuth/Login.jsx
-export default Login;
-=======
 export default LoginPage;
->>>>>>> b6d8c461b621a660f1881b21fb54b6a10d0a799c:client/src/components/LoginPage.jsx

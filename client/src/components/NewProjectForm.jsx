@@ -44,8 +44,4 @@ class NewProjectForm extends Component {
     );
   }
 }
-<<<<<<< HEAD:client/src/components/NewProject/index.jsx
-export default NewProject;
-=======
 export default NewProjectForm;
->>>>>>> b6d8c461b621a660f1881b21fb54b6a10d0a799c:client/src/components/NewProjectForm.jsx

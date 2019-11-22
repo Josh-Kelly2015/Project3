@@ -26,21 +26,9 @@
   "homepage": "https://github.com/Josh-Kelly2015/Project3#readme",
   "dependencies": {
     "axios": "^0.19.0",
-<<<<<<< HEAD
-    "bcrypt": "^3.0.6",
-    "body-parser": "^1.19.0",
-    "concurrently": "^5.0.0",
-    "cors": "^2.8.5",
-    "express": "^4.17.1",
-    "if-env": "^1.0.4",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.7.9",
-    "nodemon": "^1.19.4",
-=======
     "express": "^4.17.1",
     "if-env": "^1.0.4",
     "mongoose": "^5.7.6",
->>>>>>> b6d8c461b621a660f1881b21fb54b6a10d0a799c
     "path": "^0.12.7"
   }
 }
