@@ -1,17 +1,26 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Main from "./components/Home";
-import Login from "./components/UserAuth/Login";
-// import Profile from "./components/UserAuth/Profile";
-import Register from "./components/UserAuth/Register";
+import HomePage from "./components/HomePage";
+import LoginPage from "./components/LoginPage";
+import RegisterPage from "./components/RegisterPage";
+import NewProjectForm from "./components/NewProjectForm";
+import NavBar from "./components/NavBar";
+import ProjectListPage from "./components/ProjectListPage/ProjectListPage";
+// import WrongWay from "./components/WrongWay";
+
 function App() {
   return (
-    <Router>
-      <Route exact path="/main" component={Main} />
-      <Route exact path="/" component={Login} />
-      {/* <Route exact path="/profile" component={Profile} /> */}
-      <Route exact path="/register" component={Register} />
-    </Router>
+    <>
+      <Router>
+        <NavBar />
+        <Route exact path="/" component={HomePage} />
+        <Route exact path="/login" component={LoginPage} />
+        <Route exact path="/register" component={RegisterPage} />
+        <Route exact path="/projectlist" component={ProjectListPage} />
+        <Route exact path="/createproject" component={NewProjectForm} />
+        {/* <Route path="*" component={WrongWay} /> */}
+      </Router>
+    </>
   );
 }
 

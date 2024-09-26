@@ -1,15 +1,12 @@
 import React, { Component } from "react";
-import { register } from "./UserFunctions";
-
-class Register extends Component {
+class RegisterPage extends Component {
   constructor() {
     super();
     this.state = {
-      first_name: "",
-      last_name: "",
+      name: "",
       email: "",
       password: "",
-      errors: {}
+      rank: ""
     };
 
     this.onChange = this.onChange.bind(this);
@@ -18,20 +15,21 @@ class Register extends Component {
 
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
+    console.log(e);
   }
   onSubmit(e) {
     e.preventDefault();
-
     const newUser = {
-      first_name: this.state.first_name,
-      last_name: this.state.last_name,
+      name: this.state.name,
       email: this.state.email,
-      password: this.state.password
+      password: this.state.password,
+      rank: ""
     };
+    console.log(newUser);
 
-    register(newUser).then(res => {
-      this.props.history.push(`/`);
-    });
+    // register(newUser).then(res => {
+    //   this.props.history.push(`/`);
+    // });
   }
 
   render() {
@@ -42,24 +40,13 @@ class Register extends Component {
             <form noValidate onSubmit={this.onSubmit}>
               <h1 className="h3 mb-3 font-weight-normal">Register</h1>
               <div className="form-group">
-                <label htmlFor="name">First name</label>
+                <label htmlFor="name">Whole Name</label>
                 <input
                   type="text"
                   className="form-control"
                   name="first_name"
-                  placeholder="Enter your first name"
-                  value={this.state.first_name}
-                  onChange={this.onChange}
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="name">Last name</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  name="last_name"
-                  placeholder="Enter your lastname name"
-                  value={this.state.last_name}
+                  placeholder="Enter your  name"
+                  value={this.state.name}
                   onChange={this.onChange}
                 />
               </div>
@@ -75,6 +62,17 @@ class Register extends Component {
                 />
               </div>
               <div className="form-group">
+                <label htmlFor="rank">Rank</label>
+                <input
+                  type="rank"
+                  className="form-control"
+                  name="rank"
+                  placeholder="rank"
+                  value={this.state.rank}
+                  onChange={this.onChange}
+                />
+              </div>
+              <div className="form-group">
                 <label htmlFor="password">Password</label>
                 <input
                   type="password"
@@ -85,6 +83,7 @@ class Register extends Component {
                   onChange={this.onChange}
                 />
               </div>
+
               <button
                 type="submit"
                 className="btn btn-lg btn-primary btn-block"
@@ -99,4 +98,4 @@ class Register extends Component {
   }
 }
 
-export default Register;
+export default RegisterPage;

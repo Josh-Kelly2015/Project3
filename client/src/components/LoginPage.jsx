@@ -1,35 +1,26 @@
 import React, { Component } from "react";
-import { login } from "./UserFunctions";
-
-class Login extends Component {
-  constructor() {
-    super();
-    this.state = {
-      email: "",
-      password: "",
-      errors: {}
-    };
-
-    this.onChange = this.onChange.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
-  }
-
-  onChange(e) {
-    this.setState({ [e.target.name]: e.target.value });
-  }
+import Button from "@material-ui/core/Button";
+class LoginPage extends Component {
+  state = {
+    email: "",
+    password: ""
+  };
+  onChange = e => {
+    this.setState({ email: e.target.value });
+  };
   onSubmit(e) {
     e.preventDefault();
-
     const user = {
       email: this.state.email,
       password: this.state.password
     };
+    console.log(user);
 
-    login(user).then(res => {
-      if (res) {
-        this.props.history.push(`/main`);
-      }
-    });
+    // login(user).then(res => {
+    //   if (res) {
+    //     this.props.history.push(`/main`);
+    //   }
+    // });
   }
 
   render() {
@@ -47,7 +38,7 @@ class Login extends Component {
                   name="email"
                   placeholder="Enter email"
                   value={this.state.email}
-                  onChange={this.onChange}
+                  onChange={e => this.onChange(e)}
                 />
               </div>
               <div className="form-group">
@@ -58,15 +49,10 @@ class Login extends Component {
                   name="password"
                   placeholder="Password"
                   value={this.state.password}
-                  onChange={this.onChange}
+                  onChange={() => this.onChange}
                 />
               </div>
-              <button
-                type="submit"
-                className="btn btn-lg btn-primary btn-block"
-              >
-                Sign in
-              </button>
+              <Button type="submit">Sign in</Button>
             </form>
           </div>
         </div>
@@ -75,4 +61,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default LoginPage;

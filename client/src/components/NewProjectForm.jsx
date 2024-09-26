@@ -1,21 +1,22 @@
 import React, { Component } from "react";
-import API from "../../utils/API";
+import API from "../utils/API";
 import { TextField, Button, Paper } from "@material-ui/core";
 
-class NewProject extends Component {
+class NewProjectForm extends Component {
   state = {
-    projectName: ""
+    name: ""
   };
-  handleNewProject = event => {
-    this.setState({ projectName: event.target.value });
+  handleNewProject = e => {
+    this.setState({ name: e.target.value });
   };
   addNewProject = () => {
-    const projectData = { projectName: this.state.projectName };
+    const projectData = this.state.name;
     API.saveProject(projectData)
       .then(res => {
-        window.location.reload();
+        console.log(res.data);
       })
       .catch(err => console.log(err));
+    console.log("New Project Successfully Created!");
   };
   render() {
     return (
@@ -24,8 +25,8 @@ class NewProject extends Component {
           <form>
             <TextField
               type="text"
-              name="projectName"
-              value={this.state.projectName}
+              name="name"
+              value={this.state.name}
               onChange={this.handleNewProject}
             ></TextField>
           </form>
@@ -43,5 +44,4 @@ class NewProject extends Component {
     );
   }
 }
-
-export default NewProject;
+export default NewProjectForm;
